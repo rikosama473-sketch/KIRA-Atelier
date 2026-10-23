@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "description": "Canonical prompt registry. Do not assign images or fill prompts by guessing; review original image metadata and visual references first.",
+  "characters": [
+    {
+      "id": "pibara",
+      "display_name": "Pibara",
+      "status": "reference_confirmed",
+      "canonical_prompt": null,
+      "source_images": [
+        "from-PixAI-2034984086876227343-0.png"
+      ],
+      "variable_hair_traits": [
+        "hairstyle",
+        "hair_length",
+        "fringe",
+        "parting",
+        "updo",
+        "braid"
+      ],
+      "notes": "Confirmed reference: from-PixAI-2034984086876227343-0.png. Preserve identity traits from this source; store hairstyle and other deliberate alternatives as individual variants. No original prompt is inferred from the filename.",
+      "source_prompt_examples": [],
+      "reference_confirmation": {
+        "source_path": "from-PixAI-2034984086876227343-0.png",
+        "confirmed_by_user": true,
+        "confirmation_basis": "The user confirmed this repo image as Pibara during the image-reference workflow.",
+        "generation_status": "waiting_for_public_free_inference_quota",
+        "updated_at_utc": "2026-10-20"
+      },
+      "base_assets": [
+        {
+          "source_path": "from-PixAI-2034984086876227343-0.png",
+          "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+          "asset_kind": "whole_character_foreground_cutout",
+          "character_cutout_path": "generated/character-assets/pibara/base/source-f3777be44211-character-cutout.png",
+          "alpha_mask_path": "generated/character-assets/pibara/base/source-f3777be44211-alpha-mask.png",
+          "manifest_path": "generated/character-assets/pibara/base/source-f3777be44211-base-manifest.json",
+          "status": "derived_not_ai_generated",
+          "review_status": "needs_edge_review"
+        }
+      ],
+      "asset_generation_status": "generated_pending_visual_review",
+      "asset_runs": [
+        {
+          "run_id": "39427500253",
+          "date": "2026-10-20",
+          "pack": "hair-core-5",
+          "source_path": "from-PixAI-2034984086876227343-0.png",
+          "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+          "manifest_path": "generated/character-assets/pibara/2026-10-20/run-39427500253/manifest.json",
+          "contact_sheet_path": "generated/character-assets/pibara/2026-10-20/run-39427500253/contact-sheet.jpg",
+          "assets_added_this_run": 3,
+          "pack_completed_count": 3,
+          "pack_total": 5,
+          "status": "partial_generation_pending_visual_review"
+        },
+        {
+          "run_id": "39445227631",
+          "date": "2026-10-20",
+          "pack": "hair-core-5",
+          "source_path": "from-PixAI-2034984086876227343-0.png",
+          "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+          "manifest_path": "generated/character-assets/pibara/2026-10-20/run-39445227631/manifest.json",
+          "contact_sheet_path": "generated/character-assets/pibara/2026-10-20/run-39445227631/contact-sheet.jpg",
+          "assets_added_this_run": 2,
+          "pack_completed_count": 5,
+          "pack_total": 5,
+          "status": "complete_pending_visual_review"
+        },
+        {
+          "run_id": "39622201248",
+          "date": "2026-10-21",
+          "pack": "expressions-core-5",
+          "source_path": "from-PixAI-2034984086876227343-0.png",
+          "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+          "manifest_path": "generated/character-assets/pibara/2026-10-21/run-39622201248/manifest.json",
+          "contact_sheet_path": "generated/character-assets/pibara/2026-10-21/run-39622201248/contact-sheet.jpg",
+          "assets_added_this_run": 3,
+          "pack_completed_count": 3,
+          "pack_total": 5,
+          "status": "partial_generation_pending_visual_review"
+        }
+      ]
+    },
+    {
+      "id": "chie",
+      "display_name": "Chie",
+      "status": "needs_reference_review",
+      "canonical_prompt": null,
+      "source_images": [],
+      "variable_hair_traits": [
+        "hairstyle",
+        "hair_length",
+        "fringe",
+        "parting",
+        "updo",
+        "braid"
+      ],
+      "notes": "Preserve identity traits in the canonical prompt; store haircut and hairstyle only as per-image variants.",
+      "source_prompt_examples": []
+    },
+    {
+      "id": "sunna",
+      "display_name": "Sunna",
+      "status": "needs_reference_review",
+      "canonical_prompt": null,
+      "source_images": [],
+      "variable_hair_traits": [
+        "hairstyle",
+        "hair_length",
+        "fringe",
+        "parting",
+        "updo",
+        "braid"
+      ],
+      "notes": "Preserve identity traits in the canonical prompt; store haircut and hairstyle only as per-image variants.",
+      "source_prompt_examples": []
+    },
+    {
+      "id": "personaje-4",
+      "display_name": null,
+      "status": "unassigned",
+      "canonical_prompt": null,
+      "source_images": [],
+      "variable_hair_traits": [
+        "hairstyle",
+        "hair_length",
+        "fringe",
+        "parting",
+        "updo",
+        "braid"
+      ],
+      "notes": "Do not assign a name until a distinct character is verified.",
+      "source_prompt_examples": []
+    },
+    {
+      "id": "personaje-5",
+      "display_name": null,
+      "status": "unassigned",
+      "canonical_prompt": null,
+      "source_images": [],
+      "variable_hair_traits": [
+        "hairstyle",
+        "hair_length",
+        "fringe",
+        "parting",
+        "updo",
+        "braid"
+      ],
+      "notes": "Do not assign a name until a distinct character is verified.",
+      "source_prompt_examples": []
+    }
+  ]
+}
