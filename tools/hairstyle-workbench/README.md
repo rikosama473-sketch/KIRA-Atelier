@@ -1,4 +1,4 @@
-# IMAGE — Taller manual de peinados
+# KIRA Editor — Taller manual de peinados
 
 ## Elegir imágenes que puedan ponerse encima de una base plana
 
@@ -16,7 +16,7 @@ El visor de referencias diferencia tres casos en **Uso como capa**:
 - [Syntelligence — coleta y cabello por capas](https://syntelligence.jp/article/57529): la página declara uso gratuito personal/comercial de sus ilustraciones IA. La hoja se clasifica como referencia, porque presenta varias vistas completas y no entrega capas capilares independientes.
 - Las dos imágenes Pinterest aportadas por el usuario quedan registradas como referencias pendientes: no se ha verificado su autoría original ni sus permisos.
 
-La biblioteca no descarga automáticamente assets protegidos ni convierte hojas de referencia en capas. Para adaptar un corte a una nueva base plana, hay que aislar el cabello en una pieza transparente, eliminar restos de la cabeza anterior, verificar el alfa, alinear coronilla/ojos/orejas y guardar las coordenadas del recorte. IMAGE no etiquetará ese recorte como aprobado hasta que se revise visualmente.
+La biblioteca no descarga automáticamente assets protegidos ni convierte hojas de referencia en capas. Para adaptar un corte a una nueva base plana, hay que aislar el cabello en una pieza transparente, eliminar restos de la cabeza anterior, verificar el alfa, alinear coronilla/ojos/orejas y guardar las coordenadas del recorte. KIRA Atelier no etiquetará ese recorte como aprobado hasta que se revise visualmente.
 
 Esta herramienta existe para construir **varios looks del mismo personaje** sin sustituir su rostro, ojos, cuerpo o vestuario cada vez que cambia el pelo.
 
