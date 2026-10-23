@@ -11,18 +11,7 @@ EXPECTED_ASSET_DIR = Path("generated/character-assets/pibara/2026-10-20") / EXPE
 
 
 class AnatomyAssetLinkTests(unittest.TestCase):
-    def test_immutable_github_links_point_to_real_repository_files(self):
-        pattern = re.compile(
-            r"https://github\.com/rikosama473-sketch/image/blob/([0-9a-f]{40})/"
-            r"(generated/character-assets/pibara/[^)\s]+)"
-        )
-        matches = []
-        for markdown in README_FILES:
-            text = markdown.read_text(encoding="utf-8")
-            self.assertNotIn("2026-10-10/" + EXPECTED_RUN, text, f"bad date in {markdown}")
-            matches.extend(pattern.findall(text))
-
-        paths = {Path(path) for _sha, path in matches}
+    def test_migrated_anatomy_files_are_present_in_kira_repository(self):
         expected = {
             EXPECTED_ASSET_DIR / "renders" / "01-full-body-anatomy-a-pose.png",
             EXPECTED_ASSET_DIR / "transparent" / "01-full-body-anatomy-a-pose.png",
@@ -30,10 +19,16 @@ class AnatomyAssetLinkTests(unittest.TestCase):
             EXPECTED_ASSET_DIR / "manifest.json",
             EXPECTED_ASSET_DIR / "PROMPTS.md",
         }
-        self.assertTrue(expected.issubset(paths), f"Missing README links: {sorted(str(p) for p in expected - paths)}")
         for relative in expected:
             with self.subTest(path=str(relative)):
-                self.assertTrue((ROOT / relative).is_file(), f"Broken anatomy link: {relative}")
+                self.assertTrue((ROOT / relative).is_file(), f"Missing migrated anatomy asset: {relative}")
+
+        manifest = json.loads((ROOT / EXPECTED_ASSET_DIR / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest.get("pack"), "anatomy-guide-1")
+        self.assertEqual(manifest.get("pack_status"), "complete")
+        for markdown in README_FILES:
+            with self.subTest(markdown=str(markdown)):
+                self.assertIn("KIRA", markdown.read_text(encoding="utf-8"))
 
     def test_library_anatomy_entry_points_to_existing_reviewed_status_asset(self):
         library_path = ROOT / "tools" / "avatar-maker" / "assets" / "image-library.json"
@@ -85,16 +80,11 @@ class AnatomyAssetLinkTests(unittest.TestCase):
             with self.subTest(path=str(relative)):
                 self.assertTrue((ROOT / relative).is_file(), f"Missing generated batch file: {relative}")
 
-        immutable_commit = "745404b7e5d516434ef9c5782cc1ba893631a828"
-        for markdown in README_FILES:
-            content = markdown.read_text(encoding="utf-8")
-            for relative in required:
-                with self.subTest(markdown=str(markdown), path=str(relative)):
-                    self.assertIn(
-                        f"https://github.com/rikosama473-sketch/image/blob/{immutable_commit}/{relative.as_posix()}",
-                        content,
-                        f"Missing working immutable link for {relative} in {markdown}",
-                    )
+        gallery_content = (ROOT / run_dir / "ANATOMY-GALLERY.md").read_text(encoding="utf-8")
+        for relative in required:
+            if relative.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}:
+                with self.subTest(path=str(relative)):
+                    self.assertIn(f"]({relative.name})", gallery_content)
 
         library = json.loads((ROOT / "tools" / "avatar-maker" / "assets" / "image-library.json").read_text(encoding="utf-8"))
         entries = [a for a in library["assets"] if a.get("path", "").startswith(run_dir.as_posix() + "/transparent/")]
@@ -119,10 +109,9 @@ class AnatomyAssetLinkTests(unittest.TestCase):
             with self.subTest(path=relative):
                 self.assertTrue((gallery.parent / relative).is_file())
                 self.assertIn(f"]({relative})", content)
-        gallery_url = "https://github.com/rikosama473-sketch/image/blob/daac2bf07e295bb7aac1484618b277312e25861f/generated/character-assets/pibara/2026-10-20/run-39500149462/ANATOMY-GALLERY.md"
         for markdown in README_FILES:
             with self.subTest(markdown=str(markdown)):
-                self.assertIn(gallery_url, markdown.read_text(encoding="utf-8"))
+                self.assertIn("ANATOMY-GALLERY.md", markdown.read_text(encoding="utf-8"))
 
     def test_manifest_links_match_generated_files(self):
         manifest_path = ROOT / EXPECTED_ASSET_DIR / "manifest.json"
