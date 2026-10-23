@@ -1,4 +1,4 @@
-# Migración inicial a KIRA Atelier
+# KIRA Atelier — Registro de migración
 
 **Fecha:** 2026-10-23  
 **Destino principal:** `rikosama473-sketch/KIRA-Atelier`, rama `main`  
@@ -20,7 +20,7 @@ Esta sección registraba el corte inicial, cuando los PNG originales seguían en
 
 ## Rebranding y conservación
 
-- La identidad visible de las interfaces principales se cambió a KIRA Atelier / KIRA Atlas.
+- La identidad de marca del producto es KIRA Atelier, con los módulos KIRA Editor, KIRA Atlas y KIRA Forge. Los principales HTML fueron actualizados; quedan referencias históricas en código/datos donde son identificadores o procedencia.
 - El editor usa como muestra una salida de personaje ya copiada en este repositorio.
 - Los vínculos relativos del atlas se mantuvieron junto a los documentos de los que dependen.
 - El antiguo repositorio no se borró, no se reescribió y no se dio por cerrado: queda como archivo de origen hasta completar la migración del material que siga siendo necesario.
