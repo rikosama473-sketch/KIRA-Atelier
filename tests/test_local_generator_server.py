@@ -223,7 +223,7 @@ class LocalGeneratorHttpTests(unittest.TestCase):
     def test_serves_local_creator_ui_and_diagnostic_assets(self) -> None:
         status, body, headers = self.request("/")
         self.assertEqual(status, 200)
-        self.assertIn(b"IMAGE", body)
+        self.assertIn(b"KIRA Forge", body)
         self.assertIn("Content-Security-Policy", headers)
 
         status, body, _ = self.request("/app.js")
