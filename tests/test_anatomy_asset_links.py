@@ -83,8 +83,9 @@ class AnatomyAssetLinkTests(unittest.TestCase):
         gallery_content = (ROOT / run_dir / "ANATOMY-GALLERY.md").read_text(encoding="utf-8")
         for relative in required:
             if relative.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}:
+                local_gallery_path = relative.relative_to(run_dir).as_posix()
                 with self.subTest(path=str(relative)):
-                    self.assertIn(f"]({relative.name})", gallery_content)
+                    self.assertIn(f"]({local_gallery_path})", gallery_content)
 
         library = json.loads((ROOT / "tools" / "avatar-maker" / "assets" / "image-library.json").read_text(encoding="utf-8"))
         entries = [a for a in library["assets"] if a.get("path", "").startswith(run_dir.as_posix() + "/transparent/")]
