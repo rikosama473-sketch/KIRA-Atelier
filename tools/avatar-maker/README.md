@@ -1,5 +1,13 @@
 # KIRA Atelier — Character Studio
 
+## Recursos de Pibara en revisión
+
+- [Galería de anatomía: borradores y limitaciones](../../generated/character-assets/pibara/2026-10-20/run-39500149462/ANATOMY-GALLERY.md)
+- [Manifiesto del estudio de anatomía](../../generated/character-assets/pibara/2026-10-20/run-39496066089/manifest.json)
+- [PNG transparente de la pose frontal candidata](../../generated/character-assets/pibara/2026-10-20/run-39496066089/transparent/01-full-body-anatomy-a-pose.png)
+
+Estas salidas son referencias de trabajo; todavía requieren revisión visual y de identidad antes de declararse capas listas.
+
 ## Biblioteca visual de ojos y cabello
 
 Abrí la [Biblioteca visual](../visual-reference-library/index.html) después de iniciar el servidor local. Reúne referencias web de ojos y cabello, las 764 ilustraciones indexadas del repositorio y las capas candidatas existentes. Podés clasificar fichas, añadir etiquetas/notas, crear recetas visuales y exportar anotaciones JSON. Las recetas describen diseños; no son imágenes generadas. Las referencias web siguen enlazadas a sus fuentes y no se convierten en assets libres por estar catalogadas.
