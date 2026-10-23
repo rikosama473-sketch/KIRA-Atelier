@@ -14,10 +14,10 @@ Editor manual para abrir una imagen local, seleccionar zonas, extraer capas y pr
 ### KIRA Atlas
 Censo de fuentes visuales y peinados, con documentación de procedencia, calidad y licencias.
 
-- [Atlas interactivo de peinados](<trabajo aparte/atlas-peinados-interactivo.html>)
-- [Censo visual interactivo](<trabajo aparte/censo-visual-interactivo.html>)
-- [Índice de referencias en JSON](<trabajo aparte/indice-visual-componentes.json>)
-- [Segunda validación del censo](<trabajo aparte/validacion-segunda-pasada-2026-10-22.md>)
+- [Atlas interactivo de peinados](trabajo%20aparte/atlas-peinados-interactivo.html)
+- [Censo visual interactivo](trabajo%20aparte/censo-visual-interactivo.html)
+- [Índice de referencias en JSON](trabajo%20aparte/indice-visual-componentes.json)
+- [Segunda validación del censo](trabajo%20aparte/validacion-segunda-pasada-2026-10-22.md)
 
 La última validación estructural registró 339 referencias canónicas, 315 URL de miniaturas y 58 registros PixAI. Las URL de miniatura son candidatas extraídas de las fuentes: no significa que todas se hayan cargado y revisado individualmente en el navegador del usuario. La deduplicación perceptual entre plataformas sigue pendiente.
 
