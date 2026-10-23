@@ -52,7 +52,7 @@ class AnatomyAssetLinkTests(unittest.TestCase):
         self.assertEqual(queue.get("reference_image"), "from-PixAI-2034984086876227343-0.png")
         self.assertIn("schedule:", workflow)
         self.assertIn("workflow_dispatch:", workflow)
-        self.assertIn("asset_pack=anatomy-sheet-4", workflow)
+        self.assertIn("scripts/select_next_character_asset_task.py", workflow)
 
     def test_partial_anatomy_batch_files_and_links_exist(self):
         run_dir = Path("generated/character-assets/pibara/2026-10-20/run-39500149462")
