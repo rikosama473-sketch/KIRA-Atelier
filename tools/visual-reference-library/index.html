@@ -91,7 +91,7 @@ dialog{width:min(760px,calc(100% - 20px));max-height:92vh;overflow:auto;border:1
   </section>
 
   <div class="section-head"><div><h2 id="listTitle">Referencias web</h2><p id="listSubtitle">Referencias externas enlazadas; abrí cada fuente para comprobar autor, contexto y permisos.</p></div><div class="meta" id="resultCount"></div></div>
-  <section class="grid" id="grid" aria-live="polite"><div class="empty">Cargando los catálogos de IMAGE…</div></section>
+  <section class="grid" id="grid" aria-live="polite"><div class="empty">Cargando los catálogos de KIRA Atlas…</div></section>
   <div class="footer-note">La vista local toma las 764 entradas indexadas en <code>tools/avatar-maker/assets/image-library.json</code> y las capas de <code>catalog.json</code>. Los nombres genéricos no se convierten automáticamente en etiquetas confirmadas: la clasificación visual se guarda como anotación hasta que se revise cada archivo. Para aplicar al repositorio las anotaciones exportadas, ejecutá <code>python scripts/apply_visual_reference_annotations.py image-visual-reference-library-export.json</code>. Para producir hojas de contacto locales, ejecutá <code>python scripts/build_visual_contact_sheets.py</code> desde la raíz del repositorio.</div>
 </main>
 
@@ -134,8 +134,8 @@ function allCards(){
  const cards=[];
  (referenceCatalog?.items||[]).concat(state.userReferences||[]).forEach(x=>cards.push({id:x.id,type:"web",title:x.title||x.id,category:x.category||"mixed",image:x.image_url||"",sourceUrl:x.source_url||"",creator:x.creator||x.source_name||"",license:x.license_status||"reference_only_unverified",review:x.review_status||"unreviewed",tags:x.tags||[],description:x.description||x.usage||"",raw:x}));
  (imageLibrary?.assets||[]).forEach(x=>{const a=getAnnotation(x.id);cards.push({id:x.id,type:"local",title:a.label||x.label||x.id,category:a.category||"other",image:x.src||"",sourceUrl:"",creator:x.origin_hint||"Procedencia pendiente",license:a.license_status||x.license_review||"unreviewed",review:a.review_status||x.visual_review||"unreviewed",tags:[...(x.tags||[]),...(a.tags||[])],description:a.notes||x.origin_hint||"",path:x.path,sha:x.sha256_git_blob,raw:x});});
- (assetCatalog?.candidate_layers||[]).forEach(x=>{const a=getAnnotation("layer-"+x.id);cards.push({id:"layer-"+x.id,type:"layer",title:a.label||x.label,category:a.category||x.category,image:"../../"+x.repo_path,sourceUrl:"",creator:"IMAGE / máscara candidata",license:"user_created",review:a.review_status||x.status||"pending_visual_review",tags:[x.category,...(a.tags||[])],description:a.notes||x.review||"",path:x.repo_path,raw:x});});
- (assetCatalog?.base_illustrations||[]).forEach(x=>{const a=getAnnotation("base-"+x.id);cards.push({id:"base-"+x.id,type:"base",title:a.label||x.label,category:"full_character",image:"../../"+x.repo_path,sourceUrl:"",creator:"IMAGE / ilustración completa",license:a.license_status||"unreviewed",review:a.review_status||x.status||"unreviewed",tags:["full_character",...(a.tags||[])],description:a.notes||x.warning||"",path:x.repo_path,raw:x});});
+ (assetCatalog?.candidate_layers||[]).forEach(x=>{const a=getAnnotation("layer-"+x.id);cards.push({id:"layer-"+x.id,type:"layer",title:a.label||x.label,category:a.category||x.category,image:"../../"+x.repo_path,sourceUrl:"",creator:"KIRA Atlas / máscara candidata",license:"user_created",review:a.review_status||x.status||"pending_visual_review",tags:[x.category,...(a.tags||[])],description:a.notes||x.review||"",path:x.repo_path,raw:x});});
+ (assetCatalog?.base_illustrations||[]).forEach(x=>{const a=getAnnotation("base-"+x.id);cards.push({id:"base-"+x.id,type:"base",title:a.label||x.label,category:"full_character",image:"../../"+x.repo_path,sourceUrl:"",creator:"KIRA Atlas / ilustración completa",license:a.license_status||"unreviewed",review:a.review_status||x.status||"unreviewed",tags:["full_character",...(a.tags||[])],description:a.notes||x.warning||"",path:x.repo_path,raw:x});});
  return cards;
 }
 function tabCards(){
@@ -292,7 +292,7 @@ async function load(){
   state.userReferences=mergeById(annotationCatalog.user_references||[],localReferences);
   state.styles=mergeById(annotationCatalog.style_recipes||[],localStyles);
   updateStats();persist();setActiveTab("web");
- }catch(e){$("grid").innerHTML='<div class="empty">No se pudieron leer los catálogos. Abrí la página a través del servidor local IMAGE, no con file://.<br><br>Ruta esperada: <code>http://127.0.0.1:8766/tools/visual-reference-library/index.html</code><br><br>'+ $esc(String(e.message||e))+'</div>';}
+ }catch(e){$("grid").innerHTML='<div class="empty">No se pudieron leer los catálogos. Abrí la página a través del servidor local de KIRA Atelier, no con file://.<br><br>Ruta esperada: <code>http://127.0.0.1:8766/tools/visual-reference-library/index.html</code><br><br>'+ $esc(String(e.message||e))+'</div>';}
 }
 load();
 })();
