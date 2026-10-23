@@ -572,7 +572,7 @@ async function openProject(file){
   if(data.app==="IMAGE Hairstyle Workbench"){
    await importHairstyleWorkbenchProject(data);return;
   }
-  if(data.app!=="IMAGE Manual Character Editor"||!Array.isArray(data.layers)||!data.width||!data.height)throw new Error("Formato no compatible. Se admiten proyectos de IMAGE Editor, Character Creator y Hairstyle Workbench.");
+  if(data.app!=="IMAGE Manual Character Editor"||!Array.isArray(data.layers)||!data.width||!data.height)throw new Error("Formato no compatible. Se admiten proyectos de KIRA Editor, KIRA Character Studio y Taller de peinados.");
   doc={width:data.width,height:data.height,layers:[]};nextLayerId=data.nextLayerId||1;
   for(const l of data.layers){
    doc.layers.push({id:l.id,name:l.name,visible:l.visible!==false,opacity:typeof l.opacity==="number"?l.opacity:1,sourceApp:l.sourceApp||null,sourceLayerId:l.sourceLayerId||null,sourceCategory:l.sourceCategory||null,sourceStatus:l.sourceStatus||null,sourceTags:Array.isArray(l.sourceTags)?l.sourceTags.slice():[],sourcePath:l.sourcePath||null,sourceTransform:l.sourceTransform?Object.assign({},l.sourceTransform):null,canvas:await loadCanvasUrl(l.png),backup:await loadCanvasUrl(l.backup||l.png)});
