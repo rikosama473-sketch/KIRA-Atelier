@@ -1,4 +1,4 @@
-name: Build IMAGE visual contact sheets
+name: Build KIRA visual contact sheets
 on:
   push:
     branches: [work/easy-avatar-maker-2026-10, main]
