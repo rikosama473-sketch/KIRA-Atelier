@@ -1,0 +1,29 @@
+name: Validate IMAGE tools
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install lightweight audit requirements
+        run: python -m pip install -r requirements.txt
+      - name: Check Python syntax
+        run: python -m compileall -q scripts ml tests
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check local reviewer JavaScript
+        run: node --check tools/dataset-reviewer/app.js
+      - name: Check local image creator JavaScript
+        run: node --check tools/image-creator/app.js
+      - name: Run audit-tool tests
+        run: python -m unittest discover -s tests -v
