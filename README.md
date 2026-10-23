@@ -42,7 +42,7 @@ El script abre un servidor local para la interfaz. Para comenzar, abre una image
 ## Estado comprobado — 23 de octubre de 2026
 
 - La migración se amplió para sincronizar los módulos, herramientas, pruebas, registros, manifiestos y salidas visuales actuales desde el repositorio anterior.
-- Los 759 PNG originales de la colección principal se copiaron a la raíz de KIRA Atelier para conservar las rutas históricas del dataset. El repositorio image original permanece intacto como respaldo temporal.
+- Los 759 PNG originales de la colección principal se copiaron a la raíz de KIRA Atelier para conservar las rutas históricas del dataset. El repositorio `image` se mantiene como respaldo; solo se añadió una nota a su README para dirigir al proyecto principal, sin reescribir el historial.
 - La licencia/precio de 96 registros del censo sigue sin confirmar. No existe una afirmación de que las imágenes de terceros sean redistribuibles o entrenables solo por aparecer en el catálogo.
 - Las salidas en `generated/character-layers/pibara/39474458754/` son candidatas de trabajo. Sus propios nombres/manifiestos las identifican como candidatos: aún deben revisarse antes de considerarlas capas de producción.
 - El proyecto prioriza el editor de capas y la biblioteca visual. La generación por modelo y el entrenamiento LoRA quedan como vías auxiliares, no como requisito para usar el editor.
@@ -61,5 +61,5 @@ No se debe redistribuir una referencia solo porque la miniatura sea pública. Ca
 
 ## Migración ampliada — 23 de octubre de 2026
 
-La rama main se sincronizó desde el repositorio rikosama473-sketch/image: se copiaron las herramientas, scripts, pruebas, catálogos, metadatos de generación, requisitos opcionales, salidas actuales y la colección original de 759 PNG. También se conservó el documento de diseño previo bajo docs/legacy/IMAGE-design.md. El repositorio anterior no se borró ni reescribió.
+La rama `main` se sincronizó desde `rikosama473-sketch/image`: se copiaron las herramientas, scripts, pruebas, catálogos, metadatos de generación, requisitos opcionales, salidas actuales y la colección original de 759 PNG. También se archivaron la guía anterior bajo `docs/legacy/IMAGE-README.md` y el documento de diseño bajo `docs/legacy/IMAGE-design.md`. El repositorio anterior se conserva como respaldo y su historial no se reescribió.
 La migración de archivos no valida permisos de terceros ni certifica máscaras o recortes como capas de producción. Las referencias cuya licencia o precio sigue sin confirmarse continúan pendientes de revisión; la transferencia no cambia sus derechos.
