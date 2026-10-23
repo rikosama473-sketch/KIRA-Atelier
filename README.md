@@ -47,6 +47,14 @@ El script abre un servidor local para la interfaz. Para comenzar, abre una image
 - Las salidas en `generated/character-layers/pibara/39474458754/` son candidatas de trabajo. Sus propios nombres/manifiestos las identifican como candidatos: aún deben revisarse antes de considerarlas capas de producción.
 - El proyecto prioriza el editor de capas y la biblioteca visual. La generación por modelo y el entrenamiento LoRA quedan como vías auxiliares, no como requisito para usar el editor.
 
+## Assets de Pibara: candidatos de anatomía
+
+Las vistas anatómicas importadas se conservan como **borradores**, no como capas de producción ni como modelo de identidad aprobado. La galería documenta los cambios del generador y qué debe revisarse antes de reutilizar cada imagen.
+
+- [Galería de anatomía: frontal, perfil y espalda](generated/character-assets/pibara/2026-10-20/run-39500149462/ANATOMY-GALLERY.md)
+- [Manifiesto del estudio de anatomía](generated/character-assets/pibara/2026-10-20/run-39496066089/manifest.json)
+- [PNG transparente de la pose frontal candidata](generated/character-assets/pibara/2026-10-20/run-39496066089/transparent/01-full-body-anatomy-a-pose.png)
+
 ## Derechos y conservación
 
 No se debe redistribuir una referencia solo porque la miniatura sea pública. Cada asset incorporado al producto necesita una fuente, una licencia compatible, atribución cuando corresponda y una revisión separada para uso en la aplicación, redistribución y entrenamiento de IA. Los originales del usuario deben conservarse intactos.
