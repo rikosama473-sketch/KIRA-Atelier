@@ -42,17 +42,17 @@ class AnatomyAssetLinkTests(unittest.TestCase):
         self.assertEqual(entry.get("visual_review"), "needs_visual_identity_review")
         self.assertTrue(entry.get("review_note"))
 
-    def test_queued_batch_trigger_is_scoped_to_the_work_branch(self):
+    def test_queued_batch_is_available_to_scheduled_or_manual_runner(self):
         workflow = (ROOT / ".github" / "workflows" / "generate-character-assets-free.yml").read_text(encoding="utf-8")
         queue_path = ROOT / "data" / "anatomy-generation-queue.json"
-        self.assertTrue(queue_path.is_file(), "The one-time branch queue marker should exist.")
+        self.assertTrue(queue_path.is_file(), "The queued anatomy pack marker should exist.")
         queue = json.loads(queue_path.read_text(encoding="utf-8"))
         self.assertEqual(queue.get("character_id"), "pibara")
         self.assertEqual(queue.get("asset_pack"), "anatomy-sheet-4")
         self.assertEqual(queue.get("reference_image"), "from-PixAI-2034984086876227343-0.png")
-        self.assertRegex(workflow, r"(?s)on:\s+push:\s+branches:\s+- work/easy-avatar-maker-2026-10\s+paths:\s+- data/anatomy-generation-queue\.json")
+        self.assertIn("schedule:", workflow)
+        self.assertIn("workflow_dispatch:", workflow)
         self.assertIn("asset_pack=anatomy-sheet-4", workflow)
-        self.assertNotIn("- main", workflow)
 
     def test_partial_anatomy_batch_files_and_links_exist(self):
         run_dir = Path("generated/character-assets/pibara/2026-10-20/run-39500149462")
