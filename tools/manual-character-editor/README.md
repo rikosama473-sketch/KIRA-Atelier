@@ -1,10 +1,10 @@
-# IMAGE — Editor manual de recortes y capas
+# KIRA Editor — Editor manual de recortes y capas
 
 Este editor es una herramienta de edición manual, no un generador de máscaras por IA. Está pensado para preparar sprites y piezas intercambiables de personajes anime: cabello delantero/trasero, cabeza, cara, cuerpo, ropa y accesorios.
 
 ## Abrir en Windows
 
-1. Descargá el repositorio IMAGE o actualizá tu copia local.
+1. Descargá KIRA Atelier o actualizá tu copia local.
 2. Entrá en la carpeta tools/manual-character-editor.
 3. Hacé doble clic en start-editor.bat. También podés ejecutar python run_editor.py.
 4. Se abre el editor en Chrome u otro navegador. No requiere instalar paquetes Python; el servidor solo escucha en 127.0.0.1.
