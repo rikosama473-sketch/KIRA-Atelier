@@ -58,8 +58,7 @@ jobs:
             fi
           done
 
-          mkdir -p "$DST/.github/workflows"
-          cp -a "$SRC/.github/workflows/." "$DST/.github/workflows/"
+          # Existing KIRA workflows stay untouched here; legacy workflow files are migrated separately with authorized repository writes.
 
           # Preserve every dependency manifest from the legacy project, including optional modules.
           find "$SRC" -maxdepth 1 -type f -name 'requirements*.txt' -print0 |
