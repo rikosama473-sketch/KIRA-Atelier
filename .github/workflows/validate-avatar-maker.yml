@@ -1,4 +1,4 @@
-name: Validate IMAGE Character Creator
+name: Validate KIRA Character Studio
 on:
   push:
     branches: [work/easy-avatar-maker-2026-10, main]
