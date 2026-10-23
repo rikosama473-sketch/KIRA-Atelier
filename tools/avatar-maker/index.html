@@ -544,7 +544,7 @@ function openLocalPartsDb(){
   request.onupgradeneeded=()=>{const db=request.result;if(!db.objectStoreNames.contains("parts"))db.createObjectStore("parts",{keyPath:"id"});};
   request.onsuccess=()=>resolve(request.result);
   request.onerror=()=>{localPartsDbPromise=null;reject(request.error||Error("No se pudo abrir la biblioteca local."));};
-  request.onblocked=()=>{localPartsDbPromise=null;reject(Error("Cerrá otras pestañas de IMAGE para actualizar la biblioteca local."));};
+  request.onblocked=()=>{localPartsDbPromise=null;reject(Error("Cerrá otras pestañas de KIRA Atelier para actualizar la biblioteca local."));};
  });
  return localPartsDbPromise;
 }
