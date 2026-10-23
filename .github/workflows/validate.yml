@@ -1,4 +1,4 @@
-name: Validate IMAGE tools
+name: Validate KIRA Atelier tools
 
 on:
   push:
