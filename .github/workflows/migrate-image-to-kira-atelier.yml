@@ -1,6 +1,10 @@
 name: One-time migration from IMAGE to KIRA Atelier
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-image-to-kira-atelier.yml'
   workflow_dispatch:
     inputs:
       include_original_images:
