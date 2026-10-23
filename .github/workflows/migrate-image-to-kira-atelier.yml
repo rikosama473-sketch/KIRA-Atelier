@@ -43,7 +43,7 @@ jobs:
 
       - name: Synchronize project tools, records, generated outputs and originals
         env:
-          INCLUDE_ORIGINAL_IMAGES: ${{ inputs.include_original_images }}
+          INCLUDE_ORIGINAL_IMAGES: "true"
         shell: bash
         run: |
           set -euo pipefail
