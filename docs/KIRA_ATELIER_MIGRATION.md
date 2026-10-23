@@ -14,11 +14,9 @@
 - Guías de recursos, proveniencia, fabricación de capas y validación.
 - Las 46 entradas de `generated/character-assets/pibara/` y `generated/character-layers/pibara/` presentes en el árbol de origen, incluidos PNG/JPG, manifiestos y prompts. Cada archivo binario transferido se comparó por SHA contra el original.
 
-## Pendiente de una migración completa de los archivos gráficos
+## Estado inicial de la migración (actualizado abajo)
 
-No es honesto declarar que se trasladó toda la colección de imágenes: la transferencia inicial no incluyó los 759 PNG originales del inventario (aprox. 706,4 MB) ni el resto de archivos gráficos sueltos de `generated/`. Esos originales permanecen intactos en el repositorio `image`. Algunos manifests y el catálogo describen archivos de ese repositorio antiguo; se deberá actualizar esa procedencia cuando los originales tengan un destino definitivo.
-
-No se copió automáticamente la colección completa de imágenes porque los archivos deben revisarse por su utilidad para el editor, sus duplicados y los derechos aplicables. El censo contiene 339 referencias; 96 tienen licencia/precio pendientes y las miniaturas almacenadas son candidatas, no prueba de que cada fuente se haya inspeccionado visualmente.
+Esta sección registraba el corte inicial, cuando los PNG originales seguían en el repositorio anterior. La sincronización ampliada descrita al final reemplaza ese estado.
 
 ## Rebranding y conservación
 
@@ -31,3 +29,8 @@ No se copió automáticamente la colección completa de imágenes porque los arc
 ## Verificaciones de salida
 
 Después de publicar el commit se comprobará que los archivos estén en la rama `main`, que el JSON del índice siga parseando, que sus 339 IDs/URLs sigan siendo únicos y que las rutas relativas internas del atlas resuelvan contra los archivos migrados. La ejecución visual completa del editor y las pruebas automatizadas deberán verificarse en un entorno de desarrollo; no se deben afirmar como ejecutadas hasta realizarlas.
+
+
+## Migración ampliada — 23 de octubre de 2026
+
+Se sincronizaron los módulos, scripts, pruebas, catálogos, manifiestos y archivos generados desde la rama main del repositorio image. Se copiaron además los 759 PNG originales de la raíz, manteniendo sus nombres y rutas para no romper las referencias del dataset. image se conserva intacto como respaldo hasta terminar las verificaciones de integración. La copia no equivale a una aprobación de licencias ni convierte máscaras candidatas en capas aprobadas.
