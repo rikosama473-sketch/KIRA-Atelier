@@ -273,10 +273,20 @@ function wrapText(ctx,text,x,y,maxWidth,lineHeight,maxLines){
   }
   if(line){ctx.fillText(line,x,y);y+=lineHeight;}return y;
 }
-function drawBoard(){
+let boardRenderToken=0;
+async function drawBoard(){
+  const token=++boardRenderToken;
+  const items=state.parts.slice();
+  const images=await Promise.all(items.map(item=>new Promise(resolve=>{
+    const image=new Image();
+    image.onload=()=>resolve(image);
+    image.onerror=()=>resolve(null);
+    image.src=item.dataUrl;
+  })));
+  if(token!==boardRenderToken)return;
   const canvas=$("boardCanvas"),ctx=canvas.getContext("2d");
-  const items=state.parts;const width=1400;const cols=3;const gap=22;const left=42;const top=178;
-  const cardW=(width-left*2-gap*(cols-1))/cols;const cardH=238;const rows=Math.max(1,Math.ceil(items.length/cols));
+  const width=1400,cols=3,gap=22,left=42,top=178,cardW=(width-left*2-gap*(cols-1))/cols,cardH=238;
+  const rows=Math.max(1,Math.ceil(items.length/cols));
   canvas.width=width;canvas.height=Math.max(760,top+rows*(cardH+gap)+35);
   ctx.fillStyle="#f7f3fc";ctx.fillRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle="#211b31";ctx.fillRect(0,0,width,148);
@@ -292,19 +302,22 @@ function drawBoard(){
     return;
   }
   items.forEach((item,index)=>{
-    const x=left+(index%cols)*(cardW+gap);const y=top+Math.floor(index/cols)*(cardH+gap);
+    const x=left+(index%cols)*(cardW+gap),y=top+Math.floor(index/cols)*(cardH+gap);
     ctx.fillStyle="#ffffff";roundedRect(ctx,x,y,cardW,cardH,15,true,false);
     ctx.strokeStyle="#ded6eb";ctx.lineWidth=1;roundedRect(ctx,x,y,cardW,cardH,15,false,true);
     ctx.fillStyle="#8d6df2";roundedRect(ctx,x+15,y+15,cardW-30,28,9,true,false);
     ctx.fillStyle="#fff";ctx.font="800 13px system-ui";ctx.fillText((labels[item.category]||item.category).toUpperCase().slice(0,38),x+26,y+34);
-    const image=new Image();image.onload=()=>{
-      const bx=x+16,by=y+54,bw=cardW-32,bh=cardH-116;
+    const bx=x+16,by=y+54,bw=cardW-32,bh=cardH-116,image=images[index];
+    if(image){
       ctx.save();ctx.beginPath();ctx.rect(bx,by,bw,bh);ctx.clip();
       const scale=Math.min(bw/image.naturalWidth,bh/image.naturalHeight);
       const iw=image.naturalWidth*scale,ih=image.naturalHeight*scale;
       ctx.drawImage(image,bx+(bw-iw)/2,by+(bh-ih)/2,iw,ih);ctx.restore();
-      ctx.fillStyle="#514760";ctx.font="13px system-ui";wrapText(ctx,item.note||"Rasgo sin describir",x+17,y+cardH-48,cardW-34,17,2);
-    };image.src=item.dataUrl;
+    }else{
+      ctx.fillStyle="#eee8f5";roundedRect(ctx,bx,by,bw,bh,8,true,false);
+      ctx.fillStyle="#766887";ctx.font="12px system-ui";ctx.fillText("Vista no disponible",bx+8,by+24);
+    }
+    ctx.fillStyle="#514760";ctx.font="13px system-ui";wrapText(ctx,item.note||"Rasgo sin describir",x+17,y+cardH-48,cardW-34,17,2);
   });
   ctx.fillStyle="#83788f";ctx.font="12px system-ui";ctx.fillText("KIRA Atelier · Tablero de trabajo · Las referencias deben revisarse antes de usarse como assets finales",42,canvas.height-12);
 }
@@ -332,8 +345,8 @@ function buildPrompt(){
   ].join("\n\n");
   $("promptOutput").value=prompt;updateStats();announce("Prompt generado a partir de "+state.parts.length+" piezas.");
 }
-function exportBoard(){
-  drawBoard();
+async function exportBoard(){
+  await drawBoard();
   $("boardCanvas").toBlob(blob=>{
     if(!blob){announce("No se pudo exportar el tablero.");return;}
     downloadBlob(blob,"kira-tablero-inspiracion.png");
