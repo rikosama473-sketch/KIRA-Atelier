@@ -55,7 +55,7 @@ class DesignMixerContractTests(unittest.TestCase):
     def test_module_has_no_remote_script_or_stylesheet_dependencies(self) -> None:
         self.assertNotRegex(self.html, r"<script[^>]+src\s*=")
         self.assertNotRegex(self.html, r'<link[^>]+href=["\']https?://')
-        self.assertIn("Las imágenes se leen directamente", self.module_readme)
+        self.assertIn("Las imágenes seleccionadas se leen en el navegador", self.module_readme)
         self.assertIn("no tiene una función de subida", self.module_readme)
 
     def test_exports_and_readme_entry_are_documented(self) -> None:
