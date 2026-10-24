@@ -21,6 +21,15 @@ Censo de fuentes visuales y peinados, con documentación de procedencia, calidad
 
 La última validación estructural registró 339 referencias canónicas, 315 URL de miniaturas y 58 registros PixAI. Las URL de miniatura son candidatas extraídas de las fuentes: no significa que todas se hayan cargado y revisado individualmente en el navegador del usuario. La deduplicación perceptual entre plataformas sigue pendiente.
 
+### KIRA Design Mixer
+
+Laboratorio local para explorar carpetas grandes de referencias, recortar rasgos, etiquetar cabello/ojos/silueta/proporciones/ropa/piernas/accesorios, preparar un tablero visual y construir un prompt editable.
+
+- [Abrir Design Mixer](tools/design-mixer/index.html)
+- [Guía del módulo y hoja de ruta](tools/design-mixer/README.md)
+
+La primera versión ya permite seleccionar archivos o una carpeta, paginar la biblioteca, recortar manualmente una zona, describir el rasgo, exportar un tablero PNG, descargar el prompt y guardar/importar un proyecto JSON. Todo se procesa en el navegador y no sube las imágenes. **No detecta automáticamente piezas anatómicas todavía** ni convierte recortes en capas finales: la segmentación automática local, la transparencia precisa y la alineación anatómica son etapas pendientes explícitas.
+
 ### KIRA Forge
 Herramientas auxiliares para preparar recortes, separar spritesheets y experimentar con variantes. Son opcionales: la ruta principal del editor no requiere entrenar una LoRA. Algunos flujos de variantes llaman servicios remotos y, por tanto, no deben presentarse como totalmente offline ni con disponibilidad garantizada.
 
