@@ -39,6 +39,7 @@
     <input class="hidden" id="folderInput" type="file" accept="image/*" webkitdirectory directory multiple>
     <input class="hidden" id="projectInput" type="file" accept=".json,application/json">
   </section>
+  <p id="liveStatus" class="microcopy" role="status" aria-live="polite">La biblioteca está vacía. Elegí imágenes para iniciar una sesión local.</p>
   <section class="stats" aria-label="Resumen">
     <div class="stat"><div class="num" id="imageCount">0</div><div class="label">Imágenes indexadas en esta sesión</div></div>
     <div class="stat"><div class="num" id="partCount">0</div><div class="label">Piezas recortadas</div></div>
@@ -146,7 +147,7 @@ function addFiles(files){
   if(added) announce("Se agregaron "+added+" imágenes. No se subieron a Internet.");
   else if(files && files.length) announce("No había imágenes nuevas en la selección.");
 }
-function announce(message){const el=$("pageStatus");if(el)el.setAttribute("aria-label",message);console.info("[KIRA Design Mixer]",message);}
+function announce(message){const el=$("liveStatus");if(el)el.textContent=message;console.info("[KIRA Design Mixer]",message);}
 function makeButton(text, cls, action){
   const btn=document.createElement("button");btn.type="button";btn.className=cls;btn.textContent=text;btn.addEventListener("click",action);return btn;
 }
@@ -392,7 +393,7 @@ $("characterInput").addEventListener("change",()=>{if(state.parts.length)buildPr
 $("paletteInput").addEventListener("change",()=>{if(state.parts.length)buildPrompt();});
 $("exportBoard").addEventListener("click",exportBoard);
 $("saveProject").addEventListener("click",saveProject);
-$("downloadPrompt").addEventListener("click",()=>downloadBlob(new Blob([$ ("promptOutput").value],{type:"text/plain;charset=utf-8"}),"kira-prompt-diseno.txt"));
+$("downloadPrompt").addEventListener("click",()=>downloadBlob(new Blob([$("promptOutput").value],{type:"text/plain;charset=utf-8"}),"kira-prompt-diseno.txt"));
 $("copyPrompt").addEventListener("click",async()=>{
   const text=$("promptOutput").value;
   try{await navigator.clipboard.writeText(text);announce("Prompt copiado.");}
