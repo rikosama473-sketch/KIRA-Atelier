@@ -2,7 +2,7 @@
 
 KIRA Atelier es el taller personal para investigar, diseñar y montar personajes anime con **assets visuales reales y capas PNG**, no una promesa de generar capas perfectas con IA. Su dirección principal es un editor modular inspirado en los creadores de personajes tipo Picrew, acompañado por un atlas de referencias y herramientas locales de preparación.
 
-## Los tres módulos
+## Módulos principales
 
 ### KIRA Editor
 Editor manual para abrir una imagen local, seleccionar zonas, extraer capas y preparar PNG. El procesamiento de píxeles sucede en el navegador del equipo. Todavía requiere trabajo para convertirse en un editor de personaje completo con categorías, biblioteca de capas independientes, previsualización y guardado de proyectos; no se debe confundir un recorte del personaje entero con una capa semántica de cabello, ojos o ropa.
