@@ -62,7 +62,7 @@ class DesignMixerContractTests(unittest.TestCase):
         for phrase in ("kira-tablero-inspiracion.png", "kira-prompt-diseno.txt", "kira-design-mixer-project.json"):
             self.assertIn(phrase, self.html)
         self.assertIn("tools/design-mixer/index.html", self.project_readme)
-        self.assertIn("segmentación automática", self.module_readme.lower())
+        self.assertIn("segmentador local", self.module_readme.lower())
 
     def test_embedded_javascript_parses_when_node_is_available(self) -> None:
         node = shutil.which("node")
