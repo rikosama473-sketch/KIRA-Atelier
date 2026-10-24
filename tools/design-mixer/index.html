@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Laboratorio local de referencias, recortes y tableros de diseño para KIRA Atelier.">
+<title>KIRA Atelier — Design Mixer</title>
+<style>
+:root{color-scheme:dark;--bg:#111019;--surface:#1b1926;--surface2:#242133;--ink:#f7f3ff;--muted:#b4adc6;--line:#393349;--orange:#ff9d55;--violet:#9b7bff;--mint:#90e5cb;--danger:#ff838e;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1000px 600px at 90% -10%,#332448 0%,transparent 60%),var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--orange);outline-offset:2px}.shell{max-width:1480px;margin:auto;padding:24px clamp(14px,3vw,42px) 56px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px}.brandmark{width:42px;height:42px;display:grid;place-items:center;background:linear-gradient(135deg,var(--orange),var(--violet));color:#171320;border-radius:13px;font-weight:950;font-size:23px}.eyebrow{color:var(--orange);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.brandname{font-size:18px;font-weight:800;letter-spacing:.02em}.status{display:flex;align-items:center;gap:8px;color:var(--mint);font-size:12px;font-weight:700}.dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px #90e5cb1f}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,360px);gap:24px;align-items:center;padding:34px 0 26px}.hero h1{font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.045em;margin:9px 0 14px;max-width:850px}.hero p{color:var(--muted);max-width:780px;margin:0}.hero-aside{padding:20px;background:linear-gradient(140deg,#29223a,#1a1925);border:1px solid #49405f;border-radius:var(--radius)}.hero-aside strong{display:block;font-size:15px;margin-bottom:6px}.hero-aside p{font-size:13px}.stepchips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#ddd5ef;font-size:12px;background:#ffffff05}.chip b{color:var(--orange)}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 16px}.btn{border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:11px;padding:10px 14px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .12s,border-color .12s}.btn:hover{border-color:#8b79b9;transform:translateY(-1px)}.btn-primary{border:0;color:#191421;background:linear-gradient(120deg,var(--orange),#ffbf76);box-shadow:0 7px 24px #ff9d5520}.btn-violet{border:0;background:linear-gradient(120deg,#9170ff,#b6a1ff);color:#171320}.btn-small{padding:7px 10px;font-size:12px;border-radius:9px}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.loadzone{border:1px dashed #65587e;border-radius:var(--radius);padding:16px 18px;background:#211e2e99;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.loadzone strong{display:block}.loadzone p{font-size:12px;color:var(--muted);margin:3px 0 0}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0 28px}.stat{padding:13px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px}.stat .num{font-size:25px;font-weight:850;line-height:1.1}.stat .label{margin-top:5px;font-size:12px;color:var(--muted)}.section{margin-top:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:14px;flex-wrap:wrap}.section-head h2{margin:0;font-size:22px;letter-spacing:-.025em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.field{min-width:0;background:#14121d;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 11px}.search{width:min(330px,100%)}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px}.source-card{min-width:0;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column}.source-thumb{width:100%;height:150px;object-fit:contain;background:#0c0b11;display:block}.source-info{padding:10px;display:flex;flex-direction:column;gap:7px;flex:1}.source-name{font-size:12px;font-weight:700;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.source-path{color:var(--muted);font-size:10px;overflow-wrap:anywhere}.source-info .btn{margin-top:auto;width:100%}.pager{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px 0;color:var(--muted);font-size:13px}.empty{border:1px dashed var(--line);border-radius:var(--radius);padding:34px;text-align:center;color:var(--muted)}.workspace{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:18px;align-items:start}.panel{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}.panel h3{margin:0 0 6px;font-size:17px}.panel-intro{font-size:12px;color:var(--muted);margin:0 0 14px}.partlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}.part-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#15131e;min-width:0}.part-image{height:135px;width:100%;object-fit:contain;background:#0c0b11;display:block}.part-body{padding:9px;display:grid;gap:7px}.tag{display:inline-flex;border-radius:999px;padding:4px 7px;font-size:10px;font-weight:850;background:#9b7bff21;color:#c6b7ff;width:max-content;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.part-note{width:100%;font-size:11px;padding:7px;border:1px solid var(--line);border-radius:8px;background:#211e2c;color:var(--ink)}.board-wrap{background:#0d0c12;border-radius:12px;padding:8px;border:1px solid var(--line);overflow:auto}.board{width:100%;height:auto;display:block;border-radius:6px;background:white}.prompt-box{width:100%;min-height:180px;resize:vertical;white-space:pre-wrap}.actionrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.microcopy{font-size:11px;line-height:1.5;color:var(--muted);margin-top:10px}.divider{height:1px;background:var(--line);margin:16px 0}.hidden{display:none!important}.modal-backdrop{position:fixed;inset:0;background:#09080eeb;z-index:10;display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}.modal{width:min(1180px,100%);background:#1b1926;border:1px solid #514667;border-radius:20px;padding:20px;box-shadow:0 25px 100px #000a;max-height:95vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:start;gap:12px}.modal-head h2{margin:0;font-size:22px}.modal-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.crop-stage{display:flex;justify-content:center;align-items:center;background:#0d0c12;border:1px solid var(--line);border-radius:12px;padding:10px;margin:14px 0;min-height:180px}.crop-canvas{display:block;max-width:100%;height:auto;touch-action:none;cursor:crosshair}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.formfield{display:grid;gap:6px}.formfield label{font-size:12px;font-weight:750;color:#ded7ee}.formfield input,.formfield select,.formfield textarea{width:100%}.formfield textarea{min-height:58px;resize:vertical}.notice{border:1px solid #685435;background:#332718;color:#ffdbad;border-radius:11px;padding:11px 13px;font-size:12px;margin-top:12px}.footer{border-top:1px solid var(--line);margin-top:34px;padding-top:16px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.workspace{grid-template-columns:1fr}.hero-aside{max-width:unset}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.source-thumb{height:130px}}
+@media(max-width:520px){.shell{padding:16px 12px 36px}.topbar{align-items:flex-start}.brandname{font-size:15px}.status{font-size:10px}.hero{padding-top:24px}.stats{gap:6px}.stat{padding:10px}.stat .num{font-size:21px}.stat .label{font-size:10px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.source-thumb{height:125px}.panel{padding:13px}.formgrid{grid-template-columns:1fr}.loadzone{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand"><div class="brandmark">K</div><div><div class="eyebrow">KIRA Atelier</div><div class="brandname">Design Mixer · Laboratorio visual</div></div></div>
+    <div class="status"><span class="dot"></span>LOCAL · SIN SUBIDAS</div>
+  </header>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">De referencias a una idea propia</div>
+      <h1>Encontrá la combinación que te gusta.</h1>
+      <p>Explorá una carpeta grande de imágenes, recortá las piezas que te inspiran, mezclalas en un tablero y generá un prompt para dibujar el diseño o probarlo con una IA.</p>
+      <div class="stepchips"><span class="chip"><b>01</b> Referencias</span><span class="chip"><b>02</b> Recortes</span><span class="chip"><b>03</b> Mezcla visual</span><span class="chip"><b>04</b> Prompt</span></div>
+    </div>
+    <aside class="hero-aside"><strong>Tu biblioteca, tus reglas</strong><p>Las imágenes se leen directamente desde tu equipo. El módulo no las sube a un servidor. Empezá con una carpeta de referencias y guardá los proyectos que quieras conservar.</p></aside>
+  </section>
+
+  <section class="loadzone" aria-label="Cargar referencias">
+    <div><strong>Sumá tus referencias visuales</strong><p>Podés abrir imágenes sueltas o una carpeta completa. La galería muestra 48 por página para evitar cargar miles de miniaturas al mismo tiempo.</p></div>
+    <div class="controls" style="margin:0">
+      <button class="btn btn-primary" id="chooseFiles">＋ Elegir imágenes</button>
+      <button class="btn btn-violet" id="chooseFolder">▦ Abrir carpeta</button>
+      <button class="btn" id="loadProject">↥ Cargar proyecto</button>
+    </div>
+    <input class="hidden" id="fileInput" type="file" accept="image/*" multiple>
+    <input class="hidden" id="folderInput" type="file" accept="image/*" webkitdirectory directory multiple>
+    <input class="hidden" id="projectInput" type="file" accept=".json,application/json">
+  </section>
+  <section class="stats" aria-label="Resumen">
+    <div class="stat"><div class="num" id="imageCount">0</div><div class="label">Imágenes indexadas en esta sesión</div></div>
+    <div class="stat"><div class="num" id="partCount">0</div><div class="label">Piezas recortadas</div></div>
+    <div class="stat"><div class="num" id="boardCount">0</div><div class="label">Piezas en el tablero actual</div></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>01 / Biblioteca de referencias</h2><p>Buscá por nombre o ruta. Elegí una imagen para recortar una zona o usarla entera como referencia.</p></div><div class="filters"><input class="field search" id="searchInput" placeholder="Buscar imagen o carpeta…" aria-label="Buscar imágenes"><select class="field" id="pageSize" aria-label="Imágenes por página"><option value="24">24 por página</option><option value="48" selected>48 por página</option><option value="72">72 por página</option></select></div></div>
+    <div id="gallery" class="gallery"><div class="empty">Cargá algunas imágenes o elegí una carpeta para empezar.</div></div>
+    <div class="pager"><button class="btn btn-small" id="prevPage" disabled>← Anterior</button><span id="pageStatus">Página 0 de 0</span><button class="btn btn-small" id="nextPage" disabled>Siguiente →</button></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>02 / Mesa de piezas</h2><p>Acá juntás los detalles de distintas referencias que querés combinar en un solo concepto.</p></div><button class="btn btn-small" id="clearParts">Vaciar piezas</button></div>
+    <div class="workspace">
+      <div class="panel">
+        <h3>Piezas elegidas</h3><p class="panel-intro">Etiquetá y describí cada recorte. Podés mezclar peinados, ojos, proporciones, prendas, siluetas y paletas.</p>
+        <div id="partList" class="partlist"><div class="empty">Todavía no hay piezas. Elegí una referencia y pulsá “Recortar pieza”.</div></div>
+      </div>
+      <div class="panel">
+        <h3>Tablero de inspiración</h3><p class="panel-intro">Una composición ordenada para comparar las referencias elegidas. No pretende ser una anatomía final.</p>
+        <div class="board-wrap"><canvas id="boardCanvas" class="board" width="1400" height="760" aria-label="Vista previa del tablero"></canvas></div>
+        <div class="actionrow"><button class="btn btn-primary" id="exportBoard" disabled>↓ Exportar tablero PNG</button><button class="btn" id="saveProject" disabled>Guardar proyecto JSON</button></div>
+        <p class="microcopy">El JSON conserva los recortes seleccionados y sus notas para volver a abrir la mezcla. Si juntás muchas imágenes enormes, guardá versiones por personaje o por conjunto de piezas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>03 / Convertir la mezcla en prompt</h2><p>La descripción recoge tus notas y mantiene el estilo consistente, sin depender del nombre del archivo.</p></div></div>
+    <div class="panel">
+      <div class="formgrid">
+        <div class="formfield"><label for="styleInput">Dirección de estilo</label><input class="field" id="styleInput" value="Anime 2D, lineart limpio, sombreado suave, silueta legible y paleta coherente"></div>
+        <div class="formfield"><label for="characterInput">Idea del personaje</label><input class="field" id="characterInput" placeholder="Ej.: aventurera tranquila, urbana, fantasía oscura…"></div>
+        <div class="formfield" style="grid-column:1/-1"><label for="paletteInput">Paleta y cohesión visual</label><input class="field" id="paletteInput" placeholder="Ej.: marrón claro, crema y violeta oscuro; misma dirección de luz"></div>
+      </div>
+      <div class="actionrow"><button class="btn btn-violet" id="makePrompt" disabled>✦ Generar prompt desde la mezcla</button><button class="btn" id="downloadPrompt" disabled>Descargar TXT</button><button class="btn" id="copyPrompt" disabled>Copiar prompt</button></div>
+      <div class="formfield" style="margin-top:12px"><label for="promptOutput">Prompt editable</label><textarea class="field prompt-box" id="promptOutput" placeholder="El prompt aparecerá aquí. Podés corregirlo antes de guardarlo o usarlo con una IA."></textarea></div>
+      <p class="microcopy">El prompt es una guía textual construida a partir de tus etiquetas y notas: no puede deducir automáticamente todos los detalles de una imagen si no los describís. Las referencias sirven para inspirar rasgos y combinaciones, no para declarar derechos sobre obras ajenas.</p>
+    </div>
+  </section>
+  <div class="notice"><strong>Límite honesto de esta versión:</strong> el recorte es manual asistido por una selección rectangular. Todavía no separa automáticamente cada mechón, ropa tapada o fondo transparente. Esa siguiente etapa requiere segmentación de imagen y revisión humana; los recortes actuales son piezas de referencia, no capas de producción certificadas.</div>
+  <footer class="footer"><span>KIRA Atelier · Design Mixer</span><span>Procesamiento local en el navegador · Sin cuentas ni telemetría</span></footer>
+</div>
+
+<div id="cropDialog" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="cropTitle">
+  <div class="modal">
+    <div class="modal-head"><div><h2 id="cropTitle">Recortar una pieza</h2><p id="cropFileName">Elegí el área de interés arrastrando sobre la imagen.</p></div><button class="btn btn-small" id="closeCrop">✕ Cerrar</button></div>
+    <div class="crop-stage"><canvas id="cropCanvas" class="crop-canvas" width="800" height="600" aria-label="Imagen para seleccionar un recorte"></canvas></div>
+    <div class="formgrid">
+      <div class="formfield"><label for="categorySelect">Categoría de la pieza</label><select class="field" id="categorySelect">
+        <option value="cabello">Cabello</option><option value="flequillo">Flequillo</option><option value="ojos">Ojos</option><option value="rostro">Rostro</option><option value="expresion">Expresión</option><option value="cabeza">Cabeza / forma</option><option value="cuello">Cuello</option><option value="torso">Torso</option><option value="silueta">Silueta corporal</option><option value="proporciones del pecho">Proporciones del pecho</option><option value="cintura">Cintura</option><option value="brazos y manos">Brazos y manos</option><option value="piernas">Piernas</option><option value="calzado">Calzado</option><option value="ropa superior">Ropa superior</option><option value="ropa inferior">Ropa inferior</option><option value="vestido">Vestido</option><option value="accesorios">Accesorios</option><option value="paleta">Paleta de color</option><option value="estilo de línea">Estilo de línea</option><option value="otra">Otra</option>
+      </select></div>
+      <div class="formfield"><label for="pieceNote">Qué querés conservar de esta referencia</label><input class="field" id="pieceNote" placeholder="Ej.: flequillo irregular, puntas violetas, botas altas…"></div>
+    </div>
+    <div class="actionrow"><button class="btn" id="wholeImage">Usar imagen entera</button><button class="btn btn-primary" id="addCrop">＋ Añadir recorte a la mezcla</button></div>
+    <p class="microcopy">Arrastrá para marcar el rectángulo. La imagen original no se modifica. Si el recorte incluye fondo o partes no deseadas, cerrá y volvé a intentarlo.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const state = {sources:[], parts:[], page:0, filtered:[], currentFile:null, currentImage:null, selection:null, dragStart:null};
+const urlCache = new WeakMap();
+const createdUrls = new Set();
+const PAGE_DEFAULT = 48;
+const labels = {
+  "cabello":"Cabello","flequillo":"Flequillo","ojos":"Ojos","rostro":"Rostro","expresion":"Expresión","cabeza":"Cabeza / forma","cuello":"Cuello","torso":"Torso","silueta":"Silueta corporal","proporciones del pecho":"Proporciones del pecho","cintura":"Cintura","brazos y manos":"Brazos y manos","piernas":"Piernas","calzado":"Calzado","ropa superior":"Ropa superior","ropa inferior":"Ropa inferior","vestido":"Vestido","accesorios":"Accesorios","paleta":"Paleta de color","estilo de línea":"Estilo de línea","otra":"Otra"
+};
+function safeText(value){return String(value == null ? "" : value);}
+function getUrl(file){
+  if(urlCache.has(file)) return urlCache.get(file);
+  const url=URL.createObjectURL(file);urlCache.set(file,url);createdUrls.add(url);return url;
+}
+function humanSize(bytes){
+  if(bytes<1024) return bytes+" B";
+  if(bytes<1024*1024) return (bytes/1024).toFixed(0)+" KB";
+  return (bytes/(1024*1024)).toFixed(1)+" MB";
+}
+function updateStats(){
+  $("imageCount").textContent=state.sources.length.toLocaleString("es-AR");
+  $("partCount").textContent=state.parts.length.toLocaleString("es-AR");
+  $("boardCount").textContent=state.parts.length.toLocaleString("es-AR");
+  $("exportBoard").disabled=!state.parts.length;
+  $("saveProject").disabled=!state.parts.length;
+  $("makePrompt").disabled=!state.parts.length;
+  $("downloadPrompt").disabled=!$("promptOutput").value.trim();
+  $("copyPrompt").disabled=!$("promptOutput").value.trim();
+}
+function addFiles(files){
+  const existing=new Set(state.sources.map(f => (f.webkitRelativePath||f.name)+"|"+f.size+"|"+f.lastModified));
+  let added=0;
+  for(const file of Array.from(files||[])){
+    if(!file.type || !file.type.startsWith("image/")) continue;
+    const key=(file.webkitRelativePath||file.name)+"|"+file.size+"|"+file.lastModified;
+    if(existing.has(key)) continue;
+    existing.add(key);state.sources.push(file);added++;
+  }
+  state.sources.sort((a,b)=>(a.webkitRelativePath||a.name).localeCompare(b.webkitRelativePath||b.name,"es"));
+  state.page=0;
+  renderGallery();
+  updateStats();
+  if(added) announce("Se agregaron "+added+" imágenes. No se subieron a Internet.");
+  else if(files && files.length) announce("No había imágenes nuevas en la selección.");
+}
+function announce(message){const el=$("pageStatus");if(el)el.setAttribute("aria-label",message);console.info("[KIRA Design Mixer]",message);}
+function makeButton(text, cls, action){
+  const btn=document.createElement("button");btn.type="button";btn.className=cls;btn.textContent=text;btn.addEventListener("click",action);return btn;
+}
+function renderGallery(){
+  const query=$("searchInput").value.trim().toLocaleLowerCase("es");
+  state.filtered=state.sources.filter(f => !(query) || ((f.webkitRelativePath||f.name).toLocaleLowerCase("es").includes(query)));
+  const size=Number($("pageSize").value)||PAGE_DEFAULT;
+  const totalPages=Math.ceil(state.filtered.length/size);
+  if(totalPages===0)state.page=0;else state.page=Math.min(state.page,totalPages-1);
+  const start=state.page*size;
+  const current=state.filtered.slice(start,start+size);
+  const gallery=$("gallery");gallery.replaceChildren();
+  if(!current.length){
+    const empty=document.createElement("div");empty.className="empty";empty.textContent=state.sources.length?"No hay coincidencias. Probá otra búsqueda.":"Cargá algunas imágenes o elegí una carpeta para empezar.";gallery.appendChild(empty);
+  }else{
+    for(const file of current){
+      const card=document.createElement("article");card.className="source-card";
+      const img=document.createElement("img");img.className="source-thumb";img.loading="lazy";img.alt="Miniatura: "+file.name;img.src=getUrl(file);
+      const info=document.createElement("div");info.className="source-info";
+      const name=document.createElement("div");name.className="source-name";name.textContent=file.name;
+      const path=document.createElement("div");path.className="source-path";path.textContent=humanSize(file.size)+" · "+(file.webkitRelativePath||file.name);
+      const crop=makeButton("✂ Recortar pieza","btn btn-small btn-violet",()=>openCrop(file,false));
+      const full=makeButton("Usar imagen entera","btn btn-small",()=>openCrop(file,true));
+      info.append(name,path,crop,full);card.append(img,info);gallery.appendChild(card);
+    }
+  }
+  $("pageStatus").textContent=(totalPages?("Página "+(state.page+1)+" de "+totalPages):"Página 0 de 0")+" · "+state.filtered.length.toLocaleString("es-AR")+" resultados";
+  $("prevPage").disabled=state.page<=0;
+  $("nextPage").disabled=!totalPages||state.page>=totalPages-1;
+}
+function loadSourceImage(file){
+  return new Promise((resolve,reject)=>{
+    const img=new Image();
+    img.onload=()=>resolve(img);
+    img.onerror=()=>reject(new Error("No se pudo abrir la imagen."));
+    img.src=getUrl(file);
+  });
+}
+async function openCrop(file,whole){
+  state.currentFile=file;state.selection=null;state.dragStart=null;
+  $("cropDialog").classList.remove("hidden");
+  $("cropFileName").textContent=(file.webkitRelativePath||file.name)+" · "+humanSize(file.size);
+  $("pieceNote").value="";
+  $("categorySelect").value="cabello";
+  $("addCrop").disabled=true;
+  try{
+    state.currentImage=await loadSourceImage(file);
+    const img=state.currentImage, maxW=1100, maxH=620;
+    const scale=Math.min(maxW/img.naturalWidth,maxH/img.naturalHeight,1);
+    const canvas=$("cropCanvas");
+    canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));
+    canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));
+    canvas.style.width=canvas.width+"px";canvas.style.height=canvas.height+"px";
+    paintCrop();
+    if(whole){state.selection={x:0,y:0,w:canvas.width,h:canvas.height};paintCrop();$("addCrop").disabled=false;}
+  }catch(error){$("cropFileName").textContent=error.message;}
+}
+function normalizedSelection(){
+  const s=state.selection;if(!s)return null;
+  const x=Math.max(0,Math.min(s.x,s.x+s.w)),y=Math.max(0,Math.min(s.y,s.y+s.h));
+  const right=Math.min($("cropCanvas").width,Math.max(s.x,s.x+s.w));
+  const bottom=Math.min($("cropCanvas").height,Math.max(s.y,s.y+s.h));
+  return {x,y,w:right-x,h:bottom-y};
+}
+function paintCrop(){
+  const canvas=$("cropCanvas"),ctx=canvas.getContext("2d");
+  if(!state.currentImage)return;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.drawImage(state.currentImage,0,0,canvas.width,canvas.height);
+  const s=normalizedSelection();
+  if(s&&s.w>1&&s.h>1){
+    ctx.save();ctx.fillStyle="rgba(10,8,18,.55)";ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.clearRect(s.x,s.y,s.w,s.h);ctx.drawImage(state.currentImage,s.x*state.currentImage.naturalWidth/canvas.width,s.y*state.currentImage.naturalHeight/canvas.height,s.w*state.currentImage.naturalWidth/canvas.width,s.h*state.currentImage.naturalHeight/canvas.height,s.x,s.y,s.w,s.h);
+    ctx.strokeStyle="#ffad6a";ctx.lineWidth=Math.max(2,canvas.width/500);ctx.setLineDash([8,5]);ctx.strokeRect(s.x,s.y,s.w,s.h);ctx.restore();
+  }
+}
+function closeCrop(){
+  $("cropDialog").classList.add("hidden");state.currentFile=null;state.currentImage=null;state.selection=null;state.dragStart=null;
+}
+function addCurrentCrop(){
+  if(!state.currentImage||!state.currentFile)return;
+  const s=normalizedSelection();
+  if(!s||s.w<5||s.h<5){announce("Marcá un recorte más grande antes de añadirlo.");return;}
+  const img=state.currentImage,canvas=$("cropCanvas");
+  const sx=Math.round(s.x*img.naturalWidth/canvas.width),sy=Math.round(s.y*img.naturalHeight/canvas.height);
+  const sw=Math.max(1,Math.round(s.w*img.naturalWidth/canvas.width)),sh=Math.max(1,Math.round(s.h*img.naturalHeight/canvas.height));
+  const out=document.createElement("canvas");out.width=sw;out.height=sh;
+  const ctx=out.getContext("2d",{willReadFrequently:false});
+  ctx.drawImage(img,sx,sy,sw,sh,0,0,sw,sh);
+  let dataUrl;
+  try{dataUrl=out.toDataURL("image/png");}catch(error){announce("No se pudo exportar este recorte.");return;}
+  state.parts.push({id:"part-"+Date.now()+"-"+Math.random().toString(36).slice(2,8),category:$("categorySelect").value,note:$("pieceNote").value.trim(),sourceName:state.currentFile.name,sourcePath:state.currentFile.webkitRelativePath||state.currentFile.name,width:sw,height:sh,dataUrl});
+  renderParts();closeCrop();updateStats();drawBoard();
+}
+function makePartCard(part){
+  const card=document.createElement("article");card.className="part-card";
+  const img=document.createElement("img");img.className="part-image";img.src=part.dataUrl;img.alt=labels[part.category]||part.category;
+  const body=document.createElement("div");body.className="part-body";
+  const tag=document.createElement("span");tag.className="tag";tag.textContent=labels[part.category]||part.category;
+  const note=document.createElement("input");note.className="part-note";note.value=part.note||"";note.placeholder="Describí el rasgo…";note.setAttribute("aria-label","Descripción de "+(labels[part.category]||part.category));
+  note.addEventListener("change",()=>{part.note=note.value;drawBoard();if($("promptOutput").value)buildPrompt();});
+  const source=document.createElement("div");source.className="source-path";source.textContent=part.sourceName||"Proyecto importado";
+  const remove=makeButton("Quitar","btn btn-small",()=>{state.parts=state.parts.filter(p=>p.id!==part.id);renderParts();drawBoard();updateStats();});
+  body.append(tag,note,source,remove);card.append(img,body);return card;
+}
+function renderParts(){
+  const root=$("partList");root.replaceChildren();
+  if(!state.parts.length){const empty=document.createElement("div");empty.className="empty";empty.textContent="Todavía no hay piezas. Elegí una referencia y pulsá “Recortar pieza”.";root.appendChild(empty);}
+  else state.parts.forEach(part=>root.appendChild(makePartCard(part)));
+}
+function roundedRect(ctx,x,y,w,h,r,fill,stroke){
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();
+  if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.stroke();}
+}
+function wrapText(ctx,text,x,y,maxWidth,lineHeight,maxLines){
+  const words=safeText(text).split(/\s+/);let line="",lines=0;
+  for(let i=0;i<words.length;i++){
+    const test=line?line+" "+words[i]:words[i];
+    if(ctx.measureText(test).width>maxWidth&&line){
+      ctx.fillText(line,x,y);line=words[i];y+=lineHeight;lines++;
+      if(lines>=maxLines-1){if(i<words.length-1)line=line.replace(/[.,;:]?$/,"")+"…";ctx.fillText(line,x,y);return y+lineHeight;}
+    }else line=test;
+  }
+  if(line){ctx.fillText(line,x,y);y+=lineHeight;}return y;
+}
+function drawBoard(){
+  const canvas=$("boardCanvas"),ctx=canvas.getContext("2d");
+  const items=state.parts;const width=1400;const cols=3;const gap=22;const left=42;const top=178;
+  const cardW=(width-left*2-gap*(cols-1))/cols;const cardH=238;const rows=Math.max(1,Math.ceil(items.length/cols));
+  canvas.width=width;canvas.height=Math.max(760,top+rows*(cardH+gap)+35);
+  ctx.fillStyle="#f7f3fc";ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="#211b31";ctx.fillRect(0,0,width,148);
+  ctx.fillStyle="#ff9d55";ctx.fillRect(42,29,8,88);
+  ctx.fillStyle="#b9a7ff";ctx.font="800 18px system-ui";ctx.fillText("KIRA ATELIER / DESIGN MIXER",70,45);
+  ctx.fillStyle="#ffffff";ctx.font="800 38px system-ui";ctx.fillText("Tablero de inspiración",70,88);
+  ctx.fillStyle="#d5cce4";ctx.font="15px system-ui";ctx.fillText(items.length+" piezas · referencias para explorar un diseño propio",70,119);
+  if(!items.length){
+    ctx.fillStyle="#e9e2f4";roundedRect(ctx,42,188,width-84,360,18,true,false);
+    ctx.fillStyle="#5e526d";ctx.font="700 28px system-ui";ctx.fillText("Tus recortes aparecerán aquí",78,260);
+    ctx.font="17px system-ui";ctx.fillText("Cargá referencias, elegí rasgos y añadilos a la mezcla.",78,300);
+    ctx.fillStyle="#9679db";roundedRect(ctx,78,345,240,45,12,true,false);ctx.fillStyle="#fff";ctx.font="700 15px system-ui";ctx.fillText("CABELLO  ·  OJOS  ·  ROPA",95,373);
+    return;
+  }
+  items.forEach((item,index)=>{
+    const x=left+(index%cols)*(cardW+gap);const y=top+Math.floor(index/cols)*(cardH+gap);
+    ctx.fillStyle="#ffffff";roundedRect(ctx,x,y,cardW,cardH,15,true,false);
+    ctx.strokeStyle="#ded6eb";ctx.lineWidth=1;roundedRect(ctx,x,y,cardW,cardH,15,false,true);
+    ctx.fillStyle="#8d6df2";roundedRect(ctx,x+15,y+15,cardW-30,28,9,true,false);
+    ctx.fillStyle="#fff";ctx.font="800 13px system-ui";ctx.fillText((labels[item.category]||item.category).toUpperCase().slice(0,38),x+26,y+34);
+    const image=new Image();image.onload=()=>{
+      const bx=x+16,by=y+54,bw=cardW-32,bh=cardH-116;
+      ctx.save();ctx.beginPath();ctx.rect(bx,by,bw,bh);ctx.clip();
+      const scale=Math.min(bw/image.naturalWidth,bh/image.naturalHeight);
+      const iw=image.naturalWidth*scale,ih=image.naturalHeight*scale;
+      ctx.drawImage(image,bx+(bw-iw)/2,by+(bh-ih)/2,iw,ih);ctx.restore();
+      ctx.fillStyle="#514760";ctx.font="13px system-ui";wrapText(ctx,item.note||"Rasgo sin describir",x+17,y+cardH-48,cardW-34,17,2);
+    };image.src=item.dataUrl;
+  });
+  ctx.fillStyle="#83788f";ctx.font="12px system-ui";ctx.fillText("KIRA Atelier · Tablero de trabajo · Las referencias deben revisarse antes de usarse como assets finales",42,canvas.height-12);
+}
+function buildPrompt(){
+  const style=$("styleInput").value.trim()||"anime 2D";
+  const character=$("characterInput").value.trim()||"personaje original sin una personalidad predefinida";
+  const palette=$("paletteInput").value.trim()||"paleta armoniosa, iluminación consistente";
+  const grouped={};
+  state.parts.forEach(part=>{
+    const key=labels[part.category]||part.category;
+    if(!grouped[key])grouped[key]=[];
+    if(part.note.trim())grouped[key].push(part.note.trim());
+    else grouped[key].push("referencia visual seleccionada; interpretar solo el rasgo principal");
+  });
+  const detail=Object.keys(grouped).map(key=>"- "+key+": "+grouped[key].join("; ")).join("\n");
+  const prompt=[
+    "Diseñar un personaje anime original, coherente y utilizable como hoja de referencia.",
+    "IDEA: "+character+".",
+    "DIRECCIÓN DE ARTE: "+style+".",
+    "PALETA Y COHESIÓN: "+palette+".",
+    "RASGOS ELEGIDOS DE LAS REFERENCIAS:\n"+detail,
+    "INTEGRACIÓN: combinar los rasgos como un diseño nuevo; unificar proporciones, perspectiva, grosor del lineart, iluminación, materiales y paleta. Evitar que parezca un collage de partes incompatibles. Mantener una anatomía legible y articulaciones plausibles. Si se solicita una hoja de referencia, mostrar vista frontal limpia y detalles de cabello/ropa.",
+    "NO HACER: extremidades adicionales, articulaciones deformes, piezas fusionadas, accesorios flotantes, cambios de escala inexplicables, texto ilegible, marcas de agua o fondos recargados.",
+    "NOTA DE PRODUCCIÓN: las imágenes seleccionadas son referencias de rasgos, no una autorización automática para copiar una obra completa ni para redistribuir sus assets."
+  ].join("\n\n");
+  $("promptOutput").value=prompt;updateStats();announce("Prompt generado a partir de "+state.parts.length+" piezas.");
+}
+function exportBoard(){
+  drawBoard();
+  $("boardCanvas").toBlob(blob=>{
+    if(!blob){announce("No se pudo exportar el tablero.");return;}
+    downloadBlob(blob,"kira-tablero-inspiracion.png");
+  },"image/png");
+}
+function downloadBlob(blob,name){
+  const url=URL.createObjectURL(blob);const link=document.createElement("a");link.href=url;link.download=name;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+function saveProject(){
+  const data={format:"kira-design-mixer",version:1,savedAt:new Date().toISOString(),settings:{style:$("styleInput").value,character:$("characterInput").value,palette:$("paletteInput").value,prompt:$("promptOutput").value},parts:state.parts.map(p=>({category:p.category,note:p.note,sourceName:p.sourceName,sourcePath:p.sourcePath,width:p.width,height:p.height,dataUrl:p.dataUrl}))};
+  const blob=new Blob([JSON.stringify(data)],{type:"application/json;charset=utf-8"});downloadBlob(blob,"kira-design-mixer-project.json");
+}
+function loadProjectFile(file){
+  if(!file)return;const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const data=JSON.parse(String(reader.result));
+      if(data.format!=="kira-design-mixer"||!Array.isArray(data.parts))throw new Error("Este archivo no parece un proyecto de KIRA Design Mixer.");
+      state.parts=data.parts.filter(p=>p&&typeof p.dataUrl==="string").map((p,i)=>({id:"loaded-"+Date.now()+"-"+i,category:p.category||"otra",note:p.note||"",sourceName:p.sourceName||"Proyecto importado",sourcePath:p.sourcePath||"",width:p.width||0,height:p.height||0,dataUrl:p.dataUrl}));
+      const s=data.settings||{};$("styleInput").value=s.style||$("styleInput").value;$("characterInput").value=s.character||"";$("paletteInput").value=s.palette||"";$("promptOutput").value=s.prompt||"";
+      renderParts();drawBoard();updateStats();announce("Proyecto cargado. Se recuperaron "+state.parts.length+" piezas.");
+    }catch(error){announce(error.message||"No se pudo cargar el proyecto.");}
+  };
+  reader.onerror=()=>announce("Error leyendo el archivo del proyecto.");
+  reader.readAsText(file);
+}
+$("chooseFiles").addEventListener("click",()=>$("fileInput").click());
+$("chooseFolder").addEventListener("click",()=>$("folderInput").click());
+$("loadProject").addEventListener("click",()=>$("projectInput").click());
+$("fileInput").addEventListener("change",e=>{addFiles(e.target.files);e.target.value="";});
+$("folderInput").addEventListener("change",e=>{addFiles(e.target.files);e.target.value="";});
+$("projectInput").addEventListener("change",e=>{loadProjectFile(e.target.files[0]);e.target.value="";});
+$("searchInput").addEventListener("input",()=>{state.page=0;renderGallery();});
+$("pageSize").addEventListener("change",()=>{state.page=0;renderGallery();});
+$("prevPage").addEventListener("click",()=>{state.page=Math.max(0,state.page-1);renderGallery();});
+$("nextPage").addEventListener("click",()=>{state.page++;renderGallery();});
+$("closeCrop").addEventListener("click",closeCrop);
+$("cropDialog").addEventListener("click",e=>{if(e.target===$("cropDialog"))closeCrop();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("cropDialog").classList.contains("hidden"))closeCrop();});
+$("cropCanvas").addEventListener("pointerdown",e=>{
+  if(!state.currentImage)return;const r=$("cropCanvas").getBoundingClientRect();const x=(e.clientX-r.left)*$("cropCanvas").width/r.width;const y=(e.clientY-r.top)*$("cropCanvas").height/r.height;
+  state.dragStart={x,y};state.selection={x,y,w:0,h:0};$("cropCanvas").setPointerCapture(e.pointerId);$("addCrop").disabled=true;paintCrop();
+});
+$("cropCanvas").addEventListener("pointermove",e=>{
+  if(!state.dragStart)return;const r=$("cropCanvas").getBoundingClientRect();const x=(e.clientX-r.left)*$("cropCanvas").width/r.width;const y=(e.clientY-r.top)*$("cropCanvas").height/r.height;
+  state.selection={x:state.dragStart.x,y:state.dragStart.y,w:x-state.dragStart.x,h:y-state.dragStart.y};paintCrop();const s=normalizedSelection();$("addCrop").disabled=!(s&&s.w>=5&&s.h>=5);
+});
+function stopCropDrag(){if(state.dragStart){state.dragStart=null;const s=normalizedSelection();$("addCrop").disabled=!(s&&s.w>=5&&s.h>=5);}}
+$("cropCanvas").addEventListener("pointerup",stopCropDrag);$("cropCanvas").addEventListener("pointercancel",stopCropDrag);
+$("wholeImage").addEventListener("click",()=>{const c=$("cropCanvas");state.selection={x:0,y:0,w:c.width,h:c.height};paintCrop();$("addCrop").disabled=false;});
+$("addCrop").addEventListener("click",addCurrentCrop);
+$("clearParts").addEventListener("click",()=>{if(!state.parts.length)return;if(!confirm("¿Vaciar todas las piezas del tablero actual?"))return;state.parts=[];renderParts();drawBoard();updateStats();$("promptOutput").value="";updateStats();});
+$("makePrompt").addEventListener("click",buildPrompt);
+$("promptOutput").addEventListener("input",updateStats);
+$("styleInput").addEventListener("change",()=>{if(state.parts.length)buildPrompt();});
+$("characterInput").addEventListener("change",()=>{if(state.parts.length)buildPrompt();});
+$("paletteInput").addEventListener("change",()=>{if(state.parts.length)buildPrompt();});
+$("exportBoard").addEventListener("click",exportBoard);
+$("saveProject").addEventListener("click",saveProject);
+$("downloadPrompt").addEventListener("click",()=>downloadBlob(new Blob([$ ("promptOutput").value],{type:"text/plain;charset=utf-8"}),"kira-prompt-diseno.txt"));
+$("copyPrompt").addEventListener("click",async()=>{
+  const text=$("promptOutput").value;
+  try{await navigator.clipboard.writeText(text);announce("Prompt copiado.");}
+  catch(error){$("promptOutput").focus();$("promptOutput").select();announce("El navegador bloqueó el copiado automático; el texto quedó seleccionado para copiarlo manualmente.");}
+});
+window.addEventListener("beforeunload",()=>{createdUrls.forEach(url=>URL.revokeObjectURL(url));});
+drawBoard();updateStats();
+})();
+</script>
+</body>
+</html>
