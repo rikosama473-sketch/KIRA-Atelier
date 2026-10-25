@@ -30,8 +30,8 @@ Esta sección registraba el corte inicial, cuando los PNG originales seguían en
 ## Verificaciones realizadas
 
 - La migración principal terminó correctamente en [GitHub Actions #39986868929](https://github.com/rikosama473-sketch/KIRA-Atelier/actions/runs/39986868929).
-- El árbol de KIRA Atelier contiene **990 archivos** y cubre las **977 rutas de archivo** que existen en la rama `main` de `image`; no quedó ninguna ruta del origen ausente. Algunas rutas comunes se modificaron deliberadamente para aplicar marca, actualizar pruebas o conservar la configuración de `main`.
-- Se verificaron **759 PNG** en la raíz del repositorio de destino, los mismos 759 que están en el origen.
+- Tras la sincronización del 25 de octubre, KIRA Atelier contiene **1006 archivos** y cubre las **989 rutas de archivo** de `image/main`; no queda ninguna ruta de archivo del origen ausente. En rutas comunes donde el SHA difiere se conserva la versión específica de KIRA Atelier cuando protege el branding o los ajustes del editor.
+- Se verifican **816 PNG** en la raíz del destino. La colección original de 759 PNG citada al inicio de la migración sigue incluida, junto con imágenes de tandas posteriores.
 - La comprobación de migración compiló Python y parseó correctamente los JSON cubiertos por el validador.
 - La suite principal actualizada pasó **125 pruebas** en [GitHub Actions #39988426029](https://github.com/rikosama473-sketch/KIRA-Atelier/actions/runs/39988426029). La validación del constructor también pasó en [#39988188266](https://github.com/rikosama473-sketch/KIRA-Atelier/actions/runs/39988188266), y la validación del editor manual pasó en [#39988057952](https://github.com/rikosama473-sketch/KIRA-Atelier/actions/runs/39988057952).
 - La construcción de hojas de contacto pasó en [#39987627148](https://github.com/rikosama473-sketch/KIRA-Atelier/actions/runs/39987627148).
@@ -42,3 +42,8 @@ Esta sección registraba el corte inicial, cuando los PNG originales seguían en
 ## Migración ampliada — 23 de octubre de 2026
 
 Se sincronizaron los módulos, scripts, pruebas, catálogos, manifiestos, imágenes de salida y 759 PNG originales desde la rama `main` del repositorio `image`. Se incorporaron los cuatro workflows auxiliares que faltaban, preservando la configuración programada/manual del runner de lotes de `main`. Todos los nombres y rutas del origen tienen correspondencia en KIRA Atelier. El repositorio original sigue como respaldo; la transferencia no aprueba licencias ni convierte máscaras candidatas en capas aprobadas.
+
+
+## Sincronización final de rutas faltantes — 25 de octubre de 2026
+
+Se añadieron las 12 rutas de `image/main` que faltaban en KIRA Atelier: cinco archivos de la tanda de anatomía de Pibara `run-40104589145` (prompts, hoja de contacto, manifiesto y dos PNG) y siete archivos de `tools/sprite-layer-cropper` (herramienta, ejemplo de configuración, guía, dependencias y pruebas). Tras esta sincronización, las 989 rutas del origen tienen correspondencia en KIRA Atelier. La igualdad de rutas no implica una revisión visual humana de cada imagen ni aprobación de licencias.

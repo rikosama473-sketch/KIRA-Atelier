@@ -48,7 +48,7 @@ python tools/manual-character-editor/run_editor.py
 
 El script abre un servidor local para la interfaz. Para comenzar, abre una imagen propia o una referencia cuyo uso tengas permitido. El editor puede preparar selecciones y exportarlas a PNG, pero la calidad y separación de cada región deben revisarse visualmente.
 
-## Estado comprobado — 23 de octubre de 2026
+## Estado comprobado — 25 de octubre de 2026
 
 - La migración se amplió para sincronizar los módulos, herramientas, pruebas, registros, manifiestos y salidas visuales actuales desde el repositorio anterior.
 - Los 759 PNG originales de la colección principal se copiaron a la raíz de KIRA Atelier para conservar las rutas históricas del dataset. El repositorio `image` se mantiene como respaldo; solo se añadió una nota a su README para dirigir al proyecto principal, sin reescribir el historial.
@@ -70,5 +70,5 @@ No se debe redistribuir una referencia solo porque la miniatura sea pública. Ca
 
 ## Migración ampliada — 23 de octubre de 2026
 
-La rama `main` se sincronizó desde `rikosama473-sketch/image`: se copiaron las herramientas, scripts, pruebas, catálogos, metadatos de generación, requisitos opcionales, salidas actuales y la colección original de 759 PNG. También se archivaron la guía anterior bajo `docs/legacy/IMAGE-README.md` y el documento de diseño bajo `docs/legacy/IMAGE-design.md`. El repositorio anterior se conserva como respaldo y su historial no se reescribió.
-La migración de archivos no valida permisos de terceros ni certifica máscaras o recortes como capas de producción. Las referencias cuya licencia o precio sigue sin confirmarse continúan pendientes de revisión; la transferencia no cambia sus derechos.
+La rama `main` se sincronizó desde `rikosama473-sketch/image`: se copiaron herramientas, scripts, pruebas, catálogos, metadatos, requisitos opcionales y salidas. La colección original de 759 PNG se conserva en la raíz para mantener sus rutas históricas. La sincronización del 25 de octubre de 2026 añade cinco archivos del lote `generated/character-assets/pibara/2026-10-24/run-40104589145/` y siete archivos de `tools/sprite-layer-cropper/`. El árbol contiene 816 PNG en total. También se archivaron la guía anterior bajo `docs/legacy/IMAGE-README.md` y el documento de diseño bajo `docs/legacy/IMAGE-design.md`. El repositorio anterior se conserva como respaldo y su historial no se reescribió.
+La comparación con `image/main` deja todas las rutas de archivo de origen representadas. En rutas comunes donde el SHA difiere, se conserva la versión adaptada de KIRA Atelier cuando protege el rebranding, los enlaces corregidos o los cambios del editor. La transferencia no valida permisos de terceros ni certifica máscaras o recortes como capas de producción. Las referencias cuya licencia o precio sigue sin confirmarse continúan pendientes de revisión.
