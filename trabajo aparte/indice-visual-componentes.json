@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "project": "IMAGE",
+  "project": "KIRA Atelier",
   "created_date": "2026-10-22",
   "scope": "Female anime/waifu component research index; canonical URLs from deep source list merged with earlier targeted PixAI and external reference checks",
   "status": "research_index_not_assets",
@@ -10063,7 +10063,7 @@
       "id": "CENSUS-B-08",
       "title": "Drawings Featuring Gothic Lolita Fashion — What We Wear in the Shadows",
       "creator": "Pixivision editorial",
-      "url": "https://www.pixivision.net/ms/a/10939",
+      "url": "https://www.pixivision.net/en/a/10939",
       "source_platform": "Pixivision",
       "language": "English",
       "target_component": "Gothic lolita — black lace, frills, ribbons, ornate headdresses [131]",
@@ -10073,7 +10073,7 @@
       "asset_type": "Reference collection [131]",
       "license_summary": "not_independently_verified_by_indexer",
       "clean_square_plate_status": "NOT CONFIRMED",
-      "source_url": "https://www.pixivision.net/ms/a/10939",
+      "source_url": "https://www.pixivision.net/en/a/10939",
       "thumbnail_url": "https://embed.pixiv.net/pixivision/ms/a/10939/ogimage.jpg",
       "thumbnail_kind": "source_page_metadata_preview_candidate",
       "red_warning_required": true,
@@ -10093,7 +10093,7 @@
       "price_license_claim": "Free to browse",
       "license_status": "not_independently_verified_by_indexer",
       "monochrome_plate_status": "NOT CONFIRMED",
-      "source_verification_level": "research_report_record; original page not necessarily re-opened in this index merge",
+      "source_verification_level": "English original page re-opened and verified via web search on 2026-10-25; thumbnail load/equivalence remains unverified",
       "census_metadata": [
         {
           "research_record_id": "B-08",
@@ -10113,12 +10113,12 @@
       ],
       "thumbnail_page_title": "Drawings Featuring Gothic Lolita Fashion - What We Wear in the Shadows",
       "thumbnail_checked_date": "2026-10-21",
-      "thumbnail_status": "URL extracted from source metadata/image links; visual load not yet verified",
+      "thumbnail_status": "Thumbnail URL retained from localized ms metadata endpoint; visual load and equivalence with the English page remain unverified",
       "deep_research": {
         "id": "B-08",
         "title": "Drawings Featuring Gothic Lolita Fashion — What We Wear in the Shadows",
         "creator": "Pixivision editorial",
-        "url": "https://www.pixivision.net/ms/a/10939",
+        "url": "https://www.pixivision.net/en/a/10939",
         "source_platform": "Pixivision",
         "language": "English",
         "target_component": "Gothic lolita — black lace, frills, ribbons, ornate headdresses [131]",
@@ -10128,7 +10128,7 @@
         "asset_type": "Reference collection [131]",
         "license_summary": "Free to browse",
         "clean_square_plate_status": "NOT CONFIRMED",
-        "source_url": "https://www.pixivision.net/ms/a/10939",
+        "source_url": "https://www.pixivision.net/en/a/10939",
         "thumbnail_url": null,
         "thumbnail_kind": "not yet independently obtained",
         "red_warning_required": true,
@@ -18054,6 +18054,85 @@
       "source_report_record_id": "G4",
       "accessory_gap_run": "01a162d1-3a84-7767-9b74-947d55aa4160",
       "verified_url_in_master_list": true
+    },
+    {
+      "id": "EXT-PXV-HAIR-TAG-001",
+      "title": "Pixivision — articles tagged #hairstyles (122 items on 2026-10-25)",
+      "creator": "Pixivision editorial team",
+      "url": "https://www.pixivision.net/en/t/85",
+      "source_platform": "Pixivision",
+      "language": "English",
+      "target_component": "Discovery hub for hairstyle topics and editorial collections",
+      "target_traits": "The page listed 122 articles on 2026-10-25, covering cuts, bangs, braids, ponytails, twin-tails, buns and related hairstyles",
+      "extras_red": "TAG HUB — linked illustrations show complete characters; use this page for discovery only, not as a bundle of reusable assets",
+      "prompt_visibility": "Not applicable; category/tag index",
+      "asset_type": "Reference/tag index",
+      "license_summary": "Publicly viewable index; reuse rights for linked illustrations are separate and unverified",
+      "clean_square_plate_status": "NOT CONFIRMED",
+      "source_url": "https://www.pixivision.net/en/t/85",
+      "thumbnail_url": null,
+      "thumbnail_kind": "not retrieved",
+      "red_warning_required": true,
+      "clean_square_plate_url": null,
+      "research_batch": "pixivision-tag-verification-2026-10-25",
+      "source_report_record_id": "PXV-HAIR-TAG-2026-10-25",
+      "verified_url_in_master_list": true,
+      "research_record_ids": [
+        "PXV-HAIR-TAG-2026-10-25"
+      ],
+      "ordinal": 299,
+      "source_language": "Pixivision / English",
+      "category": "female_hair",
+      "categories": [
+        "female_hair"
+      ],
+      "price_license_claim": "Free to browse; individual artwork rights are not verified by this index",
+      "license_status": "not_independently_verified_by_indexer",
+      "monochrome_plate_status": "NOT CONFIRMED",
+      "source_verification_level": "The page was verified through current web search on 2026-10-25; no asset-reuse permission inferred",
+      "census_metadata": [
+        {
+          "research_record_id": "PXV-HAIR-TAG-2026-10-25",
+          "title": "Pixivision — articles tagged #hairstyles",
+          "creator": "Pixivision editorial team",
+          "platform_language": "Pixivision / English",
+          "category": "female_hair",
+          "target_component": "Discovery hub for hairstyle topics and editorial collections",
+          "target_traits": "Listed 122 articles at verification on 2026-10-25",
+          "irrelevant_elements_red": "TAG HUB — linked illustrations are whole-character works, not independent hair assets",
+          "prompt_visibility": "Not applicable; category/tag index",
+          "resource_type": "tag_hub",
+          "price_license_claim": "Free to browse; individual artwork rights are not verified by this index",
+          "license_evidence_status": "not_independently_verified_by_indexer",
+          "bw_clean_plate_claim": "NOT CONFIRMED"
+        }
+      ],
+      "thumbnail_page_title": "Articles tagged #hairstyles — Pixivision",
+      "thumbnail_checked_date": "2026-10-25",
+      "thumbnail_status": "No thumbnail attached; the page is recorded as a text discovery index",
+      "deep_research": {
+        "id": "PXV-HAIR-TAG-2026-10-25",
+        "title": "Pixivision — articles tagged #hairstyles",
+        "creator": "Pixivision editorial team",
+        "url": "https://www.pixivision.net/en/t/85",
+        "source_platform": "Pixivision",
+        "language": "English",
+        "target_component": "Discovery hub for hairstyle topics and editorial collections",
+        "target_traits": "The page listed 122 articles on 2026-10-25",
+        "extras_red": "Linked illustrations show complete characters; the index does not grant reuse rights",
+        "prompt_visibility": "Not applicable; category/tag index",
+        "asset_type": "Reference/tag index",
+        "license_summary": "Publicly viewable index; rights for linked illustrations are separate and unverified",
+        "clean_square_plate_status": "NOT CONFIRMED",
+        "source_url": "https://www.pixivision.net/en/t/85",
+        "thumbnail_url": null,
+        "thumbnail_kind": "not retrieved",
+        "red_warning_required": true,
+        "clean_square_plate_url": null,
+        "research_batch": "pixivision-tag-verification-2026-10-25",
+        "source_report_record_id": "PXV-HAIR-TAG-2026-10-25",
+        "verified_url_in_master_list": true
+      }
     }
   ],
   "statistics": {
@@ -18146,5 +18225,6 @@
       "verified_date": "2026-10-21",
       "notes": "El número/color de iris son atributos; no acoplan automáticamente forma de ojos, pelo o vestuario."
     }
-  ]
+  ],
+  "updated_date": "2026-10-25"
 }
