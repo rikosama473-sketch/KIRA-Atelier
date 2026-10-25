@@ -18,8 +18,9 @@ Censo de fuentes visuales y peinados, con documentación de procedencia, calidad
 - [Censo visual interactivo](trabajo%20aparte/censo-visual-interactivo.html)
 - [Índice de referencias en JSON](trabajo%20aparte/indice-visual-componentes.json)
 - [Segunda validación del censo](trabajo%20aparte/validacion-segunda-pasada-2026-10-22.md)
+- [Revalidación estructural y de fuentes — 25/10/2026](trabajo%20aparte/validacion-censo-visual-2026-10-25.md)
 
-La última validación estructural registró 339 referencias canónicas, 315 URL de miniaturas y 58 registros PixAI. Las URL de miniatura son candidatas extraídas de las fuentes: no significa que todas se hayan cargado y revisado individualmente en el navegador del usuario. La deduplicación perceptual entre plataformas sigue pendiente.
+La revalidación estructural del 25/10/2026 registra 340 referencias canónicas, 315 URL de miniaturas y 58 registros PixAI. JSON y HTML sincronizan 340 IDs y 340 URLs de origen únicas. Las URL de miniatura son candidatas extraídas de las fuentes: no significa que todas se hayan cargado y revisado individualmente en el navegador del usuario. La deduplicación perceptual entre plataformas sigue pendiente.
 
 ### KIRA Design Mixer
 
