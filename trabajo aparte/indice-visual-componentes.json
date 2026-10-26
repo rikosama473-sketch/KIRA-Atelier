@@ -1943,11 +1943,11 @@
       "extras_red": "Full-body character art in referenced illustrations",
       "prompt_visibility": "None",
       "asset_type": "Reference collection [25]",
-      "license_summary": "not_independently_verified_by_indexer",
+      "license_summary": "Reference only. The article is free to browse, but featured illustrations belong to individual creators; permissions for reuse of any individual work have not been confirmed.",
       "clean_square_plate_status": "NOT CONFIRMED",
       "source_url": "https://www.pixivision.net/en/a/10898",
       "thumbnail_url": "https://embed.pixiv.net/pixivision/en/a/10898/ogimage.jpg",
-      "thumbnail_kind": "source_page_metadata_preview_candidate",
+      "thumbnail_kind": "official_editorial_cover_visual_check_pending",
       "red_warning_required": true,
       "clean_square_plate_url": null,
       "research_batch": "deep-research-2026-10-22",
@@ -1962,10 +1962,10 @@
       "categories": [
         "female_hair"
       ],
-      "price_license_claim": "Free to browse",
-      "license_status": "not_independently_verified_by_indexer",
+      "price_license_claim": "Free to browse; individual featured artworks may have separate licenses. No reuse permission established by the editorial page.",
+      "license_status": "reference_only_individual_artist_rights_unverified",
       "monochrome_plate_status": "NOT CONFIRMED",
-      "source_verification_level": "research_report_record; original page not necessarily re-opened in this index merge",
+      "source_verification_level": "original_page_content_and_og_image_association_checked_2026-10-26",
       "census_metadata": [
         {
           "research_record_id": "A-15",
@@ -1978,14 +1978,16 @@
           "irrelevant_elements_red": "Full-body character art in referenced illustrations",
           "prompt_visibility": "None",
           "resource_type": "Reference collection [25]",
-          "price_license_claim": "Free to browse",
-          "license_evidence_status": "not_independently_verified_by_indexer",
-          "bw_clean_plate_claim": "NOT CONFIRMED"
+          "price_license_claim": "Free to browse; individual featured artworks may have separate licenses. No reuse permission established by the editorial page.",
+          "license_evidence_status": "reference_only_individual_artist_rights_unverified",
+          "bw_clean_plate_claim": "NOT CONFIRMED",
+          "rights_evidence_url": "https://www.pixivision.net/en/a/10898",
+          "rights_checked_date": "2026-10-26"
         }
       ],
       "thumbnail_page_title": "Drawings of Short Hair - Short Stories",
-      "thumbnail_checked_date": "2026-10-21",
-      "thumbnail_status": "URL extracted from source metadata/image links; visual load not yet verified",
+      "thumbnail_checked_date": "2026-10-26",
+      "thumbnail_status": "Source-page match confirmed 2026-10-26: thumbnail URL exactly matches the official Pixivision page's og:image. The page is a curated short-hairstyle illustration collection, not an individually licensed asset. The exact cover image itself has not yet been visually verified in a browser.",
       "deep_research": {
         "id": "A-15",
         "title": "Drawings of Short Hair — Short Stories",
@@ -1998,7 +2000,7 @@
         "extras_red": "Full-body character art in referenced illustrations",
         "prompt_visibility": "None",
         "asset_type": "Reference collection [25]",
-        "license_summary": "Free to browse",
+        "license_summary": "Reference only. The article is free to browse, but featured illustrations belong to individual creators; permissions for reuse of any individual work have not been confirmed.",
         "clean_square_plate_status": "NOT CONFIRMED",
         "source_url": "https://www.pixivision.net/en/a/10898",
         "thumbnail_url": null,
@@ -2007,9 +2009,15 @@
         "clean_square_plate_url": null,
         "research_batch": "deep-research-2026-10-22",
         "source_report_record_id": "A-15",
-        "verified_url_in_master_list": true
+        "verified_url_in_master_list": true,
+        "price_license_claim": "Free to browse; individual featured artworks may have separate licenses. No reuse permission established by the editorial page."
       },
-      "atlas_ordinal": 25
+      "atlas_ordinal": 25,
+      "source_last_verified_date": "2026-10-26",
+      "thumbnail_verification_method": "Fetched original article content and Open Graph metadata; the og:image URL exactly equals thumbnail_url. Direct visual confirmation remains pending.",
+      "source_evidence_url": "https://www.pixivision.net/en/a/10898",
+      "rights_evidence_url": "https://www.pixivision.net/en/a/10898",
+      "rights_checked_date": "2026-10-26"
     },
     {
       "id": "CENSUS-B-06",
@@ -4528,11 +4536,11 @@
       "extras_red": "Full character illustrations with costumes — only hair silhouettes are target elements",
       "prompt_visibility": "None (editorial curation)",
       "asset_type": "Reference collection index [58]",
-      "license_summary": "not_independently_verified_by_indexer",
+      "license_summary": "Reference only. The article is free to browse, but featured illustrations belong to individual creators; permissions for reuse of any individual work have not been confirmed.",
       "clean_square_plate_status": "NOT CONFIRMED",
       "source_url": "https://www.pixivision.net/en/a/11971",
       "thumbnail_url": "https://embed.pixiv.net/pixivision/en/a/11971/ogimage.jpg",
-      "thumbnail_kind": "source_page_metadata_preview_candidate",
+      "thumbnail_kind": "official_editorial_cover_visual_check_pending",
       "red_warning_required": true,
       "clean_square_plate_url": null,
       "research_batch": "deep-research-2026-10-22",
@@ -4547,10 +4555,10 @@
       "categories": [
         "female_hair"
       ],
-      "price_license_claim": "Free to browse; individual artworks may have separate licenses",
-      "license_status": "not_independently_verified_by_indexer",
+      "price_license_claim": "Free to browse; individual featured artworks may have separate licenses. No reuse permission established by the editorial page.",
+      "license_status": "reference_only_individual_artist_rights_unverified",
       "monochrome_plate_status": "NOT CONFIRMED",
-      "source_verification_level": "research_report_record; original page not necessarily re-opened in this index merge",
+      "source_verification_level": "original_page_content_and_og_image_association_checked_2026-10-26",
       "census_metadata": [
         {
           "research_record_id": "A-13",
@@ -4563,14 +4571,16 @@
           "irrelevant_elements_red": "Full character illustrations with costumes — only hair silhouettes are target elements",
           "prompt_visibility": "None (editorial curation)",
           "resource_type": "Reference collection index [58]",
-          "price_license_claim": "Free to browse; individual artworks may have separate licenses",
-          "license_evidence_status": "not_independently_verified_by_indexer",
-          "bw_clean_plate_claim": "NOT CONFIRMED"
+          "price_license_claim": "Free to browse; individual featured artworks may have separate licenses. No reuse permission established by the editorial page.",
+          "license_evidence_status": "reference_only_individual_artist_rights_unverified",
+          "bw_clean_plate_claim": "NOT CONFIRMED",
+          "rights_evidence_url": "https://www.pixivision.net/en/a/11971",
+          "rights_checked_date": "2026-10-26"
         }
       ],
       "thumbnail_page_title": "[Featured Articles] Hairstyle Illustration Roundup - A Trip to the Salon",
-      "thumbnail_checked_date": "2026-10-21",
-      "thumbnail_status": "URL extracted from source metadata/image links; visual load not yet verified",
+      "thumbnail_checked_date": "2026-10-26",
+      "thumbnail_status": "Source-page match confirmed 2026-10-26: thumbnail URL exactly matches the official Pixivision page's og:image. The article confirms a curated collection covering pixie cuts, bobs, waves, pigtails, ponytails and braids; it is not an individually licensed asset. The exact cover image itself has not yet been visually verified in a browser.",
       "deep_research": {
         "id": "A-13",
         "title": "Hairstyle Illustration Roundup — A Trip to the Salon",
@@ -4583,7 +4593,7 @@
         "extras_red": "Full character illustrations with costumes — only hair silhouettes are target elements",
         "prompt_visibility": "None (editorial curation)",
         "asset_type": "Reference collection index [58]",
-        "license_summary": "Free to browse; individual artworks may have separate licenses",
+        "license_summary": "Reference only. The article is free to browse, but featured illustrations belong to individual creators; permissions for reuse of any individual work have not been confirmed.",
         "clean_square_plate_status": "NOT CONFIRMED",
         "source_url": "https://www.pixivision.net/en/a/11971",
         "thumbnail_url": null,
@@ -4592,9 +4602,15 @@
         "clean_square_plate_url": null,
         "research_batch": "deep-research-2026-10-22",
         "source_report_record_id": "A-13",
-        "verified_url_in_master_list": true
+        "verified_url_in_master_list": true,
+        "price_license_claim": "Free to browse; individual featured artworks may have separate licenses. No reuse permission established by the editorial page."
       },
-      "atlas_ordinal": 58
+      "atlas_ordinal": 58,
+      "source_last_verified_date": "2026-10-26",
+      "thumbnail_verification_method": "Fetched original article content and Open Graph metadata; the og:image URL exactly equals thumbnail_url. Direct visual confirmation remains pending.",
+      "source_evidence_url": "https://www.pixivision.net/en/a/11971",
+      "rights_evidence_url": "https://www.pixivision.net/en/a/11971",
+      "rights_checked_date": "2026-10-26"
     },
     {
       "id": "CENSUS-B-09",
@@ -10713,11 +10729,11 @@
       ],
       "prompt_visibility": "None",
       "asset_type": "Tutorial / Reference [141]",
-      "license_summary": "reference_only_tutorial",
+      "license_summary": "Reference only. AnimeOutline's copyright page says original content may only be used with prior permission; no permission for KIRA Atelier is documented.",
       "clean_square_plate_status": "tutorial_montage_preview_only",
       "source_url": "https://www.animeoutline.com/how-to-draw-anime-and-manga-hair-female/",
       "thumbnail_url": "https://www.animeoutline.com/wp-content/uploads/2012/12/anime_hairstyles.png",
-      "thumbnail_kind": "tutorial_sheet_preview",
+      "thumbnail_kind": "visually_checked_official_page_thumbnail",
       "red_warning_required": true,
       "clean_square_plate_url": null,
       "research_batch": "deep-research-2026-10-22",
@@ -10726,7 +10742,7 @@
       "category": "hair",
       "monochrome_plate_status": "tutorial_montage_preview_only",
       "monochrome_query_url": "https://www.google.com/search?tbm=isch&q=anime+female+hair+reference+sheet+black+white+line+art",
-      "license_status": "reference_only_tutorial",
+      "license_status": "reference_only_permission_required",
       "ordinal": 37,
       "research_record_ids": [
         "A-16"
@@ -10743,13 +10759,15 @@
           "irrelevant_elements_red": "Face/body used as anchor for hair placement",
           "prompt_visibility": "None",
           "resource_type": "Tutorial / Reference [141]",
-          "price_license_claim": "Free",
-          "license_evidence_status": "not_independently_verified_by_indexer",
-          "bw_clean_plate_claim": "NOT CONFIRMED"
+          "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained.",
+          "license_evidence_status": "reference_only_permission_required",
+          "bw_clean_plate_claim": "NOT CONFIRMED",
+          "rights_evidence_url": "https://www.animeoutline.com/copyright/",
+          "rights_checked_date": "2026-10-26"
         }
       ],
-      "thumbnail_status": "Preview image URL obtained from source-page metadata or image links; browser load not individually verified.",
-      "thumbnail_checked_date": "2026-10-21",
+      "thumbnail_status": "Visual match confirmed 2026-10-26: grayscale montage of six anime female hairstyles. The exact URL matches the original page's og:image and the visible subject matches the tutorial. This is instructional reference artwork, not an approved reusable asset.",
+      "thumbnail_checked_date": "2026-10-26",
       "deep_research": {
         "id": "A-16",
         "title": "How to Draw Anime and Manga Hair — Female",
@@ -10762,7 +10780,7 @@
         "extras_red": "Face/body used as anchor for hair placement",
         "prompt_visibility": "None",
         "asset_type": "Tutorial / Reference [141]",
-        "license_summary": "Free",
+        "license_summary": "Reference only. AnimeOutline's copyright page says original content may only be used with prior permission; no permission for KIRA Atelier is documented.",
         "clean_square_plate_status": "NOT CONFIRMED",
         "source_url": "https://www.animeoutline.com/how-to-draw-anime-and-manga-hair-female/",
         "thumbnail_url": null,
@@ -10771,9 +10789,18 @@
         "clean_square_plate_url": null,
         "research_batch": "deep-research-2026-10-22",
         "source_report_record_id": "A-16",
-        "verified_url_in_master_list": true
+        "verified_url_in_master_list": true,
+        "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained."
       },
-      "atlas_ordinal": 137
+      "atlas_ordinal": 137,
+      "thumbnail_page_title": "How to Draw Anime and Manga Hair - Female - AnimeOutline",
+      "source_verification_level": "original_page_content_and_thumbnail_visually_checked_2026-10-26",
+      "source_last_verified_date": "2026-10-26",
+      "thumbnail_verification_method": "Opened the original tutorial and compared the source page's og:image URL with the catalog URL; visually inspected the returned image.",
+      "source_evidence_url": "https://www.animeoutline.com/how-to-draw-anime-and-manga-hair-female/",
+      "rights_evidence_url": "https://www.animeoutline.com/copyright/",
+      "rights_checked_date": "2026-10-26",
+      "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained."
     },
     {
       "id": "CENSUS-A-20",
@@ -10787,11 +10814,11 @@
       "extras_red": "Face anatomy, ear placement, shading — only hair sections relevant",
       "prompt_visibility": "None",
       "asset_type": "Tutorial / Reference [142]",
-      "license_summary": "not_independently_verified_by_indexer",
+      "license_summary": "Reference only. AnimeOutline's copyright page says original content may only be used with prior permission; no permission for KIRA Atelier is documented.",
       "clean_square_plate_status": "NOT CONFIRMED",
       "source_url": "https://www.animeoutline.com/how-to-draw-anime-girl-head-and-face/",
       "thumbnail_url": "https://www.animeoutline.com/wp-content/uploads/2012/10/anime_girl_face.png",
-      "thumbnail_kind": "source_page_metadata_preview_candidate",
+      "thumbnail_kind": "official_page_og_image_visual_check_pending",
       "red_warning_required": true,
       "clean_square_plate_url": null,
       "research_batch": "deep-research-2026-10-22",
@@ -10806,10 +10833,10 @@
       "categories": [
         "female_hair"
       ],
-      "price_license_claim": "Free",
-      "license_status": "not_independently_verified_by_indexer",
+      "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained.",
+      "license_status": "reference_only_permission_required",
       "monochrome_plate_status": "NOT CONFIRMED",
-      "source_verification_level": "research_report_record; original page not necessarily re-opened in this index merge",
+      "source_verification_level": "original_page_content_and_og_image_association_checked_2026-10-26",
       "census_metadata": [
         {
           "research_record_id": "A-20",
@@ -10822,14 +10849,16 @@
           "irrelevant_elements_red": "Face anatomy, ear placement, shading — only hair sections relevant",
           "prompt_visibility": "None",
           "resource_type": "Tutorial / Reference [142]",
-          "price_license_claim": "Free",
-          "license_evidence_status": "not_independently_verified_by_indexer",
-          "bw_clean_plate_claim": "NOT CONFIRMED"
+          "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained.",
+          "license_evidence_status": "reference_only_permission_required",
+          "bw_clean_plate_claim": "NOT CONFIRMED",
+          "rights_evidence_url": "https://www.animeoutline.com/copyright/",
+          "rights_checked_date": "2026-10-26"
         }
       ],
       "thumbnail_page_title": "How to Draw an Anime Girl's Head and Face - AnimeOutline",
-      "thumbnail_checked_date": "2026-10-21",
-      "thumbnail_status": "URL extracted from source metadata/image links; visual load not yet verified",
+      "thumbnail_checked_date": "2026-10-26",
+      "thumbnail_status": "Source-page match confirmed 2026-10-26: the thumbnail URL exactly matches the page's og:image and the source covers head/face construction with hair as a secondary element. The exact cover image itself has not yet been visually verified in a browser.",
       "deep_research": {
         "id": "A-20",
         "title": "How to Draw an Anime Girl's Head and Face",
@@ -10842,7 +10871,7 @@
         "extras_red": "Face anatomy, ear placement, shading — only hair sections relevant",
         "prompt_visibility": "None",
         "asset_type": "Tutorial / Reference [142]",
-        "license_summary": "Free",
+        "license_summary": "Reference only. AnimeOutline's copyright page says original content may only be used with prior permission; no permission for KIRA Atelier is documented.",
         "clean_square_plate_status": "NOT CONFIRMED",
         "source_url": "https://www.animeoutline.com/how-to-draw-anime-girl-head-and-face/",
         "thumbnail_url": null,
@@ -10851,9 +10880,15 @@
         "clean_square_plate_url": null,
         "research_batch": "deep-research-2026-10-22",
         "source_report_record_id": "A-20",
-        "verified_url_in_master_list": true
+        "verified_url_in_master_list": true,
+        "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained."
       },
-      "atlas_ordinal": 138
+      "atlas_ordinal": 138,
+      "source_last_verified_date": "2026-10-26",
+      "thumbnail_verification_method": "Fetched original page content and Open Graph metadata; the og:image URL exactly equals thumbnail_url. Direct visual confirmation remains pending.",
+      "source_evidence_url": "https://www.animeoutline.com/how-to-draw-anime-girl-head-and-face/",
+      "rights_evidence_url": "https://www.animeoutline.com/copyright/",
+      "rights_checked_date": "2026-10-26"
     },
     {
       "id": "CENSUS-A-17",
@@ -10867,11 +10902,11 @@
       "extras_red": "Face/body used as construction reference",
       "prompt_visibility": "None",
       "asset_type": "Tutorial / Reference [143]",
-      "license_summary": "not_independently_verified_by_indexer",
+      "license_summary": "Reference only. AnimeOutline's copyright page says original content may only be used with prior permission; no permission for KIRA Atelier is documented.",
       "clean_square_plate_status": "NOT CONFIRMED",
       "source_url": "https://www.animeoutline.com/how-to-draw-anime-pigtails-hair/",
       "thumbnail_url": "https://www.animeoutline.com/wp-content/uploads/2023/09/anime_pigtails.png",
-      "thumbnail_kind": "source_page_metadata_preview_candidate",
+      "thumbnail_kind": "official_page_og_image_visual_check_pending",
       "red_warning_required": true,
       "clean_square_plate_url": null,
       "research_batch": "deep-research-2026-10-22",
@@ -10886,10 +10921,10 @@
       "categories": [
         "female_hair"
       ],
-      "price_license_claim": "Free [143]",
-      "license_status": "not_independently_verified_by_indexer",
+      "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained.",
+      "license_status": "reference_only_permission_required",
       "monochrome_plate_status": "NOT CONFIRMED",
-      "source_verification_level": "research_report_record; original page not necessarily re-opened in this index merge",
+      "source_verification_level": "original_page_content_and_og_image_association_checked_2026-10-26",
       "census_metadata": [
         {
           "research_record_id": "A-17",
@@ -10902,14 +10937,16 @@
           "irrelevant_elements_red": "Face/body used as construction reference",
           "prompt_visibility": "None",
           "resource_type": "Tutorial / Reference [143]",
-          "price_license_claim": "Free [143]",
-          "license_evidence_status": "not_independently_verified_by_indexer",
-          "bw_clean_plate_claim": "NOT CONFIRMED"
+          "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained.",
+          "license_evidence_status": "reference_only_permission_required",
+          "bw_clean_plate_claim": "NOT CONFIRMED",
+          "rights_evidence_url": "https://www.animeoutline.com/copyright/",
+          "rights_checked_date": "2026-10-26"
         }
       ],
       "thumbnail_page_title": "How to Draw Anime Pigtails Hair - AnimeOutline",
-      "thumbnail_checked_date": "2026-10-21",
-      "thumbnail_status": "URL extracted from source metadata/image links; visual load not yet verified",
+      "thumbnail_checked_date": "2026-10-26",
+      "thumbnail_status": "Source-page match confirmed 2026-10-26: the thumbnail URL exactly matches the page's og:image and the source text confirms a six-step pigtails tutorial. The exact cover image itself has not yet been visually verified in a browser.",
       "deep_research": {
         "id": "A-17",
         "title": "How to Draw Anime Pigtails Hair",
@@ -10922,7 +10959,7 @@
         "extras_red": "Face/body used as construction reference",
         "prompt_visibility": "None",
         "asset_type": "Tutorial / Reference [143]",
-        "license_summary": "Free [143]",
+        "license_summary": "Reference only. AnimeOutline's copyright page says original content may only be used with prior permission; no permission for KIRA Atelier is documented.",
         "clean_square_plate_status": "NOT CONFIRMED",
         "source_url": "https://www.animeoutline.com/how-to-draw-anime-pigtails-hair/",
         "thumbnail_url": null,
@@ -10931,9 +10968,15 @@
         "clean_square_plate_url": null,
         "research_batch": "deep-research-2026-10-22",
         "source_report_record_id": "A-17",
-        "verified_url_in_master_list": true
+        "verified_url_in_master_list": true,
+        "price_license_claim": "Free to view on the website; reuse of original AnimeOutline content requires prior permission under its copyright policy. Permission not obtained."
       },
-      "atlas_ordinal": 139
+      "atlas_ordinal": 139,
+      "source_last_verified_date": "2026-10-26",
+      "thumbnail_verification_method": "Fetched original page content and Open Graph metadata; the og:image URL exactly equals thumbnail_url. Direct visual confirmation remains pending.",
+      "source_evidence_url": "https://www.animeoutline.com/how-to-draw-anime-pigtails-hair/",
+      "rights_evidence_url": "https://www.animeoutline.com/copyright/",
+      "rights_checked_date": "2026-10-26"
     },
     {
       "id": "CENSUS-K-18",
