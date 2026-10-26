@@ -22,8 +22,9 @@ Censo de fuentes visuales y peinados, con documentación de procedencia, calidad
 - [Segunda validación del censo](trabajo%20aparte/validacion-segunda-pasada-2026-10-22.md)
 - [Revalidación estructural y de fuentes — 25/10/2026](trabajo%20aparte/validacion-censo-visual-2026-10-25.md)
 - [Auditoría estructural y de avisos rojos — 26/10/2026](trabajo%20aparte/validacion-censo-visual-2026-10-26.md)
+- [Revisión de fuentes capilares — 26/10/2026](trabajo%20aparte/revision-fuentes-capilares-2026-10-26.md)
 
-La auditoría del 26/10/2026 confirma 340 registros, 340 IDs únicos y 340 URLs de origen únicas sincronizados entre JSON y HTML; siguen registradas 315 URLs de miniatura y 58 registros PixAI. Las 49 brechas del indicador de aviso rojo se corrigieron. Aún hay 25 registros sin miniatura directa, 245 estados de miniatura pendientes o basados en metadata candidata y 142 fichas con estado de licencia ausente, pendiente o no verificado. Una URL de miniatura está compartida por dos fichas y requiere revisión. La deduplicación visual entre URLs distintas sigue pendiente.
+La auditoría del 26/10/2026 confirma 340 registros, 340 IDs únicos y 340 URLs de origen únicas sincronizados entre JSON y HTML; siguen registradas 315 URLs de miniatura y 58 registros PixAI. Las 49 brechas del indicador de aviso rojo se corrigieron. Aún hay 25 registros sin miniatura directa, 244 estados de miniatura pendientes o basados en metadata candidata y 144 fichas con estado de licencia ausente, pendiente o no verificado. Una URL de miniatura está compartida por dos fichas y requiere revisión. La deduplicación visual entre URLs distintas sigue pendiente.
 
 ### KIRA Design Mixer
 
@@ -56,7 +57,7 @@ El script abre un servidor local para la interfaz. Para comenzar, abre una image
 
 - La migración se amplió para sincronizar los módulos, herramientas, pruebas, registros, manifiestos y salidas visuales actuales desde el repositorio anterior.
 - Los 759 PNG originales de la colección principal se copiaron a la raíz de KIRA Atelier para conservar las rutas históricas del dataset. El repositorio `image` se mantiene como respaldo; solo se añadió una nota a su README para dirigir al proyecto principal, sin reescribir el historial.
-- La licencia/precio de 96 registros del censo sigue sin confirmar. No existe una afirmación de que las imágenes de terceros sean redistribuibles o entrenables solo por aparecer en el catálogo.
+- La licencia/precio o el alcance de uso de 144 registros del censo sigue pendiente o no verificado; las fichas con permiso previo requerido tampoco se consideran assets aprobados. No existe una afirmación de que las imágenes de terceros sean redistribuibles o entrenables solo por aparecer en el catálogo.
 - Las salidas en `generated/character-layers/pibara/39474458754/` son candidatas de trabajo. Sus propios nombres/manifiestos las identifican como candidatos: aún deben revisarse antes de considerarlas capas de producción.
 - El proyecto prioriza el editor de capas y la biblioteca visual. La generación por modelo y el entrenamiento LoRA quedan como vías auxiliares, no como requisito para usar el editor.
 
