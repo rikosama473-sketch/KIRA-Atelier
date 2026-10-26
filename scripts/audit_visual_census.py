@@ -20,6 +20,9 @@ DEFAULT_JSON = ROOT / "trabajo aparte" / "indice-visual-componentes.json"
 DEFAULT_HTML = ROOT / "trabajo aparte" / "censo-visual-interactivo.html"
 UNVERIFIED_THUMBNAIL_TERMS = (
     "not yet verified",
+    "not yet been verified",
+    "not yet been visually verified",
+    "visual verification remains pending",
     "not independently loaded",
     "not independently obtained",
     "not verified",
