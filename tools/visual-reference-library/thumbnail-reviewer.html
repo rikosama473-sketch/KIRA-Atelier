@@ -177,10 +177,12 @@ function renderCurrent(){
 }
 function saveReview(advance){
  const record=currentRecord();if(!record||!state.verdict){setStatus("Elige un veredicto antes de guardar.");return;}
+ const oldFiltered=[...state.filtered],idx=oldFiltered.findIndex(item=>item.id===record.id);
  state.reviews[record.id]={id:record.id,title:record.title||"",source_url:safeHttp(record.source_url||record.url),thumbnail_url:safeHttp(record.thumbnail_url),verdict:state.verdict,verdict_label:verdictLabels[state.verdict],notes:$("notes").value.trim(),reviewed_at:new Date().toISOString()};
- const saved=persistStorage();setStatus(saved?"Revisión guardada en este navegador.":"Revisión guardada en memoria; exporta el progreso JSON antes de cerrar la página.");
- const idx=indexInFilter();renderList();
- if(advance&&idx>=0&&idx<state.filtered.length-1)selectRecord(state.filtered[idx+1].id);
+ const saved=persistStorage();
+ if(advance&&idx>=0)state.currentId=oldFiltered.slice(idx+1).find(item=>!state.reviews[item.id])?.id||null;
+ setStatus(saved?"Revisión guardada en este navegador.":"Revisión guardada en memoria; exporta el progreso JSON antes de cerrar la página.");
+ renderList();
 }
 function exportSession(){
  const reviewed=Object.values(state.reviews).filter(item=>state.entries.some(entry=>entry.id===item.id));
