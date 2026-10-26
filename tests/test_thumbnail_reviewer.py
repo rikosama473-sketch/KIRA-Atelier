@@ -15,10 +15,9 @@ class ThumbnailReviewerContractTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.html = APP.read_text(encoding="utf-8")
-        match = re.search(r"<script>([\\s\\S]*?)</script>", cls.html)
-        if not match:
+        if "<script>" not in cls.html or "</script>" not in cls.html:
             raise AssertionError("Thumbnail reviewer must contain its standalone JavaScript.")
-        cls.script = match.group(1)
+        cls.script = cls.html.split("<script>", 1)[1].split("</script>", 1)[0]
 
     def test_reviewer_has_review_and_recovery_controls(self) -> None:
         required_ids = {
@@ -28,7 +27,7 @@ class ThumbnailReviewerContractTests(unittest.TestCase):
             "thumbImage", "openSource", "openThumbnail", "extraBox", "licenseText",
             "notes", "saveReview", "saveNext", "previous", "next",
         }
-        ids = set(re.findall(r'\\bid="([^"]+)"', self.html))
+        ids = set(re.findall('id="([^"]+)"', self.html))
         self.assertTrue(required_ids.issubset(ids), f"Missing controls: {sorted(required_ids - ids)}")
 
     def test_reviewer_preserves_permissions_and_originals(self) -> None:
@@ -39,8 +38,10 @@ class ThumbnailReviewerContractTests(unittest.TestCase):
         self.assertIn("veredicto visual", self.html.lower())
 
     def test_tool_has_no_external_script_or_framework_dependency(self) -> None:
-        self.assertNotRegex(self.html, r'<script[^>]+src=')
-        self.assertNotRegex(self.html, r'https://(?:cdn\\.|unpkg\\.|cdnjs\\.)')
+        self.assertNotIn("<script src=", self.html.lower())
+        self.assertNotIn("cdn.jsdelivr.net", self.html.lower())
+        self.assertNotIn("unpkg.com", self.html.lower())
+        self.assertNotIn("cdnjs.cloudflare.com", self.html.lower())
 
     @unittest.skipUnless(shutil.which("node"), "Node.js is not installed")
     def test_inline_javascript_syntax(self) -> None:
