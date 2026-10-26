@@ -17,10 +17,12 @@ Censo de fuentes visuales y peinados, con documentación de procedencia, calidad
 - [Atlas interactivo de peinados](trabajo%20aparte/atlas-peinados-interactivo.html)
 - [Censo visual interactivo](trabajo%20aparte/censo-visual-interactivo.html)
 - [Índice de referencias en JSON](trabajo%20aparte/indice-visual-componentes.json)
+- Validador estructural offline: `python scripts/audit_visual_census.py` ([script](scripts/audit_visual_census.py), [pruebas](tests/test_visual_census_audit.py))
 - [Segunda validación del censo](trabajo%20aparte/validacion-segunda-pasada-2026-10-22.md)
 - [Revalidación estructural y de fuentes — 25/10/2026](trabajo%20aparte/validacion-censo-visual-2026-10-25.md)
+- [Auditoría estructural y de avisos rojos — 26/10/2026](trabajo%20aparte/validacion-censo-visual-2026-10-26.md)
 
-La revalidación estructural del 25/10/2026 registra 340 referencias canónicas, 315 URL de miniaturas y 58 registros PixAI. JSON y HTML sincronizan 340 IDs y 340 URLs de origen únicas. Las URL de miniatura son candidatas extraídas de las fuentes: no significa que todas se hayan cargado y revisado individualmente en el navegador del usuario. La deduplicación perceptual entre plataformas sigue pendiente.
+La auditoría del 26/10/2026 confirma 340 registros, 340 IDs únicos y 340 URLs de origen únicas sincronizados entre JSON y HTML; siguen registradas 315 URLs de miniatura y 58 registros PixAI. Las 49 brechas del indicador de aviso rojo se corrigieron. Aún hay 25 registros sin miniatura directa, 245 estados de miniatura pendientes o basados en metadata candidata y 142 fichas con estado de licencia ausente, pendiente o no verificado. Una URL de miniatura está compartida por dos fichas y requiere revisión. La deduplicación visual entre URLs distintas sigue pendiente.
 
 ### KIRA Design Mixer
 
