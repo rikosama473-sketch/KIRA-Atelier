@@ -35,8 +35,8 @@ class ThumbnailReviewerContractTests(unittest.TestCase):
         self.assertIn("no se suben imágenes", self.html.lower())
         self.assertIn("never reescriben el índice maestro automáticamente", self.html)
         self.assertIn("thumbnail_correspondence_manual", self.script)
-        self.assertIn("URL repetida en el censo", self.html)
-        self.assertIn("veredictos", self.html.lower())
+        self.assertIn("Misma URL de miniatura en", self.html)
+        self.assertIn("veredicto visual", self.html.lower())
 
     def test_tool_has_no_external_script_or_framework_dependency(self) -> None:
         self.assertNotRegex(self.html, r'<script[^>]+src=')
