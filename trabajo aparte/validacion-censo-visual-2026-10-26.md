@@ -70,9 +70,19 @@ El script no hace llamadas de red, no descarga imágenes y no modifica las fuent
 
 Se añadió `tests/test_visual_census_audit.py` para comprobar el censo real y casos controlados de errores. Las pruebas cubren la detección de URL de origen duplicadas, avisos rojos ausentes, parseo seguro de la matriz JavaScript y detección de URLs de miniatura compartidas sin borrar registros automáticamente.
 
-GitHub Actions ejecutó **Validate KIRA Atelier tools #49** tras la incorporación de las pruebas, con resultado **completed successfully**. La ejecución incluye la suite unitaria existente del repositorio, compilación de sintaxis Python y verificaciones JavaScript configuradas en `.github/workflows/validate.yml`.
+GitHub Actions ejecutó **Validate KIRA Atelier tools #49** tras la incorporación de las pruebas del validador, con resultado **completed successfully**. Más tarde, la ejecución **#59** también terminó correctamente tras incorporar el revisor visual; la suite completa informó **145 tests** y las pruebas nuevas de esa interfaz, incluida la sintaxis JavaScript con Node.js, pasaron.
 
-## 5. Próximo trabajo requerido
+## 5. Revisor visual manual de miniaturas
+
+Se añadió [`tools/visual-reference-library/thumbnail-reviewer.html`](../tools/visual-reference-library/thumbnail-reviewer.html), accesible también desde la navegación de KIRA Atlas y el README principal.
+
+El visor permite cargar el índice JSON localmente, seleccionar fichas con miniatura, abrir la obra original en otra pestaña y registrar uno de cinco resultados: coincide, no coincide, miniatura rota, duplicado probable o no confirmado. Incluye filtros por texto/categoría/estado, notas, navegación por teclado, guardado local cuando el navegador lo permite y exportación/importación de un archivo JSON auxiliar.
+
+El progreso es un **informe separado**; no reescribe el índice, no sube imágenes del usuario y no da permisos de reutilización. Para ver las miniaturas, el navegador solicita las URL remotas a los sitios originales. La carga técnica de una imagen tampoco demuestra por sí sola que corresponda a la obra: esa comprobación sigue siendo manual. Una URL de miniatura repetida se muestra como señal de revisión, sin fusionar ni borrar fichas.
+
+La interfaz tiene pruebas de contrato en `tests/test_thumbnail_reviewer.py`, que comprueban sus controles principales, el manejo conservador de permisos y la sintaxis JavaScript sin añadir dependencias externas.
+
+## 6. Próximo trabajo requerido
 
 1. Revisar visualmente las 245 miniaturas cuyo estado sigue pendiente o se basa en metadata candidata, priorizando las que alimentarán el editor.
 2. Investigar los 25 registros sin miniatura directa y decidir si vale la pena conservarlos como índices de búsqueda.
