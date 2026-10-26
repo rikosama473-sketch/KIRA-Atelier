@@ -32,9 +32,9 @@ El conjunto corregido incluye fichas de pelo, ojos, ropa, accesorios, fuentes Pi
 | URLs de miniatura registradas | 315 |
 | URLs de miniatura únicas | 314 |
 | Registros sin miniatura directa | 25 |
-| Estados de miniatura ausentes, candidatos o sin verificación | 245 |
+| Estados de miniatura ausentes, candidatos o sin verificación | 244 |
 | Estados de licencia ausentes | 45 |
-| Estados de licencia ausentes, pendientes o no verificados | 142 |
+| Estados de licencia ausentes, pendientes o no verificados | 144 |
 | Brechas en `red_warning_required` | 0 |
 
 Una URL de miniatura exacta se comparte entre dos fichas: `https://idrawfashion.com/wp-content/uploads/2019/11/fb1.png`. Se registra como **posible duplicado directo para revisión**, no se elimina automáticamente. Distintas URLs podrían seguir mostrando la misma obra; para encontrar esos casos sigue haciendo falta una comparación visual o por hash perceptual de las imágenes.
@@ -82,11 +82,21 @@ El progreso es un **informe separado**; no reescribe el índice, no sube imágen
 
 La interfaz tiene pruebas de contrato en `tests/test_thumbnail_reviewer.py`, que comprueban sus controles principales, el manejo conservador de permisos y la sintaxis JavaScript sin añadir dependencias externas.
 
-## 6. Próximo trabajo requerido
+## 6. Revisión selectiva de fuentes capilares
 
-1. Revisar visualmente las 245 miniaturas cuyo estado sigue pendiente o se basa en metadata candidata, priorizando las que alimentarán el editor.
-2. Investigar los 25 registros sin miniatura directa y decidir si vale la pena conservarlos como índices de búsqueda.
-3. Resolver individualmente los 142 estados de licencia incompletos; distinguir permiso de referencia, modificación, redistribución y entrenamiento de modelos.
-4. Ejecutar deduplicación visual entre imágenes descargadas o disponibles localmente y confirmar cada pareja antes de fusionar fichas.
+La primera tanda de cinco fichas se documenta en [Revisión de fuentes capilares — 26/10/2026](revision-fuentes-capilares-2026-10-26.md).
 
-**Conclusión:** la integridad estructural del censo se puede volver a comprobar con una herramienta local y 49 metadatos de aviso rojo quedaron normalizados. No se declara completo el censo visual ni aprobados los recursos de terceros.
+- **1 miniatura inspeccionada visualmente**: `EXT-HIR-015`, la lámina de seis peinados de AnimeOutline. La imagen corresponde al tema del tutorial, pero la política del sitio exige permiso previo para reutilizar contenido original; el permiso no se ha obtenido.
+- **4 asociaciones de página confirmadas, con inspección visual directa pendiente**: `CENSUS-A-17`, `CENSUS-A-20`, `CENSUS-A-15` y `CENSUS-A-13`. En todas, la URL de miniatura coincide exactamente con el `og:image` de la fuente y el texto original es relevante para la ficha. No se confunde la portada de una colección con una ilustración individual.
+- **Derechos separados del uso como referencia**: tres fichas AnimeOutline indican permiso previo requerido; dos fichas Pixivision mantienen pendiente la verificación de derechos de las obras individuales. Ninguna se considera un asset autorizado para incorporar o redistribuir.
+
+Se corrigió además el criterio del validador para que frases como «no se ha verificado visualmente» sigan contabilizadas como pendientes. Estado recalculado tras esta corrección: **244 miniaturas pendientes de verificación** y **144 estados de licencia ausentes, pendientes o no verificados**.
+
+## 7. Próximo trabajo requerido
+
+1. Revisar las 244 miniaturas pendientes, empezando por las piezas que podrían servir de referencia para capas de cabello en KIRA Editor.
+2. Investigar los 25 registros sin miniatura directa y decidir si conviene conservarlos como índices de búsqueda.
+3. Resolver los 144 estados de licencia incompletos; distinguir referencia, uso dentro de la aplicación, modificación, redistribución de archivos y entrenamiento de modelos. Los registros con permiso previo requerido tampoco son assets aprobados.
+4. Ejecutar deduplicación visual entre imágenes disponibles localmente y confirmar cada pareja antes de fusionar fichas.
+
+**Conclusión:** la integridad estructural del censo se puede volver a comprobar con una herramienta local y 49 metadatos de aviso rojo quedaron normalizados. La primera tanda de fuentes capilares quedó documentada, pero la revisión visual de cuatro miniaturas y las decisiones de derechos siguen pendientes. No se declara completo el censo visual ni aprobados los recursos de terceros.
