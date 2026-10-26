@@ -16,6 +16,7 @@ Censo de fuentes visuales y peinados, con documentación de procedencia, calidad
 
 - [Atlas interactivo de peinados](trabajo%20aparte/atlas-peinados-interactivo.html)
 - [Censo visual interactivo](trabajo%20aparte/censo-visual-interactivo.html)
+- [Revisión visual de miniaturas](tools/visual-reference-library/thumbnail-reviewer.html) — compara la miniatura con la fuente y exporta un registro de revisión sin modificar el índice maestro.
 - [Índice de referencias en JSON](trabajo%20aparte/indice-visual-componentes.json)
 - Validador estructural offline: `python scripts/audit_visual_census.py` ([script](scripts/audit_visual_census.py), [pruebas](tests/test_visual_census_audit.py))
 - [Segunda validación del censo](trabajo%20aparte/validacion-segunda-pasada-2026-10-22.md)
