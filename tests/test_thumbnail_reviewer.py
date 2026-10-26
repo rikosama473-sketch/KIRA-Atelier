@@ -32,7 +32,7 @@ class ThumbnailReviewerContractTests(unittest.TestCase):
 
     def test_reviewer_preserves_permissions_and_originals(self) -> None:
         self.assertIn("no se suben imágenes", self.html.lower())
-        self.assertIn("never reescriben el índice maestro automáticamente", self.html)
+        self.assertIn("nunca reescriben el índice maestro automáticamente", self.html)
         self.assertIn("thumbnail_correspondence_manual", self.script)
         self.assertIn("Misma URL de miniatura en", self.html)
         self.assertIn("veredicto visual", self.html.lower())
