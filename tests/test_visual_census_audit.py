@@ -41,6 +41,18 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertEqual(report["stats"]["red_warning_gaps"], 0)
         self.assertGreaterEqual(report["stats"]["json_entries"], 340)
 
+    def test_page_cover_visual_check_pending_is_counted_but_confirmed_thumb_is_not(self) -> None:
+        report = audit_visual_census.audit_documents()
+        self.assertTrue(report["ok"], "\\n".join(report["errors"]))
+        pending_ids = {
+            row["id"]
+            for row in report["issues"]["thumbnail_status_unverified_or_unknown"]
+        }
+        self.assertTrue(
+            {"CENSUS-A-13", "CENSUS-A-15", "CENSUS-A-17", "CENSUS-A-20"} <= pending_ids
+        )
+        self.assertNotIn("EXT-HIR-015", pending_ids)
+
     def test_parser_respects_brackets_and_escaped_quotes_inside_strings(self) -> None:
         html = r'''<script>const records=[{"id":"x","source_url":"https://example.test/a?x=[1]","title":"a \"quoted\" title"}];</script>'''
         rows = audit_visual_census.parse_html_records(html)
