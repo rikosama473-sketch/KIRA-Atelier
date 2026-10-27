@@ -66,6 +66,16 @@ class VisualCensusAuditTests(unittest.TestCase):
             {"CENSUS-C-03", "CENSUS-A-04", "EXT-ITCH-010", "EXT-ITCH-011", "EXT-TOOL-001"} <= pending_ids
         )
 
+    def test_atlas_cards_expose_thumbnail_and_asset_use_status(self) -> None:
+        atlas_path = ROOT / "trabajo aparte" / "censo-visual-interactivo.html"
+        html = atlas_path.read_text(encoding="utf-8")
+        self.assertIn("function thumbnailReviewText(e)", html)
+        self.assertIn("function assetUseText(e)", html)
+        self.assertIn('class="verify-status"', html)
+        self.assertIn('class="asset-use"', html)
+        self.assertIn("e.thumbnail_status", html)
+        self.assertIn("e.asset_use_recommendation", html)
+
     def test_parser_respects_brackets_and_escaped_quotes_inside_strings(self) -> None:
         html = r'''<script>const records=[{"id":"x","source_url":"https://example.test/a?x=[1]","title":"a \"quoted\" title"}];</script>'''
         rows = audit_visual_census.parse_html_records(html)
