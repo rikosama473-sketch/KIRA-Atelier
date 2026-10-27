@@ -27,7 +27,7 @@
 
 Se corrigió la miniatura de `EXT-TOOL-002`: en vez de una URL de imagen que no aparecía entre las imágenes actuales extraídas del devlog, ahora apunta a la ilustración etiquetada verificada visualmente en la propia página. La imagen enumera las piezas de pelo y sus accesorios y coincide directamente con el propósito de la ficha.
 
-Las seis fichas recibieron metadatos de revisión: título de fuente, fecha, método/nivel de verificación, enlace de evidencia de derechos y recomendación de uso. JSON y HTML se actualizaron para mantener la misma fuente y miniatura por ID.
+Las seis fichas recibieron metadatos de revisión: título de fuente, fecha, método/nivel de verificación, enlace de evidencia de derechos y recomendación de uso. JSON y HTML se actualizaron para mantener la misma fuente y miniatura por ID. Además, las tarjetas del atlas ahora muestran un estado visible de comprobación de miniatura y una recomendación separada de uso en KIRA; el buscador también indexa ambos estados.
 
 ## 3. Validador: recuentos conservadores
 
@@ -52,7 +52,10 @@ Los conteos de pendiente no equivalen a errores confirmados. Una URL puede corre
 
 ## 4. Validación automática
 
-Se ampliaron las pruebas para asegurar que:
+Se amplió el validador y las pruebas para asegurar que:
+- el JavaScript inline del atlas pase `node --check` en CI;
+- las tarjetas expongan visualmente el estado de miniatura y la recomendación de uso;
+
 - las portadas con fallos de carga continúan pendientes;
 - la inspección de una imagen marcada como visualmente comprobada permite que salga de la lista pendiente;
 - las licencias declaradas «verificadas» pero que todavía requieren revisar la página original siguen en el recuento de revisión;
