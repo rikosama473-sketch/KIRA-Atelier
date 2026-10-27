@@ -147,5 +147,44 @@ class VisualCensusAuditTests(unittest.TestCase):
             self.assertEqual(len(report["issues"]["shared_thumbnail_url_groups"][0]["ids"]), 2)
 
 
+    def test_duplicate_comparator_supports_distinct_pair_verdicts_and_safe_export(self) -> None:
+        tool_path = ROOT / "tools" / "visual-reference-library" / "duplicate-comparator.html"
+        self.assertTrue(tool_path.exists(), "The side-by-side duplicate comparator must be present.")
+        html = tool_path.read_text(encoding="utf-8")
+        for token in [
+            'id="imageA"', 'id="imageB"',
+            'data-decision="same_artwork"',
+            'data-decision="same_work_variant"',
+            'data-decision="similar_style_distinct"',
+            'data-decision="different_artwork"',
+            'reviewed_pairs',
+            'normalized_thumbnail_url_candidate_pairs',
+            'does not grant reuse',
+        ]:
+            self.assertIn(token, html)
+        self.assertIn("no modifica el índice", html.lower())
+        self.assertIn("No se fusionan registros de forma automática", html)
+
+    @unittest.skipUnless(shutil.which("node"), "Node.js is not installed")
+    def test_duplicate_comparator_inline_javascript_syntax(self) -> None:
+        tool_path = ROOT / "tools" / "visual-reference-library" / "duplicate-comparator.html"
+        html = tool_path.read_text(encoding="utf-8")
+        self.assertIn("<script>", html)
+        self.assertIn("</script>", html)
+        script = html.split("<script>", 1)[1].split("</script>", 1)[0]
+        with tempfile.NamedTemporaryFile("w", suffix=".js", encoding="utf-8", delete=False) as handle:
+            handle.write(script)
+            script_path = Path(handle.name)
+        try:
+            result = subprocess.run(
+                ["node", "--check", str(script_path)],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+        finally:
+            script_path.unlink(missing_ok=True)
+
 if __name__ == "__main__":
     unittest.main()
