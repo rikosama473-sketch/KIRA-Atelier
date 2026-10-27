@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -75,6 +77,27 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertIn('class="asset-use"', html)
         self.assertIn("e.thumbnail_status", html)
         self.assertIn("e.asset_use_recommendation", html)
+
+    @unittest.skipUnless(shutil.which("node"), "Node.js is not installed")
+    def test_atlas_inline_javascript_syntax(self) -> None:
+        atlas_path = ROOT / "trabajo aparte" / "censo-visual-interactivo.html"
+        html = atlas_path.read_text(encoding="utf-8")
+        self.assertIn("<script>", html)
+        self.assertIn("</script>", html)
+        script = html.split("<script>", 1)[1].split("</script>", 1)[0]
+        with tempfile.NamedTemporaryFile("w", suffix=".js", encoding="utf-8", delete=False) as handle:
+            handle.write(script)
+            script_path = Path(handle.name)
+        try:
+            result = subprocess.run(
+                ["node", "--check", str(script_path)],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+        finally:
+            script_path.unlink(missing_ok=True)
 
     def test_parser_respects_brackets_and_escaped_quotes_inside_strings(self) -> None:
         html = r'''<script>const records=[{"id":"x","source_url":"https://example.test/a?x=[1]","title":"a \"quoted\" title"}];</script>'''
