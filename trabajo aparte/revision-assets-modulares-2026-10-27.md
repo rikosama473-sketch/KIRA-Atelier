@@ -62,7 +62,7 @@ Comando local:
 
 ```bash
 python scripts/audit_visual_census.py
-python -m unittest tests.test_visual_census_audit -v
+python -m unittest discover -s tests -p "test_visual_census_audit.py" -v
 ```
 
 ## 5. Fuentes oficiales consultadas en esta tanda
