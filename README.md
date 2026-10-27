@@ -23,9 +23,9 @@ Censo de fuentes visuales y peinados, con documentación de procedencia, calidad
 - [Revalidación estructural y de fuentes — 25/10/2026](trabajo%20aparte/validacion-censo-visual-2026-10-25.md)
 - [Auditoría estructural y de avisos rojos — 26/10/2026](trabajo%20aparte/validacion-censo-visual-2026-10-26.md)
 - [Revisión de fuentes capilares — 26/10/2026](trabajo%20aparte/revision-fuentes-capilares-2026-10-26.md)
-- [Revisión de assets modulares y licencias — 27/10/2026](trabajo%20aparte/revision-assets-modulares-2026-10-27.md)
+- [Revisión de assets modulares y licencias — 27/10/2026](trabajo%20aparte/revision-assets-modulares-2026-10-27.md) — diferencia referencias de arquitectura, candidatos con licencia y recursos no redistribuibles.
 
-La revisión más reciente (27/10/2026) confirma 340 registros, 340 IDs únicos y 340 URLs de origen únicas sincronizados entre JSON y HTML. Hay 315 URLs de miniatura (314 únicas), 25 registros sin miniatura directa, 257 miniaturas pendientes de comprobación visual y 160 fichas con licencia ausente, pendiente o cuyo alcance requiere revisión; 45 carecen por completo del estado de licencia. Las 49 brechas del indicador de aviso rojo se corrigieron. Un grupo de dos fichas comparte una URL exacta de miniatura. La deduplicación visual entre URLs distintas sigue pendiente.
+La revisión más reciente (27/10/2026) confirma 340 registros, 340 IDs únicos y 340 URLs de origen únicas sincronizados entre JSON y HTML. Hay 315 URLs de miniatura (314 únicas), 25 registros sin miniatura directa, 257 miniaturas pendientes de comprobación visual y 160 fichas con licencia ausente, pendiente o cuyo alcance requiere revisión; 45 carecen por completo del estado de licencia. Las 49 brechas del indicador de aviso rojo se corrigieron. Un grupo de dos fichas comparte una URL exacta de miniatura. La deduplicación visual entre URLs distintas sigue pendiente. El atlas muestra por tarjeta el estado de comprobación visual y la recomendación de uso del recurso.
 
 ### KIRA Design Mixer
 
