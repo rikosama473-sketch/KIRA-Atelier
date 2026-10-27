@@ -51,7 +51,20 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertTrue(
             {"CENSUS-A-13", "CENSUS-A-15", "CENSUS-A-17", "CENSUS-A-20"} <= pending_ids
         )
-        self.assertNotIn("EXT-HIR-015", pending_ids)
+        self.assertTrue(
+            {"EXT-ITCH-009", "EXT-TOOL-001", "EXT-BOOTH-003"} <= pending_ids
+        )
+        self.assertTrue(
+            {"EXT-ITCH-010", "EXT-ITCH-011", "EXT-TOOL-002", "EXT-HIR-015"}.isdisjoint(pending_ids)
+        )
+
+    def test_license_review_claims_and_scope_uncertainty_are_counted(self) -> None:
+        report = audit_visual_census.audit_documents()
+        self.assertTrue(report["ok"], "\\n".join(report["errors"]))
+        pending_ids = set(report["issues"]["records_with_unverified_or_missing_license_status"])
+        self.assertTrue(
+            {"CENSUS-C-03", "CENSUS-A-04", "EXT-ITCH-010", "EXT-ITCH-011", "EXT-TOOL-001"} <= pending_ids
+        )
 
     def test_parser_respects_brackets_and_escaped_quotes_inside_strings(self) -> None:
         html = r'''<script>const records=[{"id":"x","source_url":"https://example.test/a?x=[1]","title":"a \"quoted\" title"}];</script>'''
