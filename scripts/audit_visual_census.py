@@ -39,6 +39,20 @@ UNVERIFIED_THUMBNAIL_TERMS = (
     "not retrieved",
     "candidate",
     "metadata",
+    # Spanish status strings are used by newly researched records.
+    "pendiente",
+    "sin verificar",
+    "no verificado",
+    "no verificada",
+    "no comprobado",
+    "no comprobada",
+    "no inspeccionado",
+    "no inspeccionada",
+    "no se ha cargado",
+    "no se pudo cargar",
+    "no se renderizó",
+    "no se renderizo",
+    "no comprobable",
 )
 UNVERIFIED_LICENSE_TERMS = (
     "unverified",

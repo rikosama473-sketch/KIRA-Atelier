@@ -56,6 +56,7 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertTrue(
             {"EXT-ITCH-009", "EXT-TOOL-001", "EXT-BOOTH-003"} <= pending_ids
         )
+        self.assertIn("EXT-TOOL-004", pending_ids, "Spanish pending statuses must also be counted.")
         self.assertTrue(
             {"EXT-ITCH-010", "EXT-ITCH-011", "EXT-TOOL-002", "EXT-HIR-015"}.isdisjoint(pending_ids)
         )
