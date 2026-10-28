@@ -2,17 +2,27 @@
 
 **Proyecto:** KIRA Atelier  
 **Módulo:** KIRA Atlas  
-**Lote:** dos fuentes oficiales para composición por capas  
+**Lote:** tres fuentes oficiales para composición por capas  
 **Objetivo:** añadir referencias trazables y separar su valor arquitectónico de su permiso de incorporación al editor.
 
 ## Resumen de decisiones
+
+| `EXT-OGA-002` | [Anime Girl and Boy Portraits — stevenburrow](https://opengameart.org/content/anime-girl-and-boy-portraits) | La página no ofrece una miniatura propia del arte; se deja sin imagen en lugar de reutilizar el icono genérico de comentarios. | La página oficial marca CC0 y el autor declara dominio público. El ZIP lista muestras y archivo XCF; no se inspeccionó el archivo en esta tanda. **Candidato para extracción local**, pendiente de revisar el XCF, bordes y capas femeninas. |
+
+
 
 | ID | Fuente | Miniatura | Licencia y uso recomendado |
 |---|---|---|---|
 | `EXT-BOOTH-011` | [Deformed Girl Mix-and-Match Standee Material — Mirror Image](https://booth.pm/ja/items/2720171) | **Inspeccionada visualmente el 28/10.** La portada muestra varios personajes chibi completos y texto japonés; no muestra piezas aisladas. | La ficha permite uso personal/comercial y modificaciones, no exige crédito, pero prohíbe redistribuir el material incluso tras modificarlo. **Solo referencia de arquitectura/estilo; no empaquetar capas en KIRA sin permiso expreso.** |
 | `EXT-ITCH-012` | [Modular Pixel Characters — Character Creator Pack](https://riclmbr.itch.io/modular-pixel-characters-character-creator-pack-350-items-48x48) | La URL es la portada Open Graph oficial; el archivo exacto no se pudo abrir para inspección visual. **Pendiente.** | La página declara CC0 1.0, 350 piezas modulares, 700 hojas de cabello y un manifiesto de capas. Precio mínimo visible: USD 4,21. Es un **candidato técnico** para estudiar orden/manifiesto de capas, no arte final anime. No se ha descargado el ZIP. |
 
-## 1. Mirror Image — material chibi combinable
+## 1. OpenGameArt — Anime Girl and Boy Portraits (CC0)
+
+La ficha oficial marca **CC0** y declara que el paquete contiene dos retratos femeninos, dos masculinos, variaciones de peinado, coleta, ojos y boca, junto con muestras y un proyecto XCF de GIMP. El autor aclara que todavía no ha extraído las partes individuales; habría que ocultar capas y exportar los recortes necesarios. La página no contiene una vista previa específica del recurso y solo enlaza el ZIP, por lo que no se ha empleado un logo/icono genérico como sustituto. El archivo no se ha descargado ni inspeccionado. Antes de incorporarlo como candidato técnico, revisar la jerarquía real de capas, exportar solo las piezas femeninas requeridas y comprobar los bordes, ya que los comentarios del propio recurso mencionan artefactos blancos tras rellenar colores.
+
+Fuente primaria: [OpenGameArt — Anime Girl and Boy Portraits](https://opengameart.org/content/anime-girl-and-boy-portraits).
+
+## 2. Mirror Image — material chibi combinable
 
 La página oficial de BOOTH describe cabello, ropa y rostro combinables; un PSD compatible con PSDTool con variaciones por pieza, además de PNG de expresiones. La demo gratuita figura como 85,4 MB y 850×1204 px; la versión completa, ¥550 y 1771×2508 px. El propio anuncio indica que la diferencia principal entre ambas versiones es el tamaño.
 
@@ -20,7 +30,7 @@ La portada oficial se abrió y se comprobó visualmente: es una composición pro
 
 Fuente primaria: [ficha oficial de BOOTH](https://booth.pm/ja/items/2720171).
 
-## 2. Riclmbr — Modular Pixel Characters
+## 3. Riclmbr — Modular Pixel Characters
 
 La ficha actual declara 350 artículos en siete categorías, 50 peinados en catorce colores, capas traseras separadas y un archivo `layers.json` con cuadrícula, velocidad y orden de capas. El formato descrito es una hoja de sprites de 48×48, con cuatro direcciones y siete animaciones; incluye también 24 personajes ya fusionados.
 
@@ -32,10 +42,10 @@ Fuente primaria: [ficha oficial de itch.io](https://riclmbr.itch.io/modular-pixe
 
 ## Estadísticas consolidadas tras añadir esta tanda
 
-- **343** registros, IDs únicos y URLs de origen únicas, sincronizados entre JSON y HTML.
+- **344** registros, IDs únicos y URLs de origen únicas, sincronizados entre JSON y HTML.
 - **318** URLs de miniatura registradas; **317** URLs únicas.
-- **25** fichas sin miniatura directa.
-- **259** miniaturas pendientes de comprobación visual.
+- **26** fichas sin miniatura directa.
+- **260** miniaturas pendientes de comprobación visual.
 - **160** fichas con licencia ausente/pendiente o con alcance por revisar; **45** sin estado de licencia.
 - **0** brechas del campo de aviso rojo en la validación estructural.
 - La deduplicación perceptual entre URLs distintas sigue pendiente; el comparador nuevo registra decisiones humanas, no identifica imágenes automáticamente.
@@ -47,4 +57,4 @@ python scripts/audit_visual_census.py
 python -m unittest discover -s tests -v
 ```
 
-**Criterio de cierre:** ambas páginas quedan documentadas con términos y recomendación; una miniatura se comprobó visualmente y la otra permanece pendiente. Ningún recurso fue importado automáticamente ni se infirieron derechos a partir de la mera existencia de una miniatura pública.
+**Criterio de cierre:** las tres páginas quedan documentadas con términos y recomendación; una miniatura se comprobó visualmente, una está pendiente de inspección visual y una fuente no ofrece miniatura específica. Ningún recurso fue importado automáticamente ni se infirieron derechos a partir de la mera existencia de una miniatura pública.
