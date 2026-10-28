@@ -78,6 +78,7 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertIn('class="asset-use"', html)
         self.assertIn("e.thumbnail_status", html)
         self.assertIn("e.asset_use_recommendation", html)
+        self.assertIn("return asText(e.asset_use_recommendation);", html)
 
     @unittest.skipUnless(shutil.which("node"), "Node.js is not installed")
     def test_atlas_inline_javascript_syntax(self) -> None:
@@ -198,11 +199,11 @@ class VisualCensusAuditTests(unittest.TestCase):
         atlas_rows = {row["id"]: row for row in audit_visual_census.parse_html_records(
             atlas_path.read_text(encoding="utf-8")
         )}
-        expected = {"EXT-BOOTH-011", "EXT-ITCH-012", "EXT-OGA-002"}
+        expected = {"EXT-BOOTH-011", "EXT-ITCH-012", "EXT-OGA-002", "EXT-BOOTH-012", "EXT-BOOTH-013"}
         self.assertTrue(expected <= index_rows.keys())
         self.assertTrue(expected <= atlas_rows.keys())
         for identifier in expected:
-            for field in ("source_url", "thumbnail_url", "thumbnail_status", "license_status", "extras_red"):
+            for field in ("source_url", "thumbnail_url", "thumbnail_status", "license_status", "extras_red", "monochrome_plate_status"):
                 self.assertEqual(index_rows[identifier].get(field), atlas_rows[identifier].get(field), (identifier, field))
             self.assertTrue(index_rows[identifier]["red_warning_required"])
             self.assertTrue(index_rows[identifier]["extras_red"])
@@ -223,6 +224,18 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertEqual(oga["thumbnail_kind"], "no_source_specific_preview_available")
         self.assertIn("CC0_1.0", oga["license_status"])
         self.assertIn("no muestra", oga["thumbnail_status"].lower())
+
+        aether = index_rows["EXT-BOOTH-012"]
+        self.assertIn("source_texture_redistribution_prohibited", aether["license_status"])
+        self.assertIn("Inspección visual completada", aether["thumbnail_status"])
+        self.assertIn("Solo referencia de arquitectura", aether["asset_use_recommendation"])
+        self.assertIn("No CONFIRMED", aether["monochrome_plate_status"])
+
+        ruliyna = index_rows["EXT-BOOTH-013"]
+        self.assertIn("texture_redistribution_prohibited", ruliyna["license_status"])
+        self.assertIn("SAMPLE", ruliyna["thumbnail_status"])
+        self.assertIn("No redistribuir", ruliyna["asset_use_recommendation"])
+        self.assertIn("No CONFIRMED", ruliyna["monochrome_plate_status"])
 
     def test_atlas_header_counts_and_navigation_stay_current(self) -> None:
         atlas_path = ROOT / "trabajo aparte" / "censo-visual-interactivo.html"
