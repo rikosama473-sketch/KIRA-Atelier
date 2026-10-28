@@ -71,7 +71,7 @@ function categories(row){return textValue(row.category||row.categories||row.tags
 function rowTitle(row){return textValue(row.title||row.name||row.id)||"Sin título";}
 function sourceUrl(row){return safeHttp(row.source_url||row.url);}
 function thumbUrl(row){return safeHttp(row.thumbnail_url||row.thumb_url);}
-function normalizedThumb(row){const url=thumbUrl(row);if(!url)return "";try{const parsed=new URL(url);parsed.hash="";return parsed.origin.toLowerCase()+decodeURI(parsed.pathname).replace(/\/(small|medium|large|thumb|thumbnail|preview)\//ig,"/").toLowerCase();}catch(_){return url.toLowerCase();}}
+function normalizedThumb(row){const url=thumbUrl(row);if(!url)return "";try{const parsed=new URL(url);parsed.hash="";return parsed.origin.toLowerCase()+parsed.pathname+parsed.search;}catch(_){return url;}}
 function reviewKey(a,b){return [a,b].sort((x,y)=>x.localeCompare(y)).join("::");}
 function setStatus(message){$("status").textContent=message;}
 function hasRed(row){const values=[row.extras_red,row.irrelevant_elements_red];if(Array.isArray(row.census_metadata))for(const item of row.census_metadata)if(item&&typeof item==="object")values.push(item.irrelevant_elements_red);return values.some(value=>textValue(value));}
