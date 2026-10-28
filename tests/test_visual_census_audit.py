@@ -224,5 +224,19 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertIn("CC0_1.0", oga["license_status"])
         self.assertIn("no muestra", oga["thumbnail_status"].lower())
 
+    def test_atlas_header_counts_and_navigation_stay_current(self) -> None:
+        atlas_path = ROOT / "trabajo aparte" / "censo-visual-interactivo.html"
+        reviewer_path = ROOT / "tools" / "visual-reference-library" / "thumbnail-reviewer.html"
+        index_path = ROOT / "trabajo aparte" / "indice-visual-componentes.json"
+        atlas = atlas_path.read_text(encoding="utf-8")
+        reviewer = reviewer_path.read_text(encoding="utf-8")
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+        records = audit_visual_census.parse_html_records(atlas)
+        self.assertEqual(len(records), len(index["reference_entries"]))
+        self.assertIn(f"<strong>{len(records)}</strong>registros indexados", atlas)
+        self.assertIn(f'<strong>{sum(bool(row.get("thumbnail_url")) for row in records)}</strong>URLs de vista previa registradas', atlas)
+        self.assertIn("../tools/visual-reference-library/duplicate-comparator.html", atlas)
+        self.assertIn('href="./duplicate-comparator.html">Comparar duplicados ↗', reviewer)
+
 if __name__ == "__main__":
     unittest.main()
