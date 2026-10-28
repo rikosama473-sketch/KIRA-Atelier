@@ -15,8 +15,8 @@ main{max-width:1440px;margin:auto;padding:18px}.source-links{display:flex;flex-w
 <h1>KIRA Atelier · Censo visual de referencias femeninas</h1>
 <p class="sub">Catálogo de exploración para peinados, ropa, ojos y accesorios de personajes anime/waifu. Cada ficha pone la miniatura junto al nombre y conserva el enlace a la fuente original. Las zonas rojas señalan elementos de la ilustración que no pertenecen al componente objetivo o datos que aún deben revisarse.</p>
 <div class="metrics">
-<div class="metric"><strong>344</strong>registros indexados</div>
-<div class="metric"><strong>318</strong>URLs de vista previa registradas</div>
+<div class="metric"><strong>346</strong>registros indexados</div>
+<div class="metric"><strong>320</strong>URLs de vista previa registradas</div>
 <div class="metric warn"><strong>0</strong>placas cuadradas B/N con licencia de reutilización confirmada</div>
 <div class="metric"><strong>153</strong>URLs únicas en el censo profundo original; este índice añade referencias seleccionadas</div>
 </div>
@@ -29,6 +29,7 @@ main{max-width:1440px;margin:auto;padding:18px}.source-links{display:flex;flex-w
 <a href="./auditoria-calidad-censo-339-registros.md">Auditoría histórica de calidad · 339 registros (22/10) ↗</a>
 <a href="./validacion-censo-visual-2026-10-25.md">Revalidación estructural · 340 registros (25/10) ↗</a>
 <a href="./indice-visual-componentes.json">Índice JSON con metadatos ↗</a>
+<a href="./revision-referencias-modulares-2026-10-28.md">Referencias modulares y licencias · 28/10/2026 ↗</a>
 <a href="../tools/visual-reference-library/duplicate-comparator.html">Comparador de duplicados visuales ↗</a>
 <a href="./informe-investigacion-ampliada-waifu.md">Informe ampliado de taxonomía y fuentes ↗</a>
 <a href="./inventario-fuentes-peinados-waifu.md">Inventario y estado actual ↗</a>
@@ -55,9 +56,9 @@ main{max-width:1440px;margin:auto;padding:18px}.source-links{display:flex;flex-w
 <div class="empty" id="empty">No se encontraron fichas con esos filtros. Prueba otro término o restablece los filtros.</div>
 <div class="foot">
 <p><strong>Cómo interpretar esta biblioteca</strong></p>
-<p>Las miniaturas se recuperaron de metadata o enlaces visibles de las páginas de origen. 315 registros tienen una URL de previsualización registrada; parte de estas vistas proceden de endpoints de Pixiv/Pixivision. No se ha probado individualmente la carga de cada miniatura en el navegador final.</p>
+<p>Las miniaturas se recuperaron de metadata o enlaces visibles de las páginas de origen. 320 registros tienen una URL de previsualización registrada; parte de estas vistas proceden de endpoints de Pixiv/Pixivision. Tres miniaturas nuevas de este lote sí se comprobaron visualmente, pero la carga de cada recurso remoto debe seguir verificándose en el navegador final.</p>
 <p>Una ilustración de PixAI/Pixiv/Pinterest u otro sitio es una referencia, no un permiso de reutilización. Los packs comerciales pueden permitir usar el resultado en un proyecto y, al mismo tiempo, prohibir redistribuir sus PSD/PNG. No se han descargado ni recortado todas las imágenes.</p>
-<p>Las 340 fichas incluidas en la revisión del 25/10/2026 tienen URL de origen exacta única e identificadores internos únicos. La revalidación confirmó 340 de 340 IDs y URLs de origen coincidentes entre JSON y HTML. Esto no descarta que una misma obra esté publicada en dos sitios distintos o que varias páginas muestren la misma lámina: aún no se ejecutó deduplicación perceptual por hashes de imagen. Las placas cuadradas monocromas reutilizables siguen pendientes de verificación.</p>
+<p>Control histórico: la revisión del 25/10/2026 confirmó 340 IDs y URLs de origen coincidentes. El índice actual (28/10/2026) tiene 346 IDs únicos y 346 URLs de origen únicas sincronizados entre JSON y HTML. Esto no descarta que una misma obra esté publicada en dos sitios distintos o que varias páginas muestren la misma lámina: aún no se ejecutó deduplicación perceptual por hashes de imagen. Las placas cuadradas monocromas reutilizables siguen pendientes de verificación.</p>
 </div>
 </main>
 <script>
@@ -11252,7 +11253,7 @@ function assetUseText(e){
  if(rec.includes("do_not_import")||rec.includes("without_explicit_permission")||rec.includes("without_creator_permission"))return "No incorporar ni modificar como capa de KIRA sin permiso compatible del titular.";
  if(rec.includes("workflow_architecture_reference_only"))return "Solo referencia de flujo de trabajo; revisar la licencia de cada pack de terceros.";
  if(rec.includes("architecture_reference_only"))return "Solo referencia de arquitectura/diseño; no reutilizar la captura o ilustración como asset.";
- return "Permiso de incorporación pendiente de una comprobación específica del recurso.";
+ return asText(e.asset_use_recommendation);
 }
 function isCollection(e){return /tag index|tag collection|editorial collection|collection|category map|search result|Pixiv tag index/i.test([e.title,e.resource_type,e.asset_type].join(" "))}
 function searchable(e){return [e.id,e.title,e.creator,e.source_platform,e.source_language,e.source_url,e.category,e.categories,targetText(e),redText(e),licenseText(e),e.thumbnail_status,e.asset_use_recommendation,e.source_verification_level,e.prompt_visibility,e.research_record_ids,e.alternate_source_urls,e.alternate_store_note,e.price_current,e.file_format].map(asText).join(" ").toLowerCase()}
