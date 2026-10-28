@@ -7,12 +7,9 @@
 
 ## Resumen de decisiones
 
-| `EXT-OGA-002` | [Anime Girl and Boy Portraits — stevenburrow](https://opengameart.org/content/anime-girl-and-boy-portraits) | La página no ofrece una miniatura propia del arte; se deja sin imagen en lugar de reutilizar el icono genérico de comentarios. | La página oficial marca CC0 y el autor declara dominio público. El ZIP lista muestras y archivo XCF; no se inspeccionó el archivo en esta tanda. **Candidato para extracción local**, pendiente de revisar el XCF, bordes y capas femeninas. |
-
-
-
 | ID | Fuente | Miniatura | Licencia y uso recomendado |
 |---|---|---|---|
+| `EXT-OGA-002` | [Anime Girl and Boy Portraits — stevenburrow](https://opengameart.org/content/anime-girl-and-boy-portraits) | La página no ofrece una miniatura propia del arte; se deja sin imagen en lugar de reutilizar el icono genérico de comentarios. | La página oficial marca CC0 y el autor declara dominio público. El ZIP lista muestras y archivo XCF; no se inspeccionó el archivo en esta tanda. **Candidato para extracción local**, pendiente de revisar el XCF, bordes y capas femeninas. |
 | `EXT-BOOTH-011` | [Deformed Girl Mix-and-Match Standee Material — Mirror Image](https://booth.pm/ja/items/2720171) | **Inspeccionada visualmente el 28/10.** La portada muestra varios personajes chibi completos y texto japonés; no muestra piezas aisladas. | La ficha permite uso personal/comercial y modificaciones, no exige crédito, pero prohíbe redistribuir el material incluso tras modificarlo. **Solo referencia de arquitectura/estilo; no empaquetar capas en KIRA sin permiso expreso.** |
 | `EXT-ITCH-012` | [Modular Pixel Characters — Character Creator Pack](https://riclmbr.itch.io/modular-pixel-characters-character-creator-pack-350-items-48x48) | La URL es la portada Open Graph oficial; el archivo exacto no se pudo abrir para inspección visual. **Pendiente.** | La página declara CC0 1.0, 350 piezas modulares, 700 hojas de cabello y un manifiesto de capas. Precio mínimo visible: USD 4,21. Es un **candidato técnico** para estudiar orden/manifiesto de capas, no arte final anime. No se ha descargado el ZIP. |
 
