@@ -229,13 +229,13 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertIn("source_texture_redistribution_prohibited", aether["license_status"])
         self.assertIn("Inspección visual completada", aether["thumbnail_status"])
         self.assertIn("Solo referencia de arquitectura", aether["asset_use_recommendation"])
-        self.assertIn("No CONFIRMED", aether["monochrome_plate_status"])
+        self.assertIn("NOT CONFIRMED", aether["monochrome_plate_status"])
 
         ruliyna = index_rows["EXT-BOOTH-013"]
         self.assertIn("texture_redistribution_prohibited", ruliyna["license_status"])
         self.assertIn("SAMPLE", ruliyna["thumbnail_status"])
         self.assertIn("No redistribuir", ruliyna["asset_use_recommendation"])
-        self.assertIn("No CONFIRMED", ruliyna["monochrome_plate_status"])
+        self.assertIn("NOT CONFIRMED", ruliyna["monochrome_plate_status"])
 
     def test_atlas_header_counts_and_navigation_stay_current(self) -> None:
         atlas_path = ROOT / "trabajo aparte" / "censo-visual-interactivo.html"
