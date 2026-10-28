@@ -222,7 +222,7 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertIsNone(oga["thumbnail_url"])
         self.assertEqual(oga["thumbnail_kind"], "no_source_specific_preview_available")
         self.assertIn("CC0_1.0", oga["license_status"])
-        self.assertIn("no se encontró", oga["thumbnail_status"].lower())
+        self.assertIn("no muestra", oga["thumbnail_status"].lower())
 
 if __name__ == "__main__":
     unittest.main()
