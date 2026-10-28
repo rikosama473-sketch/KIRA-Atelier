@@ -18236,6 +18236,46 @@
         "source_report_record_id": "PXV-HAIR-TAG-2026-10-25",
         "verified_url_in_master_list": true
       }
+    },
+    {
+      "id": "EXT-TOOL-004",
+      "title": "Casting Call! — creador gratuito de retratos para novelas visuales",
+      "creator": "Tira del Alba",
+      "url": "https://tiradelalba.itch.io/casting-call",
+      "source_url": "https://tiradelalba.itch.io/casting-call",
+      "source_platform": "itch.io",
+      "language": "English",
+      "target_component": "Herramienta de creación de retratos VN; cuerpo, tipo de cara, cabello, ropa, accesorios y color.",
+      "target_traits": "La página oficial indica que se exporta un ZIP de 32 PNG con fondo transparente: 16 expresiones con variación de boca cerrada/hablando, 400×600 px por retrato. Es referencia de flujo de trabajo, no una colección de capas genéricas sueltas.",
+      "extras_red": [
+        "La imagen enlazada oficialmente que se inspeccionó es el logotipo del producto, no una captura de la interfaz ni una miniatura de cabello/ropa; no contarla como muestra funcional.",
+        "La página prohíbe usar personajes creados con la herramienta en proyectos que contengan assets generados con IA y prohíbe entrenar modelos de IA.",
+        "Las condiciones del resultado creado no conceden automáticamente permiso para copiar o redistribuir el código, la ilustración fuente o los archivos del programa."
+      ],
+      "prompt_visibility": "No aplica como asset artístico del censo; el listado dice que no se usó IA generativa en el producto.",
+      "asset_type": "Free character creator tool / workflow reference",
+      "license_summary": "El anuncio permite usar y modificar los personajes creados con la herramienta en proyectos personales, no comerciales y comerciales, sin exigir atribución. Prohíbe usar esos personajes en proyectos que contengan assets generados con IA, entrenar modelos de IA, crear NFTs/promover criptomonedas o fomentar discurso de odio. Estos términos de los personajes exportados no equivalen a una licencia para redistribuir el arte fuente o el programa.",
+      "clean_square_plate_status": "No aplica: herramienta de retratos; no se ha verificado una placa de componente separada y libre para redistribución.",
+      "source_url_verified": true,
+      "thumbnail_url": "https://img.itch.zone/aW1nLzI1NTI5NzM3LnBuZw%3D%3D/original/FZ%2FifJ.png",
+      "thumbnail_kind": "official_brand_logo_not_product_preview",
+      "thumbnail_status": "Imagen oficial enlazada por itch.io inspeccionada el 2026-10-27: corresponde al logotipo del título. No es captura de interfaz ni muestra del personaje; la miniatura funcional permanece pendiente.",
+      "thumbnail_checked_date": "2026-10-27",
+      "thumbnail_verification_method": "Se abrió el enlace de imagen oficial de la página de itch.io y se inspeccionó el archivo; se contrastó con el texto de la ficha del producto.",
+      "source_verification_level": "official_itch_listing_and_linked_logo_checked",
+      "source_last_verified_date": "2026-10-27",
+      "rights_evidence_url": "https://tiradelalba.itch.io/casting-call",
+      "rights_checked_date": "2026-10-27",
+      "license_status": "tool_output_use_allowed_but_AI_generated_asset_projects_and_AI_training_prohibited",
+      "price_current": "Free",
+      "price_license_claim": "La página oficial presenta la herramienta como gratuita y publica los términos de uso de los retratos exportados.",
+      "asset_use_recommendation": "Solo referencia de flujo de trabajo. No incorporar ni redistribuir los assets fuente del programa. Mantener los retratos creados con esta herramienta fuera de proyectos que contengan assets generados con IA, conforme a sus condiciones.",
+      "red_warning_required": true,
+      "category": "character_creator_tool",
+      "research_batch": "workflow-reference-2026-10-27",
+      "rights_evidence_type": "official_product_terms",
+      "ordinal": 341,
+      "atlas_ordinal": 341
     }
   ],
   "statistics": {

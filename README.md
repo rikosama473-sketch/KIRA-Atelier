@@ -18,6 +18,7 @@ Censo de fuentes visuales y peinados, con documentación de procedencia, calidad
 - [Censo visual interactivo](trabajo%20aparte/censo-visual-interactivo.html)
 - [Revisión visual de miniaturas](tools/visual-reference-library/thumbnail-reviewer.html) — compara la miniatura con la fuente y exporta un registro de revisión sin modificar el índice maestro.
 - [Comparador de duplicados visuales](tools/visual-reference-library/duplicate-comparator.html) — compara dos fichas lado a lado y distingue la misma ilustración, una variante del diseño, estilos parecidos u obras distintas; exporta las decisiones sin modificar el índice ni inferir permisos de uso.
+- [Revisión de Casting Call! y sus restricciones](trabajo%20aparte/revision-tool-casting-call-2026-10-27.md) — referencia de arquitectura; el logotipo no se cuenta como miniatura funcional y las restricciones sobre proyectos con assets generados por IA quedan registradas.
 - [Índice de referencias en JSON](trabajo%20aparte/indice-visual-componentes.json)
 - Validador estructural offline: `python scripts/audit_visual_census.py` ([script](scripts/audit_visual_census.py), [pruebas](tests/test_visual_census_audit.py))
 - [Segunda validación del censo](trabajo%20aparte/validacion-segunda-pasada-2026-10-22.md)
