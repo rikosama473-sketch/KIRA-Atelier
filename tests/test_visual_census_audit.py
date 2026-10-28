@@ -190,5 +190,39 @@ class VisualCensusAuditTests(unittest.TestCase):
         finally:
             script_path.unlink(missing_ok=True)
 
+    def test_october_modular_sources_preserve_rights_and_thumbnail_uncertainty(self) -> None:
+        index_path = ROOT / "trabajo aparte" / "indice-visual-componentes.json"
+        atlas_path = ROOT / "trabajo aparte" / "censo-visual-interactivo.html"
+        parsed = json.loads(index_path.read_text(encoding="utf-8"))
+        index_rows = {row["id"]: row for row in parsed["reference_entries"]}
+        atlas_rows = {row["id"]: row for row in audit_visual_census.parse_html_records(
+            atlas_path.read_text(encoding="utf-8")
+        )}
+        expected = {"EXT-BOOTH-011", "EXT-ITCH-012", "EXT-OGA-002"}
+        self.assertTrue(expected <= index_rows.keys())
+        self.assertTrue(expected <= atlas_rows.keys())
+        for identifier in expected:
+            for field in ("source_url", "thumbnail_url", "thumbnail_status", "license_status", "extras_red"):
+                self.assertEqual(index_rows[identifier].get(field), atlas_rows[identifier].get(field), (identifier, field))
+            self.assertTrue(index_rows[identifier]["red_warning_required"])
+            self.assertTrue(index_rows[identifier]["extras_red"])
+
+        booth = index_rows["EXT-BOOTH-011"]
+        self.assertIn("redistribution_prohibited", booth["license_status"])
+        self.assertIn("No empaquetar", booth["asset_use_recommendation"])
+        self.assertIn("Visual match confirmed", booth["thumbnail_status"])
+
+        itch = index_rows["EXT-ITCH-012"]
+        self.assertIn("CC0_1.0", itch["license_status"])
+        self.assertIn("pending", itch["source_verification_level"].lower())
+        self.assertIsNotNone(itch["thumbnail_url"])
+        self.assertIn("pendiente", itch["thumbnail_status"].lower())
+
+        oga = index_rows["EXT-OGA-002"]
+        self.assertIsNone(oga["thumbnail_url"])
+        self.assertEqual(oga["thumbnail_kind"], "no_source_specific_preview_available")
+        self.assertIn("CC0_1.0", oga["license_status"])
+        self.assertIn("no se encontró", oga["thumbnail_status"].lower())
+
 if __name__ == "__main__":
     unittest.main()
