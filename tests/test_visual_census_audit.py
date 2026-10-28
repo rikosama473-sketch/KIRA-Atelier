@@ -159,7 +159,7 @@ class VisualCensusAuditTests(unittest.TestCase):
             'data-decision="different_artwork"',
             'reviewed_pairs',
             'normalized_thumbnail_url_candidate_pairs',
-            'or grant reuse',
+            'ni concede derechos de uso',
         ]:
             self.assertIn(token, html)
         self.assertIn("no modifica el índice", html.lower())
