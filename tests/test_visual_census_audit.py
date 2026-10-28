@@ -165,6 +165,9 @@ class VisualCensusAuditTests(unittest.TestCase):
             self.assertIn(token, html)
         self.assertIn("no modifica el índice", html.lower())
         self.assertIn("No se fusionan registros de forma automática", html)
+        # Candidate matching is intentionally conservative: preserve the path case and query string.
+        self.assertIn("parsed.origin.toLowerCase()+parsed.pathname+parsed.search", html)
+        self.assertNotIn("decodeURI(parsed.pathname).replace", html)
 
     @unittest.skipUnless(shutil.which("node"), "Node.js is not installed")
     def test_duplicate_comparator_inline_javascript_syntax(self) -> None:
