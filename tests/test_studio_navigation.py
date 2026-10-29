@@ -75,5 +75,20 @@ class StudioNavigationTests(unittest.TestCase):
         self.assertIn("/tools/manual-character-editor/index.html", launcher)
 
 
+    def test_character_studio_generation_links_target_kira_atelier(self) -> None:
+        html = (REPO_ROOT / "tools/avatar-maker/index.html").read_text(encoding="utf-8")
+        self.assertNotIn("rikosama473-sketch/image/actions/workflows/", html)
+        self.assertIn(
+            "https://github.com/rikosama473-sketch/KIRA-Atelier/actions/workflows/generate-character-assets-free.yml",
+            html,
+        )
+        self.assertIn(
+            "https://github.com/rikosama473-sketch/KIRA-Atelier/actions/workflows/generate-hairstyle-variants.yml",
+            html,
+        )
+        self.assertNotIn("no ejecutes el proceso sobre main", html.lower())
+        self.assertIn("guardados en main", html.lower())
+
+
 if __name__ == "__main__":
     unittest.main()
