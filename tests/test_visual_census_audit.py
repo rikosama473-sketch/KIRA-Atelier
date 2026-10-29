@@ -251,5 +251,36 @@ class VisualCensusAuditTests(unittest.TestCase):
         self.assertIn("../tools/visual-reference-library/duplicate-comparator.html", atlas)
         self.assertIn('href="./duplicate-comparator.html">Comparar duplicados ↗', reviewer)
 
+    def test_shared_thumbnail_candidate_keeps_both_records_and_restricts_asset_use(self) -> None:
+        index_path = ROOT / "trabajo aparte" / "indice-visual-componentes.json"
+        atlas_path = ROOT / "trabajo aparte" / "censo-visual-interactivo.html"
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+        rows = index["reference_entries"]
+        html_rows = audit_visual_census.parse_html_records(atlas_path.read_text(encoding="utf-8"))
+        ids = {"ACC-CENSUS-F2", "ACC-CENSUS-F3"}
+        indexed = {row["id"]: row for row in rows if row.get("id") in ids}
+        rendered = {row["id"]: row for row in html_rows if row.get("id") in ids}
+        self.assertEqual(set(indexed), ids)
+        self.assertEqual(set(rendered), ids)
+        self.assertEqual(len({row["source_url"] for row in indexed.values()}), 2)
+        self.assertEqual(len({row["thumbnail_url"] for row in indexed.values()}), 1)
+        for record_id, row in indexed.items():
+            peer_ids = ids - {record_id}
+            self.assertEqual(row["thumbnail_duplicate_group_id"], "THUMB-SHARED-001")
+            self.assertEqual(row["thumbnail_duplicate_review_status"], "candidate_pending_visual_comparison")
+            self.assertTrue(any(peer in row["thumbnail_status"] for peer in peer_ids))
+            self.assertTrue(row["red_warning_required"])
+            self.assertIn("do not treat it as a distinct source-specific artwork", row["extras_red"])
+            self.assertEqual(row["license_status"], "reference_only_source_artwork_reuse_not_verified")
+            self.assertIn("without explicit permission", row["asset_use_recommendation"])
+            self.assertEqual(row["rights_evidence_url"], "https://idrawfashion.com/terms-of-service/")
+            for key in (
+                "thumbnail_status", "thumbnail_duplicate_group_id",
+                "thumbnail_duplicate_review_status", "thumbnail_duplicate_peer_ids",
+                "license_status", "asset_use_recommendation", "rights_evidence_url",
+                "extras_red", "red_warning_required",
+            ):
+                self.assertEqual(rendered[record_id].get(key), row.get(key), f"{record_id}: {key}")
+
 if __name__ == "__main__":
     unittest.main()
