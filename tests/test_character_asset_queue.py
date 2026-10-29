@@ -88,6 +88,19 @@ class CharacterAssetQueueTests(unittest.TestCase):
         self.assertEqual(validation_packs, generator_packs)
         self.assertIn("anatomy-back-1", dispatch_packs)
 
+    def test_workflow_checks_out_and_commits_generated_image_library(self):
+        workflow_path = Path(__file__).resolve().parents[1] / ".github" / "workflows" / "generate-character-assets-free.yml"
+        workflow = workflow_path.read_text(encoding="utf-8")
+
+        checkout_start = workflow.index("          sparse-checkout: |")
+        checkout_end = workflow.index("          sparse-checkout-cone-mode: true", checkout_start)
+        checkout_rules = workflow[checkout_start:checkout_end]
+        self.assertIn("            tools/avatar-maker/assets\\n", checkout_rules)
+
+        commit_start = workflow.index("      - name: Commit generated assets and resumable progress to main")
+        commit_step = workflow[commit_start:]
+        self.assertIn("          git add -A -- tools/avatar-maker/assets/image-library.json\\n", commit_step)
+
     def test_starts_with_first_incomplete_pibara_pack(self):
         with tempfile.TemporaryDirectory() as temp:
             root = self.make_root(temp)
