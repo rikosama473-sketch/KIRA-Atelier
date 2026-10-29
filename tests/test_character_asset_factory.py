@@ -171,6 +171,62 @@ class CharacterAssetFactoryTests(unittest.TestCase):
             )
             self.assertEqual(registry["characters"][0]["base_assets"][0]["status"], "derived_not_ai_generated")
 
+    def test_generated_assets_enter_library_without_automatic_rights_approval(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            library_path = root / "tools" / "avatar-maker" / "assets" / "image-library.json"
+            library_path.parent.mkdir(parents=True)
+            library_path.write_text(
+                json.dumps({"schema_version": 1, "assets": [], "asset_count": 0}),
+                encoding="utf-8",
+            )
+
+            relative = "generated/character-assets/pibara/2026-10-29/run-test/renders/01-full-body-back-view.png"
+            render_path = root / relative
+            render_path.parent.mkdir(parents=True)
+            render_path.write_bytes(b"test-render-placeholder")
+            record = {
+                "asset_id": "full-body-back-view",
+                "render": {"file": relative, "sha256": "render-sha"},
+                "transparent_layer": None,
+            }
+
+            MODULE.update_image_library(
+                root,
+                "pibara",
+                "from-PixAI-reference.png",
+                "12345678abcdef00",
+                "anatomy-back-1",
+                "run-test",
+                [record],
+            )
+            library = json.loads(library_path.read_text(encoding="utf-8"))
+            self.assertEqual(library["asset_count"], 1)
+            self.assertEqual(len(library["assets"]), 1)
+            asset = library["assets"][0]
+            self.assertEqual(asset["path"], relative)
+            self.assertEqual(asset["src"], "../../" + relative)
+            self.assertEqual(asset["kind"], "anatomy_guide")
+            self.assertEqual(asset["pack"], "anatomy-back-1")
+            self.assertEqual(asset["visual_review"], "needs_visual_identity_review")
+            self.assertEqual(asset["license_review"], "unreviewed")
+            self.assertEqual(asset["training_permission"], "unreviewed")
+            self.assertEqual(asset["manifest_status"], "needs_visual_identity_review")
+
+            # Retrying the same batch must not duplicate the library entry.
+            MODULE.update_image_library(
+                root,
+                "pibara",
+                "from-PixAI-reference.png",
+                "12345678abcdef00",
+                "anatomy-back-1",
+                "run-test",
+                [record],
+            )
+            library = json.loads(library_path.read_text(encoding="utf-8"))
+            self.assertEqual(library["asset_count"], 1)
+            self.assertEqual(len(library["assets"]), 1)
+
     def test_confirmed_pibara_reference_cannot_be_reused_for_other_characters(self):
         reference = "from-PixAI-2034984086876227343-0.png"
         self.assertEqual(MODULE.validate_character_reference("pibara", reference), reference)
