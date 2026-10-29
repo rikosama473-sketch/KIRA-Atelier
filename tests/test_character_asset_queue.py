@@ -66,6 +66,7 @@ class CharacterAssetQueueTests(unittest.TestCase):
         (run_dir / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
 
 
+
     def test_workflow_dispatch_validation_and_queue_match_generator_packs(self):
         workflow_path = Path(__file__).resolve().parents[1] / ".github" / "workflows" / "generate-character-assets-free.yml"
         workflow = workflow_path.read_text(encoding="utf-8")
@@ -73,9 +74,9 @@ class CharacterAssetQueueTests(unittest.TestCase):
         input_start = workflow.index("      asset_pack:")
         input_end = workflow.index("      background:", input_start)
         asset_pack_input = workflow[input_start:input_end]
-        self.assertIn("        options:\\n", asset_pack_input)
-        options_text = asset_pack_input.split("        options:\\n", 1)[1]
-        dispatch_packs = set(re.findall(r"^\\s+- ([a-z0-9-]+)\\s*$", options_text, re.MULTILINE))
+        self.assertIn("        options:\n", asset_pack_input)
+        options_text = asset_pack_input.split("        options:\n", 1)[1]
+        dispatch_packs = set(re.findall(r"^\s+- ([a-z0-9-]+)\s*$", options_text, re.MULTILINE))
 
         guard_start = workflow.index("          supported_packs = {")
         guard_end = workflow.index("          }", guard_start)
