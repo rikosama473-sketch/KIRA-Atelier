@@ -99,7 +99,7 @@ class ImageProjectHandoffTests(unittest.TestCase):
         )
         self.assertIn("cuota pública compartida", ai_workspace)
         self.assertNotIn("work/easy-avatar-maker-2026-10", ai_workspace)
-        self.assertIn("hair-core-5", ai_workspace)
+        self.assertIn("paquete que todavía esté incompleto", ai_workspace)
         self.assertIn("guardar el progreso en main", ai_workspace.lower())
         self.assertIn("pendientes de revisión visual y de permisos", ai_workspace.lower())
         self.assertNotIn("no ejecutes el proceso sobre main", ai_workspace.lower())
