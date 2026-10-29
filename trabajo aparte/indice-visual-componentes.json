@@ -18017,19 +18017,20 @@
       "source_report_record_id": "F2",
       "accessory_gap_run": "01a162d1-3a84-7767-9b74-947d55aa4160",
       "verified_url_in_master_list": true,
-      "thumbnail_status": "Shared thumbnail URL flagged 2026-10-29 with ACC-CENSUS-F3. Exact image not independently rendered in this pass; source-specific visual correspondence remains unverified. URL match is a review lead, not a confirmed artwork duplicate.",
+      "thumbnail_status": "Official Others ACC source page opened and topic list confirmed on 2026-10-29 (ribbon bows, flower crowns, chains, sunglasses, bags, zippers, crowns, belts). Shared thumbnail URL flagged with ACC-CENSUS-F3. Exact preview fb1.png could not be independently rendered in this pass; source-specific thumbnail correspondence remains unverified. URL match is a review lead, not a confirmed artwork duplicate.",
       "thumbnail_duplicate_group_id": "THUMB-SHARED-001",
       "thumbnail_duplicate_review_status": "candidate_pending_visual_comparison",
       "thumbnail_duplicate_peer_ids": [
         "ACC-CENSUS-F3"
       ],
-      "source_verification_level": "official_source_url_checked; source-specific preview and reuse rights unresolved",
+      "source_verification_level": "official_source_page_content_confirmed_2026-10-29; exact_shared_thumbnail_render_pending; free_tutorial_artwork_reuse_not_established",
       "source_last_verified_date": "2026-10-29",
       "license_status": "reference_only_source_artwork_reuse_not_verified",
       "asset_use_recommendation": "Reference/tutorial only. Do not redistribute tutorial imagery as KIRA editor assets without explicit permission or a source-specific open license.",
       "rights_evidence_url": "https://idrawfashion.com/terms-of-service/",
       "rights_checked_date": "2026-10-29",
-      "updated_review_batch": "shared-thumbnail-permissions-2026-10-29"
+      "updated_review_batch": "shared-thumbnail-permissions-2026-10-29",
+      "thumbnail_checked_date": "2026-10-29"
     },
     {
       "id": "ACC-CENSUS-F3",
@@ -18058,19 +18059,20 @@
       "source_report_record_id": "F3",
       "accessory_gap_run": "01a162d1-3a84-7767-9b74-947d55aa4160",
       "verified_url_in_master_list": true,
-      "thumbnail_status": "Shared thumbnail URL flagged 2026-10-29 with ACC-CENSUS-F2. Exact image not independently rendered in this pass; source-specific visual correspondence remains unverified. URL match is a review lead, not a confirmed artwork duplicate.",
+      "thumbnail_status": "Official Jewelry source page opened on 2026-10-29; page describes bracelets, earrings, rings and necklaces and lists a bracelet tutorial. Shared thumbnail URL flagged with ACC-CENSUS-F2. Exact preview fb1.png could not be independently rendered in this pass; source-specific thumbnail correspondence remains unverified. URL match is a review lead, not a confirmed artwork duplicate.",
       "thumbnail_duplicate_group_id": "THUMB-SHARED-001",
       "thumbnail_duplicate_review_status": "candidate_pending_visual_comparison",
       "thumbnail_duplicate_peer_ids": [
         "ACC-CENSUS-F2"
       ],
-      "source_verification_level": "official_source_url_checked; source-specific preview and reuse rights unresolved",
+      "source_verification_level": "official_source_page_content_confirmed_2026-10-29; exact_shared_thumbnail_render_pending; free_tutorial_artwork_reuse_not_established",
       "source_last_verified_date": "2026-10-29",
       "license_status": "reference_only_source_artwork_reuse_not_verified",
       "asset_use_recommendation": "Reference/tutorial only. Do not redistribute tutorial imagery as KIRA editor assets without explicit permission or a source-specific open license.",
       "rights_evidence_url": "https://idrawfashion.com/terms-of-service/",
       "rights_checked_date": "2026-10-29",
-      "updated_review_batch": "shared-thumbnail-permissions-2026-10-29"
+      "updated_review_batch": "shared-thumbnail-permissions-2026-10-29",
+      "thumbnail_checked_date": "2026-10-29"
     },
     {
       "id": "ACC-CENSUS-G1",
