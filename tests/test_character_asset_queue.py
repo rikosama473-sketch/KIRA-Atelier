@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import re
 from pathlib import Path
 import tempfile
 import unittest
@@ -8,6 +9,11 @@ SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "select_next_characte
 SPEC = importlib.util.spec_from_file_location("character_asset_queue", SCRIPT)
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
+
+FACTORY_SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "generate_character_assets_free.py"
+FACTORY_SPEC = importlib.util.spec_from_file_location("character_asset_factory_for_queue", FACTORY_SCRIPT)
+FACTORY_MODULE = importlib.util.module_from_spec(FACTORY_SPEC)
+FACTORY_SPEC.loader.exec_module(FACTORY_MODULE)
 
 
 class CharacterAssetQueueTests(unittest.TestCase):
@@ -58,6 +64,28 @@ class CharacterAssetQueueTests(unittest.TestCase):
             "variants": [{"asset_id": slug, "render": {"file": render.relative_to(root).as_posix()}}],
         }
         (run_dir / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+
+
+    def test_workflow_dispatch_validation_and_queue_match_generator_packs(self):
+        workflow_path = Path(__file__).resolve().parents[1] / ".github" / "workflows" / "generate-character-assets-free.yml"
+        workflow = workflow_path.read_text(encoding="utf-8")
+
+        input_start = workflow.index("      asset_pack:")
+        input_end = workflow.index("      background:", input_start)
+        asset_pack_input = workflow[input_start:input_end]
+        self.assertIn("        options:\\n", asset_pack_input)
+        options_text = asset_pack_input.split("        options:\\n", 1)[1]
+        dispatch_packs = set(re.findall(r"^\\s+- ([a-z0-9-]+)\\s*$", options_text, re.MULTILINE))
+
+        guard_start = workflow.index("          supported_packs = {")
+        guard_end = workflow.index("          }", guard_start)
+        validation_packs = set(re.findall(r'"([a-z0-9-]+)"', workflow[guard_start:guard_end]))
+
+        generator_packs = set(FACTORY_MODULE.PACKS)
+        self.assertEqual(set(MODULE.PACK_ORDER), generator_packs)
+        self.assertEqual(dispatch_packs, generator_packs)
+        self.assertEqual(validation_packs, generator_packs)
+        self.assertIn("anatomy-back-1", dispatch_packs)
 
     def test_starts_with_first_incomplete_pibara_pack(self):
         with tempfile.TemporaryDirectory() as temp:
