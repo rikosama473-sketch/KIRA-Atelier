@@ -282,5 +282,23 @@ class VisualCensusAuditTests(unittest.TestCase):
             ):
                 self.assertEqual(rendered[record_id].get(key), row.get(key), f"{record_id}: {key}")
 
+
+    def test_shared_thumbnail_report_distinguishes_page_evidence_from_reuse_rights(self) -> None:
+        report_path = ROOT / "trabajo aparte" / "revision-miniatura-compartida-permisos-2026-10-29.md"
+        report = report_path.read_text(encoding="utf-8").lower()
+        self.assertIn("la página oficial se abrió el 29/10/2026", report)
+        self.assertIn("no resuelve expresamente los permisos", report)
+        self.assertIn("derechos no verificados", report)
+        index_path = ROOT / "trabajo aparte" / "indice-visual-componentes.json"
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+        pair = {row["id"]: row for row in index["reference_entries"] if row.get("thumbnail_duplicate_group_id") == "THUMB-SHARED-001"}
+        self.assertEqual(set(pair), {"ACC-CENSUS-F2", "ACC-CENSUS-F3"})
+        self.assertEqual(len({row["source_url"] for row in pair.values()}), 2)
+        self.assertEqual(len({row["thumbnail_url"] for row in pair.values()}), 1)
+        for row in pair.values():
+            self.assertIn("exact_shared_thumbnail_render_pending", row["source_verification_level"])
+            self.assertIn("free_tutorial_artwork_reuse_not_established", row["source_verification_level"])
+            self.assertEqual(row["thumbnail_duplicate_review_status"], "candidate_pending_visual_comparison")
+
 if __name__ == "__main__":
     unittest.main()
