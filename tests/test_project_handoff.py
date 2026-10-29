@@ -88,17 +88,22 @@ class ImageProjectHandoffTests(unittest.TestCase):
         self.assertIn('$(\"saveProjectBtn\").addEventListener("click",saveProject)', self.manual)
         self.assertIn('$(\"openProjectBtn\").addEventListener("click",function(){$("projectFile").click();})', self.manual)
 
-    def test_ai_workspace_explains_the_no_key_hair_generation_path_and_branch_safety(self) -> None:
+    def test_ai_workspace_explains_the_no_key_hair_generation_path_and_main_persistence(self) -> None:
         ai_workspace = self.avatar.split("function aiWorkspace(root){", 1)[1].split(
             "function syncAIQuality(){", 1
         )[0]
         self.assertIn("Abrir generador IA gratuito", ai_workspace)
-        self.assertIn("generate-character-assets-free.yml", ai_workspace)
+        self.assertIn(
+            "KIRA-Atelier/actions/workflows/generate-character-assets-free.yml",
+            ai_workspace,
+        )
         self.assertIn("cuota pública compartida", ai_workspace)
-        self.assertIn("work/easy-avatar-maker-2026-10", ai_workspace)
+        self.assertNotIn("work/easy-avatar-maker-2026-10", ai_workspace)
         self.assertIn("hair-core-5", ai_workspace)
-        self.assertIn("no ejecutes el proceso sobre main", ai_workspace)
-        self.assertNotIn("generate-hairstyle-variants.yml", ai_workspace)
+        self.assertIn("guardados en main", ai_workspace.lower())
+        self.assertIn("pendientes de revisión visual y de permisos", ai_workspace.lower())
+        self.assertNotIn("no ejecutes el proceso sobre main", ai_workspace.lower())
+        self.assertNotIn("image/actions/workflows", ai_workspace)
 
     def test_ai_workspace_renders_reusable_free_generated_hairstyle_variants(self) -> None:
         self.assertIn('id="aiFreeVariantsGrid"', self.avatar)
