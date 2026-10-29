@@ -95,11 +95,11 @@ class CharacterAssetQueueTests(unittest.TestCase):
         checkout_start = workflow.index("          sparse-checkout: |")
         checkout_end = workflow.index("          sparse-checkout-cone-mode: true", checkout_start)
         checkout_rules = workflow[checkout_start:checkout_end]
-        self.assertIn("            tools/avatar-maker/assets\\n", checkout_rules)
+        self.assertIn("            tools/avatar-maker/assets", checkout_rules)
 
         commit_start = workflow.index("      - name: Commit generated assets and resumable progress to main")
         commit_step = workflow[commit_start:]
-        self.assertIn("          git add -A -- tools/avatar-maker/assets/image-library.json\\n", commit_step)
+        self.assertIn("          git add -A -- tools/avatar-maker/assets/image-library.json", commit_step)
 
     def test_starts_with_first_incomplete_pibara_pack(self):
         with tempfile.TemporaryDirectory() as temp:
