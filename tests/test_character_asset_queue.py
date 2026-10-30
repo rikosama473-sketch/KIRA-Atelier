@@ -149,5 +149,44 @@ class CharacterAssetQueueTests(unittest.TestCase):
             self.assertIsNone(MODULE.select_next_task(root))
 
 
+    def test_partial_manifest_does_not_mark_pack_complete(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = self.make_root(temp)
+            self.mark_complete(root, "anatomy-sheet-4")
+            self.mark_complete(root, "anatomy-guide-1")
+            manifest_path = next(
+                (root / "generated" / "character-assets" / "pibara").rglob("manifest.json")
+            )
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["pack_status"] = "partial"
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            task = MODULE.select_next_task(root)
+            self.assertEqual(task["asset_pack"], "anatomy-guide-1")
+
+    def test_missing_render_file_does_not_mark_pack_complete(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = self.make_root(temp)
+            self.mark_complete(root, "anatomy-sheet-4")
+            self.mark_complete(root, "anatomy-guide-1")
+            manifest_path = next(
+                path for path in (root / "generated" / "character-assets" / "pibara").rglob("manifest.json")
+                if json.loads(path.read_text(encoding="utf-8"))["pack"] == "anatomy-guide-1"
+            )
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            render_path = root / manifest["variants"][0]["render"]["file"]
+            render_path.unlink()
+            task = MODULE.select_next_task(root)
+            self.assertEqual(task["asset_pack"], "anatomy-guide-1")
+
+    def test_changed_source_reference_invalidates_old_completed_manifests(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = self.make_root(temp)
+            self.mark_complete(root, "anatomy-sheet-4")
+            source = root / "from-PixAI-2034984086876227343-0.png"
+            source.write_bytes(b"updated-pibara-source")
+            task = MODULE.select_next_task(root)
+            self.assertEqual(task["asset_pack"], "anatomy-sheet-4")
+
+
 if __name__ == "__main__":
     unittest.main()
