@@ -3,7 +3,7 @@
   "project": "IMAGE Character Creator",
   "title": "Biblioteca local de ilustraciones",
   "generated_from": "data/training-labels.csv and files present in the repository tree",
-  "asset_count": 774,
+  "asset_count": 775,
   "notice": "This library indexes existing raster files in this repository for personal browsing. Filename hints do not prove authorship, franchise identity, license, or permission to redistribute/train. Items remain unreviewed until their source and rights are confirmed.",
   "filters": [
     "Todos",
@@ -11761,7 +11761,30 @@
       "character_id": "pibara",
       "pack": "anatomy-back-1",
       "manifest_status": "needs_visual_identity_review"
+    },
+    {
+      "id": "generated-pibara-anatomy-joint-guide-1-full-body-joint-guide-f3777be4",
+      "catalog_id": "GEN-F3777BE4-FULL-BODY-JOINT-GUIDE",
+      "label": "Guía anatómica — full-body-joint-guide — Pibara",
+      "path": "generated/character-assets/pibara/2026-10-31/run-41213072543/transparent/01-full-body-joint-guide.png",
+      "src": "../../generated/character-assets/pibara/2026-10-31/run-41213072543/transparent/01-full-body-joint-guide.png",
+      "kind": "anatomy_guide",
+      "origin_hint": "Generated in repository workflow via the public image-edit Space; source: from-PixAI-2034984086876227343-0.png; run: 41213072543",
+      "visual_review": "needs_visual_identity_review",
+      "license_review": "unreviewed",
+      "training_permission": "unreviewed",
+      "tags": [
+        "Anatomía",
+        "Cuerpo completo"
+      ],
+      "size_bytes": 744203,
+      "sha256_git_blob": "",
+      "sha256": "54c1c96b988ff07a6442bf0d49ef9946e07e7e12e0ac223387455c75fd601621",
+      "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+      "character_id": "pibara",
+      "pack": "anatomy-joint-guide-1",
+      "manifest_status": "needs_visual_identity_review"
     }
   ],
-  "updated_at_utc": "2026-10-30T15:23:19.445158+00:00"
+  "updated_at_utc": "2026-10-31T15:06:27.215385+00:00"
 }
