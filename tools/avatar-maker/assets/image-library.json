@@ -3,7 +3,7 @@
   "project": "IMAGE Character Creator",
   "title": "Biblioteca local de ilustraciones",
   "generated_from": "data/training-labels.csv and files present in the repository tree",
-  "asset_count": 775,
+  "asset_count": 776,
   "notice": "This library indexes existing raster files in this repository for personal browsing. Filename hints do not prove authorship, franchise identity, license, or permission to redistribute/train. Items remain unreviewed until their source and rights are confirmed.",
   "filters": [
     "Todos",
@@ -11784,7 +11784,30 @@
       "character_id": "pibara",
       "pack": "anatomy-joint-guide-1",
       "manifest_status": "needs_visual_identity_review"
+    },
+    {
+      "id": "generated-pibara-eyes-4-eye-catchlights-f3777be4",
+      "catalog_id": "GEN-F3777BE4-EYE-CATCHLIGHTS",
+      "label": "Variante eye-catchlights — Pibara — eyes-4",
+      "path": "generated/character-assets/pibara/2026-11-01/run-41319431937/transparent/01-eye-catchlights.png",
+      "src": "../../generated/character-assets/pibara/2026-11-01/run-41319431937/transparent/01-eye-catchlights.png",
+      "kind": "generated_full_illustration",
+      "origin_hint": "Generated in repository workflow via the public image-edit Space; source: from-PixAI-2034984086876227343-0.png; run: 41319431937",
+      "visual_review": "needs_visual_identity_review",
+      "license_review": "unreviewed",
+      "training_permission": "unreviewed",
+      "tags": [
+        "Generado",
+        "eyes-4"
+      ],
+      "size_bytes": 751397,
+      "sha256_git_blob": "",
+      "sha256": "3e74b9db1ec437eaa21c32904f324be90697d7b83d6c66dfc9a3147e201a87c2",
+      "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+      "character_id": "pibara",
+      "pack": "eyes-4",
+      "manifest_status": "needs_visual_identity_review"
     }
   ],
-  "updated_at_utc": "2026-10-31T15:06:27.215385+00:00"
+  "updated_at_utc": "2026-11-01T15:07:16.272072+00:00"
 }
