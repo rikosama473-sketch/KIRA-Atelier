@@ -3,7 +3,7 @@
   "project": "IMAGE Character Creator",
   "title": "Biblioteca local de ilustraciones",
   "generated_from": "data/training-labels.csv and files present in the repository tree",
-  "asset_count": 779,
+  "asset_count": 780,
   "notice": "This library indexes existing raster files in this repository for personal browsing. Filename hints do not prove authorship, franchise identity, license, or permission to redistribute/train. Items remain unreviewed until their source and rights are confirmed.",
   "filters": [
     "Todos",
@@ -11876,7 +11876,30 @@
       "character_id": "pibara",
       "pack": "eyes-4",
       "manifest_status": "needs_visual_identity_review"
+    },
+    {
+      "id": "generated-pibara-accessories-4-ribbon-f3777be4",
+      "catalog_id": "GEN-F3777BE4-RIBBON",
+      "label": "Variante ribbon — Pibara — accessories-4",
+      "path": "generated/character-assets/pibara/2026-11-03/run-41661878192/transparent/01-ribbon.png",
+      "src": "../../generated/character-assets/pibara/2026-11-03/run-41661878192/transparent/01-ribbon.png",
+      "kind": "generated_full_illustration",
+      "origin_hint": "Generated in repository workflow via the public image-edit Space; source: from-PixAI-2034984086876227343-0.png; run: 41661878192",
+      "visual_review": "needs_visual_identity_review",
+      "license_review": "unreviewed",
+      "training_permission": "unreviewed",
+      "tags": [
+        "Generado",
+        "accessories-4"
+      ],
+      "size_bytes": 784194,
+      "sha256_git_blob": "",
+      "sha256": "71ef0d632c85b90193e09c22e7157e2dc7cd85b37b8bb10b060b918c6a8a69ab",
+      "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+      "character_id": "pibara",
+      "pack": "accessories-4",
+      "manifest_status": "needs_visual_identity_review"
     }
   ],
-  "updated_at_utc": "2026-11-02T15:26:37.752640+00:00"
+  "updated_at_utc": "2026-11-03T15:17:07.294540+00:00"
 }
