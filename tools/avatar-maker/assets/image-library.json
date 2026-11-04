@@ -3,7 +3,7 @@
   "project": "IMAGE Character Creator",
   "title": "Biblioteca local de ilustraciones",
   "generated_from": "data/training-labels.csv and files present in the repository tree",
-  "asset_count": 780,
+  "asset_count": 783,
   "notice": "This library indexes existing raster files in this repository for personal browsing. Filename hints do not prove authorship, franchise identity, license, or permission to redistribute/train. Items remain unreviewed until their source and rights are confirmed.",
   "filters": [
     "Todos",
@@ -11899,7 +11899,76 @@
       "character_id": "pibara",
       "pack": "accessories-4",
       "manifest_status": "needs_visual_identity_review"
+    },
+    {
+      "id": "generated-pibara-accessories-4-hair-clip-f3777be4",
+      "catalog_id": "GEN-F3777BE4-HAIR-CLIP",
+      "label": "Variante hair-clip — Pibara — accessories-4",
+      "path": "generated/character-assets/pibara/2026-11-04/run-41856668685/transparent/02-hair-clip.png",
+      "src": "../../generated/character-assets/pibara/2026-11-04/run-41856668685/transparent/02-hair-clip.png",
+      "kind": "generated_full_illustration",
+      "origin_hint": "Generated in repository workflow via the public image-edit Space; source: from-PixAI-2034984086876227343-0.png; run: 41856668685",
+      "visual_review": "needs_visual_identity_review",
+      "license_review": "unreviewed",
+      "training_permission": "unreviewed",
+      "tags": [
+        "Generado",
+        "accessories-4"
+      ],
+      "size_bytes": 766206,
+      "sha256_git_blob": "",
+      "sha256": "7fbd9c7b1c2115d89ae02a4f5de5f5c1ef7ce009068fcf5477305c503c8b4c8b",
+      "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+      "character_id": "pibara",
+      "pack": "accessories-4",
+      "manifest_status": "needs_visual_identity_review"
+    },
+    {
+      "id": "generated-pibara-accessories-4-star-pin-f3777be4",
+      "catalog_id": "GEN-F3777BE4-STAR-PIN",
+      "label": "Variante star-pin — Pibara — accessories-4",
+      "path": "generated/character-assets/pibara/2026-11-04/run-41856668685/transparent/03-star-pin.png",
+      "src": "../../generated/character-assets/pibara/2026-11-04/run-41856668685/transparent/03-star-pin.png",
+      "kind": "generated_full_illustration",
+      "origin_hint": "Generated in repository workflow via the public image-edit Space; source: from-PixAI-2034984086876227343-0.png; run: 41856668685",
+      "visual_review": "needs_visual_identity_review",
+      "license_review": "unreviewed",
+      "training_permission": "unreviewed",
+      "tags": [
+        "Generado",
+        "accessories-4"
+      ],
+      "size_bytes": 775793,
+      "sha256_git_blob": "",
+      "sha256": "afa2bb71bc7f3c7dff2dae43d1523b7c1b7d45076324a7dba0968e55f026251c",
+      "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+      "character_id": "pibara",
+      "pack": "accessories-4",
+      "manifest_status": "needs_visual_identity_review"
+    },
+    {
+      "id": "generated-pibara-accessories-4-headband-f3777be4",
+      "catalog_id": "GEN-F3777BE4-HEADBAND",
+      "label": "Variante headband — Pibara — accessories-4",
+      "path": "generated/character-assets/pibara/2026-11-04/run-41856668685/transparent/04-headband.png",
+      "src": "../../generated/character-assets/pibara/2026-11-04/run-41856668685/transparent/04-headband.png",
+      "kind": "generated_full_illustration",
+      "origin_hint": "Generated in repository workflow via the public image-edit Space; source: from-PixAI-2034984086876227343-0.png; run: 41856668685",
+      "visual_review": "needs_visual_identity_review",
+      "license_review": "unreviewed",
+      "training_permission": "unreviewed",
+      "tags": [
+        "Generado",
+        "accessories-4"
+      ],
+      "size_bytes": 774979,
+      "sha256_git_blob": "",
+      "sha256": "a59e7d48a44aeb3117d3882e2437148fec5782396fe5d8d2c364a1927a6bf806",
+      "source_sha256": "f3777be442119b85a9ddab6c59a576f37761248a902e13289c3ff520ebcb67c0",
+      "character_id": "pibara",
+      "pack": "accessories-4",
+      "manifest_status": "needs_visual_identity_review"
     }
   ],
-  "updated_at_utc": "2026-11-03T15:17:07.294540+00:00"
+  "updated_at_utc": "2026-11-04T15:23:34.995412+00:00"
 }
